@@ -451,29 +451,55 @@ left: 458px;
     /*border-style: dashed;*/
 }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">
 
 
 
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">var inventario = {};
+
+function tiene(objeto) { return objeto in inventario; }
+
+Macro.add("agarrar", {
+	handler: function agarrar() {
+		if (this.args.length !== 1)
+			this.error("se espera un único objeto cómo parámetro");
+
+		inventario[this.args[0]] = true;
+	}
+});
+
+Macro.add("inventario", {
+	handler: function renderInventario() {
+		var inventarioArray = Object.getOwnPropertyNames(inventario)
+		jQuery(this.output).wiki(inventarioArray);
+	}
+});
 
 
+/* Asignación de globales para uso en pasajes */
+window.tiene = tiene;
 </script><tw-passagedata pid="1" name="Oficina" tags="nobr" position="781,240" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 
 &lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/INAP_fondo.png&quot;]]
-	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés revisar los emails?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés consultar los textos?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;
+		&lt;div class=&quot;tooltip&quot;&gt;
+			&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés revisar los emails?&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;
+		&lt;div class=&quot;tooltip-left&quot;&gt;
+			&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés consultar los textos?&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
 
 	&lt;&lt;if $primeraVez is true&gt;&gt;
-	&lt;div class=&quot;mensaje&quot;&gt;
-		&lt;p&gt;¡Hola $usuario !&lt;/p&gt;
-		&lt;p&gt;Explora la oficina, encontrarás información útil para resolver el problema del Puente.&lt;/p&gt;
-		&lt;p&gt; Esta es sólo una demo que muestra las funcionalidades disponibles en un juego interactivo. Los textos son solo a modo de ejemplo.&lt;/p&gt;
-		&lt;p&gt;&lt;&lt;button &quot;OK&quot; Oficina&gt;&gt;&lt;&lt;set $primeraVez to false&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
-	&lt;/div&gt;
-		
-		
+		&lt;div class=&quot;mensaje&quot;&gt;
+			&lt;p&gt;¡Hola $usuario !&lt;/p&gt;
+			&lt;p&gt;Explora la oficina, encontrarás información útil para resolver el problema del Puente.&lt;/p&gt;
+			&lt;p&gt; Esta es sólo una demo que muestra las funcionalidades disponibles en un juego interactivo. Los textos son solo a modo de ejemplo.&lt;/p&gt;
+			&lt;p&gt;&lt;&lt;button &quot;OK&quot; Oficina&gt;&gt;&lt;&lt;set $primeraVez to false&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+		&lt;/div&gt;
 	&lt;&lt;/if&gt;&gt;
 	&lt;&lt;set $MostrarFooter to true&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInterface" tags="" position="50,24" size="200,100">&lt;div id=&quot;aplicacion&quot;&gt;
@@ -501,22 +527,26 @@ left: 458px;
 &lt;&lt;cacheaudio &quot;ambiente2&quot; &quot;sonidos/musica2.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="489,24" size="200,100">
 &lt;&lt;if $MostrarFooter is true&gt;&gt;
-&lt;div class=&quot;toolbox&quot;&gt;
-&lt;&lt;if $TieneNormativa is true&gt;&gt;
-&lt;div class=&quot;hotspot&quot; id=&quot;normativa-tool&quot; data-passage=&quot;Docus&quot;&gt;
-	&lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/normativa.png&quot;&gt;
-	&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Normativa Vigente&lt;/span&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
+	&lt;div class=&quot;toolbox&quot;&gt;
+		&lt;&lt;if tiene(&quot;normativa&quot;)&gt;&gt;
+			&lt;div class=&quot;hotspot&quot; id=&quot;normativa-tool&quot; data-passage=&quot;Docus&quot;&gt;
+				&lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/normativa.png&quot;&gt;
+				&lt;div class=&quot;tooltip&quot;&gt;
+					&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Normativa Vigente&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $TieneExpediente is true&gt;&gt;
-&lt;div class=&quot;hotspot&quot; id=&quot;expediente-tool&quot; data-passage=&quot;Docus&quot;&gt;
-	&lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/expediente.png&quot;&gt;
-	&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Expediente&lt;/span&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
+		&lt;&lt;if tiene(&quot;expediente&quot;)&gt;&gt;
+			&lt;div class=&quot;hotspot&quot; id=&quot;expediente-tool&quot; data-passage=&quot;Docus&quot;&gt;
+				&lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/expediente.png&quot;&gt;
+				&lt;div class=&quot;tooltip&quot;&gt;
+					&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Expediente&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;&lt;/if&gt;&gt;
+	&lt;p&gt;[DEBUG:inventario]&lt;&lt;inventario&gt;&gt;&lt;/p&gt;
+	&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Login" tags="nobr" position="436,188" size="200,200">&lt;div class=&quot;pantalla-login&quot;&gt;
 &lt;div class=&quot;texto-bienvenida&quot;&gt;
 Bienvenido. Por favor ingrese su nombre.
@@ -554,18 +584,31 @@ Bienvenido. Por favor ingrese su nombre.
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Biblioteca" tags="nobr" position="1073,224" size="200,100">&lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/INAP_biblioteca.png&quot;]]
 
-&lt;&lt;if $TieneNormativa is false&gt;&gt;
+&lt;&lt;if not tiene(&quot;normativa&quot;)&gt;&gt;
 	&lt;div class=&quot;objeto&quot;  id=&quot;normativa&quot;&gt;
-	&lt;&lt;link &quot;&lt;img src=&#39;imagenes/normativa-item.png&#39;&gt;&quot;&gt;&gt;&lt;&lt;set $TieneNormativa to true&gt;&gt;&lt;&lt;set $Progreso += 2 &gt;&gt;&lt;&lt;audio &quot;exito&quot; play&gt;&gt;&lt;&lt;script&gt;&gt;Engine.play(&quot;Biblioteca&quot;)&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
-		
-		&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Normativa Actual de la AFN&lt;/span&gt;&lt;/div&gt;
+		&lt;&lt;link &quot;&lt;img src=&#39;imagenes/normativa-item.png&#39;&gt;&quot;&gt;&gt;
+			&lt;&lt;agarrar &quot;normativa&quot;&gt;&gt;
+			&lt;&lt;set $Progreso += 2 &gt;&gt;
+			&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
+			&lt;&lt;script&gt;&gt;Engine.play(&quot;Biblioteca&quot;)&lt;&lt;/script&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+		&lt;div class=&quot;tooltip&quot;&gt;
+			&lt;span class=&quot;tooltiptext&quot;&gt;Normativa Actual de la AFN&lt;/span&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $TieneExpediente is false&gt;&gt;
+&lt;&lt;if not tiene(&quot;expediente&quot;)&gt;&gt;
 	&lt;div class=&quot;objeto&quot;  id=&quot;expediente&quot;&gt;
-	&lt;&lt;link &quot;&lt;img src=&#39;imagenes/expediente-item.png&#39;&gt;&quot;&gt;&gt;&lt;&lt;set $TieneExpediente to true&gt;&gt;&lt;&lt;set $Progreso += 2 &gt;&gt;&lt;&lt;audio &quot;exito&quot; play&gt;&gt;&lt;&lt;script&gt;&gt;Engine.play(&quot;Biblioteca&quot;)&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
-	&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Expediente del Puente&lt;/span&gt;&lt;/div&gt;
+		&lt;&lt;link &quot;&lt;img src=&#39;imagenes/expediente-item.png&#39;&gt;&quot;&gt;&gt;
+			&lt;&lt;agarrar &quot;expediente&quot;&gt;&gt;
+			&lt;&lt;set $Progreso += 2 &gt;&gt;
+			&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
+			&lt;&lt;script&gt;&gt;Engine.play(&quot;Biblioteca&quot;)&lt;&lt;/script&gt;&gt;
+		&lt;&lt;/link&gt;&gt;	
+		&lt;div class=&quot;tooltip&quot;&gt;
+			&lt;span class=&quot;tooltiptext&quot;&gt;Expediente del Puente&lt;/span&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;	    	
 
