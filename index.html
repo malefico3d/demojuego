@@ -135,6 +135,31 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
   border-radius: 50px; */
 }
 
+.avatar-foto {
+  display: block;
+  width: 70px;
+  height: 70px;
+  background: url(imagenes/opciones.png)
+	          repeat-x;
+  background-size: 280px;
+}
+
+.avatar-foto.foto0 {
+  background-position: 0px 0px;
+}
+
+.avatar-foto.foto1 {
+  background-position: -70px 0px;
+}
+
+.avatar-foto.foto2 {
+  background-position: -140px 0px;
+}
+
+.avatar-foto.foto3 {
+  background-position: -210px 0px;
+}
+
 #avatar-texto {
   position: absolute;
   top: 0px;
@@ -455,6 +480,7 @@ left: 458px;
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">var inventario = {};
 
 function tiene(objeto) { return objeto in inventario; }
@@ -479,6 +505,7 @@ Macro.add("inventario", {
 /* Asignación de globales para uso en pasajes */
 window.tiene = tiene;
 
+
 </script><tw-passagedata pid="1" name="Oficina" tags="nobr" position="781,240" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 
@@ -497,7 +524,6 @@ window.tiene = tiene;
 
 	&lt;&lt;if $primeraVez is true&gt;&gt;
 		&lt;div class=&quot;mensaje&quot;&gt;
-			&lt;p&gt;EL AVATAR ES $avatar&lt;/p&gt;
 			&lt;p&gt;¡Hola $usuario !&lt;/p&gt;
 			&lt;p&gt;Explora la oficina, encontrarás información útil para resolver el problema del Puente.&lt;/p&gt;
 			&lt;p&gt; Esta es sólo una demo que muestra las funcionalidades disponibles en un juego interactivo. Los textos son solo a modo de ejemplo.&lt;/p&gt;
@@ -579,10 +605,10 @@ Bienvenido. Por favor ingrese su nombre.
 </tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="177,185" size="200,200">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
 &lt;div class=&quot;cabecera&quot;&gt;
   &lt;div id=&quot;avatar&quot;&gt;
-	[img[&quot;imagenes/avatar.png&quot;]]
+    &lt;&lt;print &quot;&lt;div class=\&quot;avatar-foto foto&quot; + $avatar + &quot;\&quot;&gt;&lt;/div&gt;&quot;&gt;&gt;
 	&lt;div id=&quot;avatar-texto&quot;&gt;$usuario&lt;/div&gt;
 	&lt;div id=&quot;progreso&quot;&gt;$Progreso / $Total&lt;/div&gt;
-	&lt;/div&gt;
+  &lt;/div&gt;
   &lt;div id=&quot;desarrollo&quot;&gt;
 	  &lt;&lt;button Reiniciar&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
