@@ -689,11 +689,15 @@ border-color: #57c;
 .botones {
   display: inline-block;
   padding: 2px;
-  position: absolute;
+  position: relative;
   margin: auto;
   margin-top: auto;
   margin-top: 20px;
   bottom: -1px;
+}
+
+.glosario > .botones {
+  position: absolute;
 }
 .contenedor-botonera {
   position: relative;
@@ -900,6 +904,7 @@ color: #505e5f;
 @keyframes titila {  
   50% { opacity: 0; }
 }
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">var inventario = {};
 
 function tiene(objeto) { return objeto in inventario; }
@@ -923,6 +928,7 @@ Macro.add("inventario", {
 
 /* Asignación de globales para uso en pasajes */
 window.tiene = tiene;
+
 
 
 
@@ -998,46 +1004,39 @@ Abrazo y contá conmigo!
 
 &lt;&lt;cacheaudio &quot;ambiente&quot; &quot;sonidos/musica.ogg&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambiente2&quot; &quot;sonidos/musica2.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="491,24" size="200,100">
+&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="493,26" size="200,100">
 &lt;&lt;if $MostrarFooter is true&gt;&gt;
-&lt;div class=&quot;toolbox&quot;&gt;
-&lt;&lt;if $TieneNormativa is true&gt;&gt;
-&lt;div class=&quot;hotspot&quot; id=&quot;normativa-tool&quot; data-passage=&quot;Docus&quot;&gt;
-	&lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/normativa.png&quot;&gt;
-	&lt;div class=&quot;item-tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Normativa Vigente&lt;/span&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $TieneExpediente is true&gt;&gt;
-	&lt;div class=&quot;hotspot&quot; id=&quot;expediente-tool&quot; data-passage=&quot;Docus&quot;&gt;
-	&lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/expediente.png&quot;&gt;
-	&lt;div class=&quot;item-tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Expediente&lt;/span&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $TieneGlosario is true&gt;&gt;
-	&lt;div class=&quot;hotspot&quot; id=&quot;glosario-tool&quot; data-passage=&quot;PalabrasClave&quot;&gt;
-	&lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/herramientas/glosario.png&quot;&gt;
-	&lt;div class=&quot;item-tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-
-
-&lt;&lt;if $TieneCelu is true and State.passage is not &quot;Wassap&quot;&gt;&gt;
-&lt;div class=&quot;wassap&quot;&gt;
-	&lt;div class=&quot;wassap-icono&quot;&gt;&lt;/div&gt;
-	&lt;div class=&quot;wassap-globo&quot;&gt;
-		&lt;&lt;if $Notificacion is true&gt;&gt;
-		&lt;div class=&quot;blinker&quot;&gt;[[1 Mensaje Nuevo !|Wassap]]&lt;/div&gt;
-		&lt;&lt;else&gt;&gt;
-		[[Revisar el celular|Wassap]]
-		&lt;&lt;/if&gt;
+	&lt;div class=&quot;toolbox&quot;&gt;
+	  &lt;&lt;if $TieneNormativa is true&gt;&gt;
+	  &lt;div class=&quot;hotspot&quot; id=&quot;normativa-tool&quot; data-passage=&quot;Docus&quot;&gt;
+	  &lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/normativa.png&quot;&gt;
+	  &lt;div class=&quot;item-tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Normativa Vigente&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	  &lt;&lt;/if&gt;&gt;
+	  &lt;&lt;if $TieneExpediente is true&gt;&gt;
+	  &lt;div class=&quot;hotspot&quot; id=&quot;expediente-tool&quot; data-passage=&quot;Docus&quot;&gt;
+	  &lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/expediente.png&quot;&gt;
+	  &lt;div class=&quot;item-tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Expediente&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	  &lt;&lt;/if&gt;&gt;
+	  &lt;&lt;if $TieneGlosario is true&gt;&gt;
+	  &lt;div class=&quot;hotspot&quot; id=&quot;glosario-tool&quot; data-passage=&quot;PalabrasClave&quot;&gt;
+	  &lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/herramientas/glosario.png&quot;&gt;
+	  &lt;div class=&quot;item-tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	  &lt;&lt;/if&gt;&gt;
 	&lt;/div&gt;
-&lt;/div&gt;
+	&lt;&lt;if $TieneCelu is true and State.passage is not &quot;Wassap&quot;&gt;&gt;
+	&lt;div class=&quot;wassap&quot;&gt;
+		&lt;div class=&quot;wassap-icono&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;wassap-globo&quot;&gt;
+			&lt;&lt;if $Notificacion is true&gt;&gt;
+				&lt;div class=&quot;blinker&quot;&gt;[[1 Mensaje Nuevo !|Wassap]]&lt;/div&gt;
+			&lt;&lt;else&gt;&gt;
+				[[Revisar el celular|Wassap]]
+			&lt;&lt;/if&gt;&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Inicio" tags="nobr" position="438,188" size="200,200">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Inicio" tags="nobr" position="439,188" size="200,200">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;&lt;if $primeraVez is true&gt;&gt;
 &lt;div class=&quot;contenedor-exterior&quot;&gt;
 	&lt;div class=&quot;mensaje&quot;&gt;
@@ -1048,8 +1047,7 @@ Abrazo y contá conmigo!
 		[[Comenzar|ConfiguracionAvatar]] 
 	&lt;/div&gt;
 &lt;/div&gt;
-		
-	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="Docus" tags="nobr" position="1569,42" size="200,100">&lt;&lt;set $MostrarFooter to false&gt;&gt;
@@ -1193,7 +1191,7 @@ $(function(){
 			.style.backgroundPositionX = offset + &#39;px&#39;;
 		});
 	});	
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="15" name="Wassap" tags="nobr" position="820,24" size="200,100">&lt;&lt;set $Notificacion to false&gt;&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="15" name="Wassap" tags="nobr" position="765,26" size="200,100">&lt;&lt;set $Notificacion to false&gt;&gt;
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 	&lt;div class=&quot;celular&quot;&gt;
 		&lt;div class=&quot;celular-pantalla&quot;&gt;
@@ -1240,7 +1238,7 @@ Hola Juan, Mariela me está preguntando cuándo pueden comprar las notebooks y t
  &lt;div id=&quot;definicion&quot; class=&quot;contenedor-definiciones&quot;&gt;No hay resultados que mostrar. Haga clic sobre una letra para ver las definiciones.&lt;/div&gt;
   
   &lt;div class=&quot;botones&quot;&gt;
-  	&lt;&lt;button Salir Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
+  	&lt;&lt;button Volver Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="L" tags="L nobr" position="2296,602" size="100,100">&lt;h2&gt;Licitación Directa&lt;/h2&gt;
