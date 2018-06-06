@@ -989,7 +989,7 @@ Abrazo y contá conmigo!
 &lt;&lt;set $primeraVez to true&gt;&gt;
 &lt;&lt;set $TieneNormativa to false&gt;&gt;
 &lt;&lt;set $TieneExpediente to false&gt;&gt;
-&lt;&lt;set $TieneGlosario to true&gt;&gt;
+&lt;&lt;set $TieneGlosario to false&gt;&gt;
 &lt;&lt;set $Progreso to 0 &gt;&gt;
 &lt;&lt;set $Total to 4 &gt;&gt;
 &lt;&lt;set $Pregunta to 1&gt;&gt;
@@ -1076,11 +1076,11 @@ Abrazo y contá conmigo!
 &lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/INAP_biblioteca.png&quot;]]
 
-&lt;&lt;if $TieneNormativa is false&gt;&gt;
+&lt;&lt;if $TieneGlosario is false&gt;&gt;
 	&lt;div class=&quot;objeto&quot;  id=&quot;normativa&quot;&gt;
-	&lt;&lt;link &quot;&lt;img src=&#39;imagenes/normativa-item.png&#39;&gt;&quot;&gt;&gt;&lt;&lt;set $TieneNormativa to true&gt;&gt;&lt;&lt;set $Progreso += 1 &gt;&gt;&lt;&lt;audio &quot;exito&quot; play&gt;&gt;&lt;&lt;script&gt;&gt;Engine.play(&quot;Biblioteca&quot;)&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
+	&lt;&lt;link &quot;&lt;img src=&#39;imagenes/normativa-item.png&#39;&gt;&quot;&gt;&gt;&lt;&lt;set $TieneGlosario to true&gt;&gt;&lt;&lt;set $Progreso += 1 &gt;&gt;&lt;&lt;audio &quot;exito&quot; play&gt;&gt;&lt;&lt;script&gt;&gt;Engine.play(&quot;Biblioteca&quot;)&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
 		
-		&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Normativa Actual de la AFN&lt;/span&gt;&lt;/div&gt;
+		&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Glosario de Palabras Clave&lt;/span&gt;&lt;/div&gt;
 	&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -1213,11 +1213,9 @@ Hola Juan, Mariela me está preguntando si pueden comprar notebooks y tablets. N
      data-passage=&quot;Wassap&quot;
 	 data-setter=&quot;$mensaje to &#39;Desafio2-error&#39;&quot;&gt;
 Hola Juan, Mariela me está preguntando cuándo pueden comprar las notebooks y tablets. ¿Qué le digo? 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Desafio3" tags="nobr" position="1049,314" size="200,100">Tengo la respuesta, pero vamos a aprovechar esta pregunta para tu entrenamiento. Buscá en la herramienta de Palabras claves “Plan Anual de Contrataciones/Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses. 
-&lt;p&gt;¿Vos que decís?&lt;/p&gt;
-&lt;&lt;set $TieneGlosario to true&gt;&gt;
-&lt;div class=&quot;dialogo-container opcion-celular&quot; data-passage=&quot;Oficina&quot;&gt;SI&lt;/div&gt;
-&lt;div class=&quot;dialogo-container opcion-celular&quot; data-passage=&quot;Oficina&quot;&gt;NO&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Desafio2-error" tags="nobr" position="835,312" size="200,100">&lt;p&gt;Mariela me comentó su duda, pero fijate que te está preguntando otra cosa. Te pregunta si pueden comprarlas o no. Yo tengo la respuesta pero vamos a aprovechar esta pregunta para tu entrenamiento. Buscá en la herramienta de Palabras claves “Plan Anual de Contrataciones/Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses.&lt;/p&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Desafio3" tags="nobr" position="1049,314" size="200,100">Tengo la respuesta, pero vamos a aprovechar esta pregunta para tu entrenamiento. En la biblioteca hay un Glosario de Palabras Clave, buscá “Plan Anual de Contrataciones/Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses. 
+&lt;div class=&quot;dialogo-container opcion-celular&quot; data-passage=&quot;Biblioteca&quot;&gt;Ok&lt;/div&gt;
+&lt;div class=&quot;dialogo-container opcion-celular&quot;&gt;[[&quot;Ok&quot;|Biblioteca]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="Desafio2-error" tags="nobr" position="835,312" size="200,100">&lt;p&gt;Mariela me comentó su duda, pero fijate que te está preguntando otra cosa. Te pregunta si pueden comprarlas o no. Yo tengo la respuesta pero vamos a aprovechar esta pregunta para tu entrenamiento. Buscá en la herramienta de Palabras claves “Plan Anual de Contrataciones/Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses.&lt;/p&gt;
 &lt;p&gt;¿Vos que decís?&lt;/p&gt;
 &lt;div class=&quot;dialogo-container opcion-celular&quot;&gt;SI&lt;/div&gt;
 &lt;div class=&quot;dialogo-container opcion-celular&quot;&gt;NO&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="PalabrasClave" tags="nobr" position="1427,483" size="200,200">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
