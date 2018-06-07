@@ -317,7 +317,7 @@ img#normativa {
   
 }
 
-.volver-escenario {
+.volver-escenario, .oeste, .este {
   top: 115px;
  visibility:hidden;
   opacity: 0;
@@ -951,9 +951,17 @@ State.variables.inventario = {};
 	[img[&quot;imagenes/INAP_fondo.png&quot;]]
 	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés revisar los emails?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés consultar los textos?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-
 	
-	&lt;&lt;set $MostrarFooter to true&gt;&gt;
+&lt;&lt;set $MostrarFooter to true&gt;&gt;
+
+&lt;div class=&quot;hotspot&quot; id=&quot;ir-oficina-oeste&quot; data-passage=&quot;Oficina Oeste&quot;&gt;
+	&lt;div class=&quot;ir-oeste&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;hotspot&quot; id=&quot;ir-oficina-este&quot; data-passage=&quot;Oficina Este&quot;&gt;
+	&lt;div class=&quot;ir-este&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+	
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInterface" tags="" position="50,24" size="200,100">&lt;div id=&quot;aplicacion&quot;&gt;
 &lt;div id=&quot;passages&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Computadora" tags="nobr" position="1289,4" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
@@ -1009,7 +1017,7 @@ Abrazo y contá conmigo!
 
 &lt;&lt;cacheaudio &quot;ambiente&quot; &quot;sonidos/musica.ogg&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambiente2&quot; &quot;sonidos/musica2.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="493,26" size="200,100">&lt;&lt;if $MostrarFooter is true&gt;&gt;
+&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="532,29" size="200,100">&lt;&lt;if $MostrarFooter is true&gt;&gt;
 	&lt;div class=&quot;toolbox&quot;&gt;
 		&lt;&lt;for _item, _data range $inventario&gt;&gt;
 			&lt;&lt;include _item&gt;&gt;
@@ -1028,7 +1036,7 @@ Abrazo y contá conmigo!
 	&lt;/div&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="6" name="Inicio" tags="nobr" position="439,188" size="200,200">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Inicio" tags="nobr" position="50,336" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;&lt;if $primeraVez is true&gt;&gt;
 &lt;div class=&quot;contenedor-exterior&quot;&gt;
 	&lt;div class=&quot;mensaje&quot;&gt;
@@ -1053,7 +1061,7 @@ Abrazo y contá conmigo!
 &lt;/ul&gt;
 &lt;div class=&quot;volver&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="182,183" size="200,200">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="49,128" size="200,200">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
 &lt;div class=&quot;cabecera&quot;&gt;
   &lt;div id=&quot;avatar&quot;&gt;
   &lt;&lt;print &quot;&lt;div class=\&quot;avatar-foto foto&quot; + $avatar + &quot;\&quot;&gt;&lt;/div&gt;&quot;&gt;&gt;
@@ -1064,7 +1072,7 @@ Abrazo y contá conmigo!
 	  &lt;&lt;button Reiniciar&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Biblioteca" tags="nobr" position="1693,330" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Biblioteca" tags="nobr" position="1222,364" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
 &lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/INAP_biblioteca.png&quot;]]
 
@@ -1106,7 +1114,7 @@ Abrazo y contá conmigo!
 	&lt;div class=&quot;volver-escenario&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Peritos" tags="nobr" position="692,691" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Peritos" tags="nobr" position="692,674" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/INAP_fondo_compu.png&quot;]]
 &lt;div class=&quot;texto_compu&quot;&gt;
 	&lt;p&gt;Informe de Peritaje Puente.
@@ -1114,7 +1122,7 @@ Abrazo y contá conmigo!
 	&lt;/p&gt;
 	&lt;&lt;button Volver Computadora&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="Contabilidad" tags="nobr" position="814,690" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="Contabilidad" tags="nobr" position="805,673" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/INAP_fondo_compu.png&quot;]]
 &lt;div class=&quot;texto_compu&quot;&gt;
 	&lt;p&gt;Informe de Contabilidad
@@ -1164,7 +1172,7 @@ Abrazo y contá conmigo!
 &lt;/div&gt;
 	
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="ConfiguracionAvatar" tags="nobr" position="453,497" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="ConfiguracionAvatar" tags="nobr" position="49,449" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;contenedorCentrado&quot;&gt;
 &lt;div class=&quot;texto-bienvenida&quot;&gt;Por favor ingresá tu nombre.&lt;/div&gt;
 &lt;&lt;textbox &quot;$usuario&quot; &quot;Anónimo&quot;&gt;&gt;
@@ -1211,7 +1219,7 @@ $(function(){
 &lt;/div&gt;
 
 &lt;&lt;set $MostrarFooter to true&gt;&gt;
-&lt;&lt;set $MostrarAvatar to true&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Desafio2" tags="nobr" position="1050,199" size="200,100">Elige el texto que enviarías a Juan para resolver la duda que te planteó Mariela
+&lt;&lt;set $MostrarAvatar to true&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Desafio2" tags="nobr" position="985,546" size="200,100">Elige el texto que enviarías a Juan para resolver la duda que te planteó Mariela
 
 &lt;div class=&quot;opcion-celular&quot;
      data-passage=&quot;Wassap&quot;
@@ -1223,7 +1231,7 @@ Hola Juan, Mariela me está preguntando si pueden comprar notebooks y tablets. N
      data-passage=&quot;Wassap&quot;
 	 data-setter=&quot;$mensaje to &#39;Desafio2-error&#39;&quot;&gt;
 Hola Juan, Mariela me está preguntando cuándo pueden comprar las notebooks y tablets. ¿Qué le digo? 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Desafio3" tags="nobr" position="1054,313" size="200,100">&lt;&lt;if $TieneDefinicion is false&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Desafio3" tags="nobr" position="1207,667" size="200,100">&lt;&lt;if $TieneDefinicion is false&gt;&gt;
 &lt;div class=&quot;mensaje-celular&quot;&gt;
 Tengo la respuesta, pero vamos a aprovechar esta pregunta para tu entrenamiento. 
 &lt;&lt;if not tiene(&quot;glosario&quot;)&gt;&gt;En la biblioteca hay un Glosario de Palabras Clave, buscá: &lt;&lt;else&gt;&gt;Buscá en Palabras Clave &lt;&lt;/if&gt;&gt;“Plan Anual de Contrataciones/Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses. 
@@ -1242,7 +1250,7 @@ Entonces, ¿ qué le contestamos a Juan ?
 &lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Biblioteca&quot;&gt;Se puede realizar la compra.&lt;/div&gt;
 &lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Wassap&quot; data-setter=&quot;$mensaje to &#39;Desafio4&#39;&quot;&gt;No se puede realizar la compra.&lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Desafio2-error" tags="nobr" position="835,312" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Desafio2-error" tags="nobr" position="988,666" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
 Mariela me comentó su duda, pero fijate que te está preguntando otra cosa. Te pregunta si pueden comprarlas o no. Yo tengo la respuesta pero vamos a aprovechar esta pregunta para tu entrenamiento. Buscá en la herramienta de Palabras claves “Plan Anual de Contrataciones/Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses.&lt;/div&gt;
 &lt;div class=&quot;dialogo-container opcion-celular&quot; passage-data=&quot;Oficina&quot;&gt;Ok&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="PalabrasClave" tags="nobr" position="1560,492" size="200,200">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;glosario&quot;&gt;
@@ -1428,7 +1436,7 @@ Bueno, me estoy yendo a una reunión. Fijate la lista y cualquier cosa que neces
 &lt;h4&gt;NOTA DESARROLLO: Tiene que habilitarse la vision de la carpeta violeta&lt;/h4&gt;
 
 &lt;&lt;link [[Consultar a Juan|Wassap]]&gt;&gt;&lt;&lt;set $mensaje to &quot;Desafio2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
-[[Volver|Oficina]]</tw-passagedata><tw-passagedata pid="30" name="Desafio4" tags="nobr" position="1050,428" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+[[Volver|Oficina]]</tw-passagedata><tw-passagedata pid="30" name="Desafio4" tags="nobr" position="1203,782" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
 (emoji dedo pulgar para abajo)
 No, no podemos! Primero porque no contamos con la firma del Director del Museo
 para acompañar el requerimiento, recién vuelve en 3 meses de su licencia y entonces no nos dan los plazos para realizar este desdoblamiento. 
@@ -1448,13 +1456,15 @@ Sí.
      data-passage=&quot;Wassap&quot;
 	 data-setter=&quot;$mensaje to &#39;Desafio4-error&#39;&quot;&gt;
 No.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="Desafio4-error" tags="nobr" position="831,429" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="Desafio4-error" tags="nobr" position="984,783" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
 Mariela me avisó que puso todo lo necesario así que tranquilo, avancemos!. 
 &lt;/div&gt;
 &lt;&lt;include Desafio4-exito&gt;&gt;
-</tw-passagedata><tw-passagedata pid="32" name="Desafio4-exito" tags="nobr" position="1268,432" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+</tw-passagedata><tw-passagedata pid="32" name="Desafio4-exito" tags="nobr" position="1421,786" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+&lt;&lt;if not tiene(&quot;presupuestos&quot;)&gt;&gt;
 Perfecto, avancemos con la definición del tipo de contrato.
 En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte, mientras vos &lt;b&gt;estabas mirando los videos&lt;/b&gt; Gómez hizo magia jaja, elegí el que necesitamos y seguimos hablando por acá.
+&lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="expediente" tags="item nobr" position="104,801" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;expediente-tool&quot; data-passage=&quot;Docus&quot;&gt;
 	&lt;img src=&quot;imagenes/expediente.png&quot;&gt;
 	&lt;div class=&quot;item-tooltip&quot;&gt;
@@ -1470,6 +1480,39 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Normativa Vigente&lt;/span&gt;
 	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Oficina Oeste" tags="nobr" position="490,181" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
+
+&lt;div class=&quot;pantalla&quot;&gt;
+	[img[&quot;imagenes/oficina-OESTE.png&quot;]]
+	&lt;div class=&quot;hotspot&quot; id=&quot;fichero&quot; data-passage=&quot;Bebedero&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés ver el fichero?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;gomez&quot; data-passage=&quot;Gomez&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés ver el escritorio de Gómez?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+[[&quot;Ir hacia el este&quot;|Oficina]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="Oficina Este" tags="nobr" position="989,208" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
+
+&lt;div class=&quot;pantalla&quot;&gt;
+	[img[&quot;imagenes/oficina-ESTE.png&quot;]]
+	[[&quot;Ir hacia el oeste&quot;|Oficina]]	
+	&lt;&lt;set $MostrarFooter to true&gt;&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;ir-oficina-oeste&quot; data-passage=&quot;Oficina&quot;&gt;
+	&lt;div class=&quot;ir-oeste&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Bebedero" tags="" position="341,324.5" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+	[img[&quot;imagenes/bebedero-fichero.png&quot;]]
+	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés abrir el fichero?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés servirte un poco de agua?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+
+[[&quot;Volver&quot;|Oficina Oeste]]
+	
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="Gomez" tags="nobr" position="333,181.5" size="100,100">
+&lt;div class=&quot;pantalla&quot;&gt;
+	[img[&quot;imagenes/escritorio-gomez.png&quot;]]
+	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés abrir el fichero?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés servirte un poco de agua?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+
+	[[&quot;Volver&quot;|Oficina Oeste]]
 &lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
