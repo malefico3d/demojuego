@@ -236,8 +236,8 @@ img#normativa {
 
 .toolbox_item {
   height: 70px;
-  position: relative;
-  display: table-cell;
+  width: 70px;
+  display: inline-block;
   padding: 0px 15px;
 }
 
@@ -377,20 +377,22 @@ img#normativa {
  
 }
 
-.hotspot:hover .tooltip, .hotspot:hover .tooltip-left, .hotspot:hover .tooltiptext, .hotspot#volver-oficina:hover .volver-escenario, .hotspot#volver-oficina2:hover .volver-escenario, .hotspot:hover .item-tooltip {
+/* Hotspots */
+.hotspot:hover .tooltip,
+.hotspot:hover .tooltip-left,
+.hotspot:hover .tooltiptext,
+.hotspot#volver-oficina:hover .volver-escenario,
+.hotspot#volver-oficina2:hover .volver-escenario,
+/* Inventario */
+.toolbox_item:hover .item-tooltip,
+.toolbox_item:hover .tooltiptext,
+/* Objetos */
+.objeto:hover .tooltip,
+.objeto:hover .tooltip-left,
+.objeto:hover .tooltiptext {
   visibility:visible;
   opacity: 1;
   
-}
-
-.objeto:hover .tooltip, .objeto:hover .tooltiptext {
-  visibility:visible;
-  opacity: 1;
-}
-
-.objeto:hover .tooltip-left, .objeto:hover .tooltiptext {
-  visibility:visible;
-  opacity: 1;
 }
 
 .tooltip .tooltiptext::after {
@@ -561,13 +563,6 @@ left: 458px;
   margin: 5px;
 }
 
-.hotspot#normativa-tool {
-  left: 0px;
-}
-
-.hotspot#expediente-tool {
-  left: 65px;
-}
 .hotspot#volver-oficina {
     top: 101px;
     left: 0px;
@@ -928,40 +923,26 @@ color: #505e5f;
   50% { opacity: 0; }
 }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">var inventario = {};
 
-function tiene(objeto) { return objeto in inventario; }
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
+function tiene(objeto) { return objeto in inventario(); }
 
 Macro.add("agarrar", {
 	handler: function agarrar() {
 		if (this.args.length !== 1)
 			this.error("se espera un único objeto cómo parámetro");
 
-		inventario[this.args[0]] = true;
+		inventario()[this.args[0]] = true;
 	}
 });
-
-Macro.add("inventario", {
-	handler: function renderInventario() {
-		var inventarioArray = Object.getOwnPropertyNames(inventario)
-		jQuery(this.output).wiki(inventarioArray);
-	}
-});
-
 
 /* Asignación de globales para uso en pasajes */
 window.tiene = tiene;
 
-
-
-
-
-
-
-
-
-
-
+/* Asignación de variables en Twine */
+State.variables.inventario = {};
 
 </script><tw-passagedata pid="1" name="Oficina" tags="nobr" position="704,186" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
@@ -1028,24 +1009,11 @@ Abrazo y contá conmigo!
 
 &lt;&lt;cacheaudio &quot;ambiente&quot; &quot;sonidos/musica.ogg&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambiente2&quot; &quot;sonidos/musica2.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="493,26" size="200,100">
-&lt;&lt;if $MostrarFooter is true&gt;&gt;
+&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="493,26" size="200,100">&lt;&lt;if $MostrarFooter is true&gt;&gt;
 	&lt;div class=&quot;toolbox&quot;&gt;
-	  &lt;&lt;if $TieneNormativa is true&gt;&gt;
-	  &lt;div class=&quot;hotspot&quot; id=&quot;normativa-tool&quot; data-passage=&quot;Docus&quot;&gt;
-	  &lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/normativa.png&quot;&gt;
-	  &lt;div class=&quot;item-tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Normativa Vigente&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-	  &lt;&lt;/if&gt;&gt;
-	  &lt;&lt;if $TieneExpediente is true&gt;&gt;
-	  &lt;div class=&quot;hotspot&quot; id=&quot;expediente-tool&quot; data-passage=&quot;Docus&quot;&gt;
-	  &lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/expediente.png&quot;&gt;
-	  &lt;div class=&quot;item-tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Expediente&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-	  &lt;&lt;/if&gt;&gt;
-	  &lt;&lt;if $TieneGlosario is true&gt;&gt;
-	  &lt;div class=&quot;hotspot&quot; id=&quot;glosario-tool&quot; data-passage=&quot;PalabrasClave&quot;&gt;
-	  &lt;img class=&quot;toolbox_item&quot; src=&quot;imagenes/herramientas/glosario.png&quot;&gt;
-	  &lt;div class=&quot;item-tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-	  &lt;&lt;/if&gt;&gt;
+		&lt;&lt;for _item, _data range $inventario&gt;&gt;
+			&lt;&lt;include _item&gt;&gt;
+		&lt;&lt;/for&gt;&gt;
 	&lt;/div&gt;
 	&lt;&lt;if $TieneCelu is true and State.passage is not &quot;Wassap&quot;&gt;&gt;
 	&lt;div class=&quot;wassap&quot;&gt;
@@ -1096,30 +1064,46 @@ Abrazo y contá conmigo!
 	  &lt;&lt;button Reiniciar&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Biblioteca" tags="nobr" position="1692,330" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Biblioteca" tags="nobr" position="1693,330" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
 &lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/INAP_biblioteca.png&quot;]]
 
-&lt;&lt;if $TieneGlosario is false&gt;&gt;
-	&lt;div class=&quot;objeto&quot;  id=&quot;normativa&quot;&gt;
-	&lt;&lt;link &quot;&lt;img src=&#39;imagenes/normativa-item.png&#39;&gt;&quot;&gt;&gt;&lt;&lt;set $TieneGlosario to true&gt;&gt;&lt;&lt;set $Progreso += 1 &gt;&gt;&lt;&lt;audio &quot;exito&quot; play&gt;&gt;&lt;&lt;script&gt;&gt;Engine.play(&quot;Biblioteca&quot;)&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
-		
-		&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Glosario de Palabras Clave&lt;/span&gt;&lt;/div&gt;
+&lt;&lt;if not tiene(&quot;glosario&quot;)&gt;&gt;
+	&lt;div class=&quot;objeto&quot; id=&quot;normativa&quot;&gt;
+		&lt;&lt;link &quot;&lt;img src=&#39;imagenes/normativa-item.png&#39;&gt;&quot;&gt;&gt;
+			&lt;&lt;agarrar &quot;glosario&quot;&gt;&gt;
+			&lt;&lt;set $Progreso += 1 &gt;&gt;
+			&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
+			&lt;&lt;script&gt;&gt;Engine.play(&quot;Biblioteca&quot;)&lt;&lt;/script&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+
+		&lt;div class=&quot;tooltip&quot;&gt;
+			&lt;span class=&quot;tooltiptext&quot;&gt;Glosario de Palabras Clave&lt;/span&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $TieneExpediente is false&gt;&gt;
-	&lt;div class=&quot;objeto&quot;  id=&quot;expediente&quot;&gt;
-	&lt;&lt;link &quot;&lt;img src=&#39;imagenes/expediente-item.png&#39;&gt;&quot;&gt;&gt;&lt;&lt;set $TieneExpediente to true&gt;&gt;&lt;&lt;set $Progreso += 1 &gt;&gt;&lt;&lt;audio &quot;exito&quot; play&gt;&gt;&lt;&lt;script&gt;&gt;Engine.play(&quot;Biblioteca&quot;)&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
-	&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Expediente del Puente&lt;/span&gt;&lt;/div&gt;
+&lt;&lt;if not tiene(&quot;expediente&quot;)&gt;&gt;
+	&lt;div class=&quot;objeto&quot; id=&quot;expediente&quot;&gt;
+		&lt;&lt;link &quot;&lt;img src=&#39;imagenes/expediente-item.png&#39;&gt;&quot;&gt;&gt;
+			&lt;&lt;agarrar &quot;expediente&quot;&gt;&gt;
+			&lt;&lt;set $Progreso += 1 &gt;&gt;
+			&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
+			&lt;&lt;script&gt;&gt;Engine.play(&quot;Biblioteca&quot;)&lt;&lt;/script&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+
+		&lt;div class=&quot;tooltip&quot;&gt;
+			&lt;span class=&quot;tooltiptext&quot;&gt;Expediente del Puente&lt;/span&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;	    	
+&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;hotspot&quot; id=&quot;volver-oficina&quot; data-passage=&quot;Oficina&quot;&gt;
-  &lt;div class=&quot;volver-escenario&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;volver-escenario&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;div class=&quot;hotspot&quot; id=&quot;volver-oficina2&quot; data-passage=&quot;Oficina&quot;&gt;
-  &lt;div class=&quot;volver-escenario&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;volver-escenario&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Peritos" tags="nobr" position="692,691" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
@@ -1239,20 +1223,20 @@ Hola Juan, Mariela me está preguntando si pueden comprar notebooks y tablets. N
      data-passage=&quot;Wassap&quot;
 	 data-setter=&quot;$mensaje to &#39;Desafio2-error&#39;&quot;&gt;
 Hola Juan, Mariela me está preguntando cuándo pueden comprar las notebooks y tablets. ¿Qué le digo? 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Desafio3" tags="nobr" position="1051,313" size="200,100">&lt;&lt;if $TieneDefinicion is false&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Desafio3" tags="nobr" position="1054,313" size="200,100">&lt;&lt;if $TieneDefinicion is false&gt;&gt;
 &lt;div class=&quot;mensaje-celular&quot;&gt;
 Tengo la respuesta, pero vamos a aprovechar esta pregunta para tu entrenamiento. 
-&lt;&lt;if $TieneGlosario is false&gt;&gt;En la biblioteca hay un Glosario de Palabras Clave, buscá: &lt;&lt;else&gt;&gt;Buscá en Palabras Clave &lt;&lt;/if&gt;&gt;“Plan Anual de Contrataciones/Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses. 
+&lt;&lt;if not tiene(&quot;glosario&quot;)&gt;&gt;En la biblioteca hay un Glosario de Palabras Clave, buscá: &lt;&lt;else&gt;&gt;Buscá en Palabras Clave &lt;&lt;/if&gt;&gt;“Plan Anual de Contrataciones/Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses. 
 &lt;/div&gt;
 
-&lt;&lt;if $TieneGlosario is false&gt;&gt;
+&lt;&lt;if not tiene(&quot;glosario&quot;)&gt;&gt;
 &lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Biblioteca&quot;&gt;Ok&lt;/div&gt;
 &lt;div class=&quot;opcion-celular&quot;&gt;[[&quot;Ok&quot;|Biblioteca]]&lt;/div&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Oficina&quot;&gt;Ok&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;div class=&quot;mensaje-celular&quot;
+&lt;div class=&quot;mensaje-celular&quot;&gt;
 Entonces, ¿ qué le contestamos a Juan ?
 &lt;/div&gt;
 &lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Biblioteca&quot;&gt;Se puede realizar la compra.&lt;/div&gt;
@@ -1444,7 +1428,7 @@ Bueno, me estoy yendo a una reunión. Fijate la lista y cualquier cosa que neces
 &lt;h4&gt;NOTA DESARROLLO: Tiene que habilitarse la vision de la carpeta violeta&lt;/h4&gt;
 
 &lt;&lt;link [[Consultar a Juan|Wassap]]&gt;&gt;&lt;&lt;set $mensaje to &quot;Desafio2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
-[[Volver|Oficina]]</tw-passagedata><tw-passagedata pid="30" name="Desafio4" tags="nobr" position="1050,429.5" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+[[Volver|Oficina]]</tw-passagedata><tw-passagedata pid="30" name="Desafio4" tags="nobr" position="1050,428" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
 (emoji dedo pulgar para abajo)
 No, no podemos! Primero porque no contamos con la firma del Director del Museo
 para acompañar el requerimiento, recién vuelve en 3 meses de su licencia y entonces no nos dan los plazos para realizar este desdoblamiento. 
@@ -1468,9 +1452,24 @@ No.
 Mariela me avisó que puso todo lo necesario así que tranquilo, avancemos!. 
 &lt;/div&gt;
 &lt;&lt;include Desafio4-exito&gt;&gt;
-</tw-passagedata><tw-passagedata pid="32" name="Desafio4-exito" tags="nobr" position="1268,432.5" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+</tw-passagedata><tw-passagedata pid="32" name="Desafio4-exito" tags="nobr" position="1268,432" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
 Perfecto, avancemos con la definición del tipo de contrato.
 En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte, mientras vos &lt;b&gt;estabas mirando los videos&lt;/b&gt; Gómez hizo magia jaja, elegí el que necesitamos y seguimos hablando por acá.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="expediente" tags="item nobr" position="104,801" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;expediente-tool&quot; data-passage=&quot;Docus&quot;&gt;
+	&lt;img src=&quot;imagenes/expediente.png&quot;&gt;
+	&lt;div class=&quot;item-tooltip&quot;&gt;
+		&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Expediente&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="glosario" tags="item nobr" position="229,801" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;glosario-tool&quot; data-passage=&quot;PalabrasClave&quot;&gt;
+	&lt;img src=&quot;imagenes/herramientas/glosario.png&quot;&gt;
+	&lt;div class=&quot;item-tooltip&quot;&gt;
+		&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="normativa" tags="item nobr" position="348,799" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;normativa-tool&quot; data-passage=&quot;Docus&quot;&gt;
+	&lt;img src=&quot;imagenes/normativa.png&quot;&gt;
+	&lt;div class=&quot;item-tooltip&quot;&gt;
+		&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Normativa Vigente&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
