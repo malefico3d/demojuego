@@ -182,6 +182,7 @@ img {
   /* transform: translateY(-50%); */
 }
 
+
 img#normativa {
   height: 98px;
   width: auto;
@@ -235,10 +236,10 @@ img#normativa {
 
 
 .toolbox_item {
-  height: 70px;
-  width: 70px;
+  height: 64px;
+  width: 64px;
   display: inline-block;
-  padding: 0px 15px;
+  padding: 0px 3px;
 }
 
 .hotspot {
@@ -435,6 +436,29 @@ img#normativa {
   /*border-style:dashed;*/
 }
 
+#fichero {
+width: 195px;
+height: 236px;
+top: 170px;
+left: 49px;
+}
+
+#gomez {
+  width: 315px;
+height: 256px;
+top: 279px;
+left: 356px;
+}
+
+/* OBJETOS */
+
+.objeto#presupuestos {
+  top: 233px;
+  left: 623px;
+  width: 146px;
+  height: 86px;
+}
+
 .objeto#normativa {
   top: 393px;
   left: 419px;
@@ -562,6 +586,43 @@ left: 458px;
   padding: 15px;
   margin: 5px;
 }
+
+/* Posiciones genericas para ir hacia el este y el oeste */
+.W, .E {
+    
+    width: 80px;
+	height: 433px;
+	position: absolute;
+	background-color: transparent;
+  	
+	opacity: 0;
+	transition: opacity 300ms;
+	background-repeat: no-repeat;
+  background-position:center;
+  background-size: contain;
+	/*border-style: dashed;
+	border-color: green;
+	border-width: 2px;*/
+	z-index: 100;
+}
+
+
+.E {
+    top: 101px;
+    right: 0px;
+  background-image: url("imagenes/flecha-E.png");
+    
+}
+
+.W {
+    top: 101px;
+    left: 0px;
+  	background-image: url("imagenes/flecha-W.png");
+}
+.W:hover, .E:hover {
+  opacity: 1;
+}
+
 
 .hotspot#volver-oficina {
     top: 101px;
@@ -914,6 +975,22 @@ color: #505e5f;
   border-color: transparent #f2f1c9 transparent transparent ;
 }
 
+.opcion-presupuesto {
+  font-size: 1em;
+  background-color: white;
+  color: #505050;
+  padding: 8px;
+  box-shadow: 5px 7px 6px #000000a0;
+  margin-top: 5px;
+}
+
+.opcion-presupuesto:hover {
+  	background-color: #daf6c3;
+}
+
+.opcion-presupuesto:active {
+  	background-color: green;
+}
 
 .blinker {
   animation: titila 1s linear infinite;
@@ -954,13 +1031,8 @@ State.variables.inventario = {};
 	
 &lt;&lt;set $MostrarFooter to true&gt;&gt;
 
-&lt;div class=&quot;hotspot&quot; id=&quot;ir-oficina-oeste&quot; data-passage=&quot;Oficina Oeste&quot;&gt;
-	&lt;div class=&quot;ir-oeste&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;hotspot&quot; id=&quot;ir-oficina-este&quot; data-passage=&quot;Oficina Este&quot;&gt;
-	&lt;div class=&quot;ir-este&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;W&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;E&quot; data-passage=&quot;Oficina Este&quot;&gt;&lt;/div&gt;
 	
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInterface" tags="" position="50,24" size="200,100">&lt;div id=&quot;aplicacion&quot;&gt;
 &lt;div id=&quot;passages&quot;&gt;&lt;/div&gt;
@@ -1051,17 +1123,29 @@ Abrazo y contá conmigo!
 
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="Docus" tags="nobr" position="1694,177" size="200,100">&lt;&lt;set $MostrarFooter to false&gt;&gt;
+&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;documentos&quot;&gt;
 &lt;p&gt;Documentación oficial de consulta&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;$usuario, aquí podrás encontrar enlaces útiles para resolver los problemas con los que te encotrarás diariamente.&lt;/p&gt;
+Membrete de Mueblería “Pizzani”
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.google.com&quot; target=&quot;_blank&quot;&gt;Documentación elemental&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.educ.ar&quot; target=&quot;_blank&quot;&gt;Documentos avanzados&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;4 sillones de director: 100 módulos&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;volver&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
+Membrete de Papelera “Nodesma”
+&lt;ul&gt;
+&lt;li&gt;200 Resmas A 4: 18 módulos&lt;/li&gt;
+&lt;/ul&gt;
+Membrete de Technology Pastorino
+&lt;ul&gt;
+&lt;li&gt;20 Tablets: 400 módulos&lt;/li&gt;
+&lt;li&gt;6 Notebooks: 60 módulos&lt;/li&gt;
+&lt;li&gt;1 Cañón: 10 módulos&lt;/li&gt;
+&lt;li&gt;1 Pantalla: 2 módulos&lt;/li&gt;
+Total: 472 módulos
+&lt;/ul&gt;
+&lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="49,128" size="200,200">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="49,128" size="200,200">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
 &lt;div class=&quot;cabecera&quot;&gt;
   &lt;div id=&quot;avatar&quot;&gt;
   &lt;&lt;print &quot;&lt;div class=\&quot;avatar-foto foto&quot; + $avatar + &quot;\&quot;&gt;&lt;/div&gt;&quot;&gt;&gt;
@@ -1106,13 +1190,8 @@ Abrazo y contá conmigo!
 	&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;div class=&quot;hotspot&quot; id=&quot;volver-oficina&quot; data-passage=&quot;Oficina&quot;&gt;
-	&lt;div class=&quot;volver-escenario&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;hotspot&quot; id=&quot;volver-oficina2&quot; data-passage=&quot;Oficina&quot;&gt;
-	&lt;div class=&quot;volver-escenario&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;W&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;E&quot; data-passage=&quot;Oficina Este&quot;&gt;&lt;/div&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Peritos" tags="nobr" position="692,674" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/INAP_fondo_compu.png&quot;]]
@@ -1484,35 +1563,80 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 
 &lt;div class=&quot;pantalla&quot;&gt;
+&lt;&lt;if not tiene(&quot;presupuestos&quot;)&gt;&gt;
 	[img[&quot;imagenes/oficina-OESTE.png&quot;]]
+&lt;&lt;else&gt;&gt;
+	[img[&quot;imagenes/oficina-OESTE-1.png&quot;]]
+&lt;&lt;/if&gt;&gt;
 	&lt;div class=&quot;hotspot&quot; id=&quot;fichero&quot; data-passage=&quot;Bebedero&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés ver el fichero?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;hotspot&quot; id=&quot;gomez&quot; data-passage=&quot;Gomez&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés ver el escritorio de Gómez?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-[[&quot;Ir hacia el este&quot;|Oficina]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="Oficina Este" tags="nobr" position="989,208" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
+
+&lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="Oficina Este" tags="nobr" position="990,208" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 
 &lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/oficina-ESTE.png&quot;]]
 	[[&quot;Ir hacia el oeste&quot;|Oficina]]	
 	&lt;&lt;set $MostrarFooter to true&gt;&gt;
-	&lt;div class=&quot;hotspot&quot; id=&quot;ir-oficina-oeste&quot; data-passage=&quot;Oficina&quot;&gt;
-	&lt;div class=&quot;ir-oeste&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Bebedero" tags="" position="341,324.5" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+	&lt;div class=&quot;W&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Bebedero" tags="nobr" position="341,322.5" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/bebedero-fichero.png&quot;]]
-	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés abrir el fichero?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés servirte un poco de agua?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;fichero&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés abrir el fichero?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;bebedero&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés servirte un poco de agua?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 
-[[&quot;Volver&quot;|Oficina Oeste]]
+&lt;div class=&quot;E&quot; data-passage=&quot;Gomez&quot;&gt;&lt;/div&gt;
 	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="Gomez" tags="nobr" position="333,181.5" size="100,100">
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="Gomez" tags="nobr" position="344,179.5" size="100,100">
 &lt;div class=&quot;pantalla&quot;&gt;
-	[img[&quot;imagenes/escritorio-gomez.png&quot;]]
+	[img[&quot;imagenes/escritorio-gomez-1.png&quot;]]
 	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés abrir el fichero?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés servirte un poco de agua?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 
-	[[&quot;Volver&quot;|Oficina Oeste]]
+&lt;&lt;if not tiene(&quot;presupuestos&quot;)&gt;&gt;
+	&lt;div class=&quot;objeto&quot; id=&quot;presupuestos&quot;&gt;
+		&lt;&lt;link &quot;&lt;img src=&#39;imagenes/presupuestos.png&#39;&gt;&quot;&gt;&gt;
+			&lt;&lt;agarrar &quot;presupuestos&quot;&gt;&gt;
+			&lt;&lt;set $Progreso += 1 &gt;&gt;
+			&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
+			&lt;&lt;script&gt;&gt;Engine.play(&quot;Gomez&quot;)&lt;&lt;/script&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+
+		&lt;div class=&quot;tooltip&quot;&gt;
+			&lt;span class=&quot;tooltiptext&quot;&gt;Presupuestos&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;div class=&quot;W&quot; data-passage=&quot;Bebedero&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;E&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
+	
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="presupuestos" tags="item nobr" position="478,799.5" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;presupuestos-tool&quot; data-passage=&quot;Presupuestos&quot;&gt;
+	&lt;img src=&quot;imagenes/expediente.png&quot;&gt;
+	&lt;div class=&quot;item-tooltip&quot;&gt;
+		&lt;span class=&quot;tooltiptext&quot;&gt;Presupuestos de compras&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="Presupuestos" tags="nobr" position="724,341.5" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;div class=&quot;contenedorCentrado&quot;&gt;
+  &lt;div class=&quot;opcion-presupuesto&quot;&gt;
+  &lt;h4&gt;Mueblería “Pizzani”&lt;/h4&gt;
+  &lt;ul&gt;&lt;li&gt;4 sillones de director: 100 módulos&lt;/li&gt;&lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;opcion-presupuesto&quot;&gt;
+  &lt;h4&gt;Papelera “Nodesma”&lt;/h4&gt;
+  &lt;ul&gt;&lt;li&gt;200 Resmas A4: 18 módulos&lt;/li&gt;&lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;opcion-presupuesto&quot;&gt;
+  &lt;h4&gt;Technology Pastorino&lt;/h4&gt;
+  &lt;ul&gt;
+  &lt;li&gt;20 Tablets: 400 módulos&lt;/li&gt;
+  &lt;li&gt;6 Notebooks: 60 módulos&lt;/li&gt;
+  &lt;li&gt;1 Cañón: 10 módulos&lt;/li&gt;
+  &lt;li&gt;1 Pantalla: 2 módulos&lt;/li&gt;
+  Total: 472 módulos
+  &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
