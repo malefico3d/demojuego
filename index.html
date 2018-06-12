@@ -1036,6 +1036,7 @@ top:30%;
   background-color:blue;
 }
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
 function tiene(objeto) { return objeto in inventario(); }
 
@@ -1054,6 +1055,7 @@ window.tiene = tiene;
 /* Asignación de variables en Twine */
 State.variables.inventario = {};
 
+
 </script><tw-passagedata pid="1" name="Oficina" tags="nobr" position="704,186" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 
@@ -1061,8 +1063,6 @@ State.variables.inventario = {};
 	[img[&quot;imagenes/INAP_fondo.png&quot;]]
 	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés revisar los emails?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés consultar los textos?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-	
-&lt;&lt;set $MostrarFooter to true&gt;&gt;
 
 &lt;div class=&quot;W&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina Este&quot;&gt;&lt;/div&gt;
@@ -1096,8 +1096,6 @@ Abrazo y contá conmigo!
 &lt;&lt;button Ok Computadora&gt;&gt;
 &lt;&lt;set $Accion to true&gt;&gt;
 &lt;&lt;set $OpcionesAccion to &quot;AccionComponer&quot;&gt;&gt;
-&lt;&lt;set $MostrarFooter to true&gt;&gt;
-
 &lt;&lt;/button&gt;&gt;
 
 &lt;/div&gt;	
@@ -1106,7 +1104,6 @@ Abrazo y contá conmigo!
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="273,23" size="200,100">&lt;&lt;set $Glosario to [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;I&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;M&quot;,&quot;N&quot;,&quot;O&quot;,&quot;P&quot;,&quot;Q&quot;,&quot;R&quot;,&quot;S&quot;,&quot;T&quot;,&quot;U&quot;,&quot;V&quot;,&quot;W&quot;,&quot;X&quot;,&quot;Y&quot;,&quot;Z&quot;]&gt;&gt;
 &lt;&lt;set $Contenido to &quot;TEST&quot;&gt;&gt;
-&lt;&lt;set $MostrarFooter to false&gt;&gt;
 &lt;&lt;set $MostrarAvatar to false&gt;&gt;
 &lt;&lt;set $primeraVez to true&gt;&gt;
 &lt;&lt;set $TieneNormativa to false&gt;&gt;
@@ -1129,7 +1126,7 @@ Abrazo y contá conmigo!
 
 &lt;&lt;cacheaudio &quot;ambiente&quot; &quot;sonidos/musica.ogg&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambiente2&quot; &quot;sonidos/musica2.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="532,29" size="200,100">&lt;&lt;if $MostrarFooter is true&gt;&gt;
+&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="532,29" size="200,100">&lt;&lt;if not tags().includes(&quot;no-footer&quot;)&gt;&gt;
 	&lt;div class=&quot;toolbox&quot;&gt;
 		&lt;&lt;for _item, _data range $inventario&gt;&gt;
 			&lt;&lt;include _item&gt;&gt;
@@ -1154,7 +1151,7 @@ Abrazo y contá conmigo!
 	&lt;/div&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="6" name="Inicio" tags="nobr" position="50,336" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Inicio" tags="nobr no-footer" position="50,336" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;&lt;if $primeraVez is true&gt;&gt;
 &lt;div class=&quot;contenedor-exterior&quot;&gt;
 	&lt;div class=&quot;mensaje&quot;&gt;
@@ -1168,8 +1165,7 @@ Abrazo y contá conmigo!
 &lt;&lt;/if&gt;&gt;
 
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="Docus" tags="nobr" position="1694,177" size="200,100">&lt;&lt;set $MostrarFooter to false&gt;&gt;
-&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="Docus" tags="nobr no-footer" position="1694,177" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;documentos&quot;&gt;
 &lt;p&gt;Documentación oficial de consulta&lt;/p&gt;
 &lt;hr&gt;
@@ -1343,7 +1339,6 @@ $(function(){
 	&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;&lt;set $MostrarFooter to true&gt;&gt;
 &lt;&lt;set $MostrarAvatar to true&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Desafio2" tags="nobr" position="985,544" size="200,100">Elige el texto que enviarías a Juan para resolver la duda que te planteó Mariela
 
 &lt;div class=&quot;opcion-celular&quot;
@@ -1618,22 +1613,21 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;hotspot&quot; id=&quot;gomez&quot; data-passage=&quot;Gomez&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés ver el escritorio de Gómez?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="Oficina Este" tags="nobr" position="990,208" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="Oficina Este" tags="nobr no-footer" position="990,208" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 
 &lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/oficina-ESTE.png&quot;]]
 	[[&quot;Ir hacia el oeste&quot;|Oficina]]	
-	&lt;&lt;set $MostrarFooter to true&gt;&gt;
 	&lt;div class=&quot;W&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Bebedero" tags="nobr" position="341,322.5" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Bebedero" tags="nobr" position="341,322" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/bebedero-fichero.png&quot;]]
 	&lt;div class=&quot;hotspot&quot; id=&quot;fichero&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés abrir el fichero?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;hotspot&quot; id=&quot;bebedero&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés servirte un poco de agua?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;E&quot; data-passage=&quot;Gomez&quot;&gt;&lt;/div&gt;
 	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="Gomez" tags="nobr" position="344,179.5" size="100,100">
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="Gomez" tags="nobr" position="344,179" size="100,100">
 &lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/escritorio-gomez-1.png&quot;]]
 	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés abrir el fichero?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1657,13 +1651,12 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 &lt;div class=&quot;W&quot; data-passage=&quot;Bebedero&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
 	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="presupuestos" tags="item nobr" position="100,1117.5" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;presupuestos-tool&quot; data-passage=&quot;Desafio Presupuestos&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="presupuestos" tags="item nobr" position="100,1117" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;presupuestos-tool&quot; data-passage=&quot;Desafio Presupuestos&quot;&gt;
 	&lt;img src=&quot;imagenes/expediente.png&quot;&gt;
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Presupuestos de compras&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="Desafio Presupuestos" tags="nobr" position="988,905.5" size="100,100">&lt;&lt;set $MostrarFooter to false&gt;&gt;
-&lt;&lt;set $MostrarCabecera to false&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="Desafio Presupuestos" tags="nobr no-footer" position="988,905" size="100,100">&lt;&lt;set $MostrarCabecera to false&gt;&gt;
 
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;contenedorCentrado&quot;&gt;
@@ -1688,10 +1681,10 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
   &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Desafio6" tags="nobr" position="1116,907.5" size="100,100">&lt;&lt;set $EligioPresupuesto to true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Desafio6" tags="nobr" position="1116,907" size="100,100">&lt;&lt;set $EligioPresupuesto to true&gt;&gt;
 
 &lt;&lt;button &quot;Volver&quot; Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
-</tw-passagedata><tw-passagedata pid="43" name="AccionComponer" tags="accion nobr" position="308,794.5" size="100,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Componer&quot; data-setter= &quot;$Accion to false&quot;&gt;Escribir un email a Mariela&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="43" name="AccionComponer" tags="accion nobr" position="308,794" size="100,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Componer&quot; data-setter= &quot;$Accion to false&quot;&gt;Escribir un email a Mariela&lt;/div&gt;
 &lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina&quot; data-setter= &quot;$Accion to false&quot;&gt;Seguir recorriendo la oficina&lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
