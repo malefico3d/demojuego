@@ -150,8 +150,8 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 #progreso {
   position: absolute;
   top: 20px;
-  left: 108px;
-  width: 80px;
+  left: 97px;
+  width: 89px;
   font-size:2em;
   color:yellow;
   font-weight: bold;
@@ -293,6 +293,90 @@ img#normativa {
   height: 70px;
 }
 
+.item-tooltip {
+  visibility:hidden;
+  opacity: 0;
+  transition: opacity 300ms;
+  position:relative;
+  display:inline-block;
+  height: 60px;
+  width: 120px;
+  background-color: #004bff;
+  margin: 4px;
+  padding: 0px 5px;
+  border-radius: 16px;
+  border-style: solid;
+  border-color: #3d76ff;
+  z-index: 149;
+  top: -87px;
+  left: 3%;
+}
+
+.item-tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms;
+  color: white;
+  font-size:0.8em;
+  font-weight: bold;
+  font-family: arial;
+  text-shadow: 1px 1px 4px #090101cc;
+  padding-top:5px;
+  display: table-cell;
+  text-align:center;
+  
+}
+
+.tooltip .tooltiptext, .tooltip-left .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms;
+  color: #404040;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: arial;
+  line-height: 17px;
+  vertical-align: text-top;
+  display: inline-block;
+ 
+}
+
+.hotspot > .tooltip {
+ visibility:hidden;
+  opacity: 0;
+  transition: opacity 300ms;
+  position:relative;
+  display:inline-block;
+  height: 60px;
+  width: 120px;
+  background-color: white;
+  margin: 4px;
+  padding: 0px 5px;
+  border-radius:5px;
+  z-index:100;
+  top:10%;
+  left: 5%;
+  box-shadow: 10px 10px 20px #202020;
+}
+
+.hotspot > .tooltip-left {
+    visibility: hidden;
+    opacity: 0;
+  transition: opacity 300ms;
+    position: relative;
+    display: inline-block;
+    height: 60px;
+    width: 120px;
+    background-color: white;
+    margin: 4px;
+    padding: 0px 5px;
+    border-radius: 5px;
+    z-index: 100;
+  	top:2px;
+    left: -12%;
+  box-shadow: 10px 10px 20px #202020;
+}
+
 .tooltip {
  visibility:hidden;
   opacity: 0;
@@ -311,71 +395,6 @@ img#normativa {
   box-shadow: 10px 10px 20px #202020;
 }
 
-.item-tooltip {
- visibility:hidden;
-  opacity: 0;
-  transition: opacity 300ms;
-  position:relative;
-  display:inline-block;
-  height: 60px;
-  width: 120px;
-  background-color: #004bff;
-  margin: 4px;
-  padding: 0px 5px;
-  border-radius: 16px;
-  border-style: solid;
-  border-color: #3d76ff;
-  z-index: 149;
-  top: -123px;
-  left: 118%;
-}
-
-.item-tooltip .tooltiptext {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 300ms;
-  color: white;
-  font-size:0.8em;
-  font-weight: bold;
-  font-family: arial;
-  text-shadow: 1px 1px 4px #090101cc;
-  padding-top:5px;
-  display: table-cell;
-  text-align:center;
-  
-}
-
-.volver-escenario, .oeste, .este {
-  top: 115px;
- visibility:hidden;
-  opacity: 0;
-  transition: opacity 300ms;
-  background-image:url("imagenes/volver2.png");
-  background-repeat: no-repeat;
-  position:relative;
-  display:inline-block;
-  height: 120px;
-  width: 140px;
-  background-color: transparent;
-  margin: 4px;
-  padding: 0px 5px;
-  border-radius:5px;
-  z-index:100;
- 
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 300ms;
-  color: #404040;
-  font-size:0.8em;
-  font-weight: bold;
-  font-family: arial;
-  text-shadow: 1px 1px 4px #50505090;
- 
-}
-
 .tooltip-left {
     visibility: hidden;
     opacity: 0;
@@ -391,18 +410,26 @@ img#normativa {
     z-index: 100;
     top: 2px;
     left: -90%;
+  	box-shadow: 10px 10px 20px #202020;
 }
 
-.tooltip-left .tooltiptext {
-  visibility: hidden;
-    opacity: 0;
-  transition: opacity 300ms;
-  color: #404040;
-  font-size:0.8em;
-  font-weight: bold;
-  font-family: arial;
-  text-shadow: 1px 1px 4px #50505090;
- 
+.tooltip .tooltiptext::after, .tooltip-left .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  
+  margin-top: 0px;
+  background-color: transparent;
+  border-width: 6px;
+  border-style: solid;
+ }
+.tooltip .tooltiptext::after {
+border-color: transparent white transparent transparent;
+ right: 100%; /* a la izquierda del tooltip */
+}
+.tooltip-left .tooltiptext::after {
+border-color: transparent  transparent transparent white;
+  right: -9%; /* a la derecha tooltip */
 }
 
 /* Hotspots */
@@ -421,30 +448,6 @@ img#normativa {
   visibility:visible;
   opacity: 1;
   
-}
-
-.tooltip .tooltiptext::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  right: 100%; /* To the left of the tooltip */
-  margin-top: 0px;
-  background-color: transparent;
-  border-width: 6px;
-  border-style: solid;
-  border-color: transparent white transparent transparent;
-}
-
-.tooltip-left .tooltiptext::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: 100%; /* To the left of the tooltip */
-  margin-top: 0px;
-  background-color: transparent;
-  border-width: 6px;
-  border-style: solid;
-  border-color: transparent transparent transparent white;
 }
 
 #computadora {
@@ -507,23 +510,6 @@ left: 356px;
   left: 210px;
   width: 348px;
   height: 140px;
-}
-
-.volver {
-   position:absolute;
-  border-color:green;
-  /*border-style: dashed;*/
-  border-width:1px;
-  background-color:transparent;
-  cursor: pointer;
-  background-image: url("imagenes/volver.png");
-  background-repeat: no-repeat;
-  top: 427px;
-  left: 10%;
-  width: 50%;
-  height: 50px;
- 
-  /*border-style:none;*/
 }
 
 .texto_compu {
@@ -621,7 +607,7 @@ left: 356px;
   margin: 5px;
 }
 
-/* Posiciones genericas para ir hacia el este y el oeste */
+/* Posiciones genericas para ir hacia el sur (volver), este y el oeste */
 
 
 .W, .E, .S {
@@ -964,7 +950,7 @@ border-color: #57c;
   background-color: #b3f3b3;
   border-radius: 8px;
   padding: 5px;
-  box-shadow: 1px 1px 4px #404040;
+  box-shadow: 5px 6px 8px #40404040;
   margin: 15px;
   color: #505e5f;
   position:relative;
@@ -999,13 +985,13 @@ border-color: #57c;
 }
 
 .mensaje-celular {
-  background-color: #f2f1c9;
+  background-color: #fffdb9;
   border-radius: 8px;
   padding: 5px;
-  box-shadow: 1px 1px 4px #404040;
+  box-shadow: 5px 6px 8px #40404040;
   margin: 15px;
   color: #505e5f;
-  position:relative;
+  position: relative;
 }
 
 .dialogo-container .mensaje-celular::after {
@@ -1017,7 +1003,7 @@ border-color: #57c;
   background-color: transparent;
   border-width: 6px;
   border-style: solid;
-  border-color: transparent #f2f1c9 transparent transparent ;
+  border-color: transparent #fffdb9 transparent transparent ;
 }
 
 .opcion-presupuesto, .opcion-pliego {
@@ -1373,7 +1359,7 @@ Total: 472 módulos
 	&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;div class=&quot;W&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;W&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina Este&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;S&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 
