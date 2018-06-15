@@ -236,13 +236,22 @@ img#normativa {
 
 
 .toolbox_item {
+  position: relative;
   height: 64px;
   width: 64px;
+  top: 0px;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   display: inline-block;
   padding: 0px 3px;
+  cursor: pointer;
+  
+}
+
+.toolbox_item:hover {
+ animation: resalta 300ms infinite; 
+ animation-direction: alternate;
 }
 
 .toolbox_item#libro1 {
@@ -288,7 +297,7 @@ img#normativa {
   border-style: dashed;
   border-width:1px;*/
   background-color:transparent;
-  cursor: pointer;
+  cursor: grab;
   width: 70px;
   height: 70px;
 }
@@ -622,6 +631,7 @@ left: 356px;
   border-color: green;
   border-width: 2px;*/
   z-index: 100;
+  cursor: pointer;
 }
 
 .W, .E {
@@ -701,12 +711,13 @@ div#botones-mail {
 	background-color: transparent;
 	width: 524px;
 	height: 100px;
+  text-align: center;
 }
 
 div#botones-mail > .macro-button {
-  padding: 5px;
+  padding: 12px;
   border-radius: 5px;
-  background-color: #505050;
+  background-color: #35a;
 }
 
 .avatar-selector {
@@ -954,6 +965,7 @@ border-color: #57c;
   margin: 15px;
   color: #505e5f;
   position:relative;
+  cursor: pointer;
 }
 
 .opcion-celular:hover {
@@ -1014,6 +1026,7 @@ border-color: #57c;
   box-shadow: 5px 7px 6px #000000a0;
   margin-top: 3px;
   width: 347px;
+  cursor: pointer;
 }
 .opcion-pliego {
   height: 124px;
@@ -1032,9 +1045,7 @@ border-color: #57c;
   animation: titila 1s linear infinite;
 }
 
-@keyframes titila {  
-  50% { opacity: 0; }
-}
+
 
 /* Overlay para mostrar opciones de accion */
 .ventana-accion {
@@ -1062,6 +1073,8 @@ position: relative;
 margin: 20px;
 display: inline-block;
 top:30%;
+  cursor: pointer;
+  animation: ingresa 600ms linear;
 }
 
 .opcion-accion:hover {
@@ -1148,7 +1161,50 @@ top:30%;
   left: 17px; 
 }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
+.instrucciones {
+  position: absolute;
+  top: 205px;
+  width: 400px;
+  background-color: orange;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  left: 94px;
+  padding-left: 94px;
+  text-align: center;
+  box-shadow: 0px 5px 10px #404040c0;
+  animation: ingresa-instrucciones 500ms linear;
+}
+
+/***************/
+/* ANIMACIONES */
+/***************/
+
+@keyframes titila {  
+  50% { opacity: 0; }
+}
+
+@keyframes ingresa {
+  from {opacity:  0;
+  		left: 100px;}
+  to {opacity: 1;
+  		left: 0px;}
+}
+
+@keyframes ingresa-instrucciones {
+  from {opacity:  0;
+  		left: 0px;}
+  to {opacity: 1;
+  		left: 94px;}
+}
+@keyframes resalta {
+  from {top: 0px;}
+  to	{top: -10px;}
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
 function tiene(objeto) { return objeto in inventario(); }
 
 Macro.add("agarrar", {
@@ -1165,6 +1221,7 @@ window.tiene = tiene;
 
 /* Asignación de variables en Twine */
 State.variables.inventario = {};
+
 
 
 
@@ -1399,7 +1456,7 @@ Total: 472 módulos
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Componer" tags="nobr" position="1557,0" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Componer" tags="nobr" position="1227,38" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/fondo_compu.png&quot;]]
 
 &lt;div class=&quot;mail_compu&quot;&gt;
@@ -1419,6 +1476,9 @@ Total: 472 módulos
 &lt;&lt;button &quot;Enviar&quot; Evaluar&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
+&lt;div class=&quot;instrucciones&quot;&gt;
+	&lt;p&gt;Analiza las opciones y elige el correcto destinatario y asunto para este email y presiona &quot;Enviar&quot;.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 	
 
@@ -1725,13 +1785,15 @@ Perfecto, avancemos con la definición del tipo de contrato.
 En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte, mientras vos &lt;b&gt;estabas mirando los videos&lt;/b&gt; Gómez hizo magia jaja, elegí el que necesitamos y seguimos hablando por acá.
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-&lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Biblioteca&quot;&gt;Ok
+
+&lt;&lt;button Ok Biblioteca&gt;&gt;
+/* &lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Biblioteca&quot;&gt;Ok */
 	&lt;&lt;set $Accion to true&gt;&gt;
 	&lt;&lt;set $OpcionesAccion to &quot;AccionPresupuestos&quot;&gt;&gt;
 	&lt;&lt;set $MostrarPresupuestos to true&gt;&gt;
 	&lt;&lt;set $MostrarFooter to true&gt;&gt;
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="33" name="libro1" tags="item nobr" position="108,798" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;libro1&quot; data-passage=&quot;Docus&quot;&gt;
+/* &lt;/div&gt; */
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="libro1" tags="item nobr" position="101,799" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;libro1&quot; data-passage=&quot;Docus&quot;&gt;
 	/*&lt;img src=&quot;imagenes/tomo1.png&quot;&gt;*/
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Tomo 1&lt;/span&gt;
@@ -2045,7 +2107,7 @@ Lamentablemente no es la opción correcta. El tipo de contratación es la compul
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Pliegos de contratación&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="libro2" tags="item nobr" position="104,694" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;libro2&quot; data-passage=&quot;Docus&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="libro2" tags="item nobr" position="101,694" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;libro2&quot; data-passage=&quot;Docus&quot;&gt;
 	/* &lt;img src=&quot;imagenes/tomo2.png&quot;&gt;*/
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Tomo 2&lt;/span&gt;
