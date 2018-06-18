@@ -475,6 +475,13 @@ border-color: transparent  transparent transparent white;
   /*border-style:dashed;*/
 }
 
+#impresora {
+  top: 232px;
+  left: 24px;
+  width: 121px;
+  height: 169px;
+}
+
 #fichero {
 width: 195px;
 height: 236px;
@@ -1030,7 +1037,7 @@ border-color: #57c;
 }
 .opcion-pliego {
   height: 124px;
-  display: table-row;
+  width: 300px;
 }
 
 .opcion-presupuesto:hover, .opcion-pliego:hover {
@@ -1103,8 +1110,8 @@ top:30%;
   color: #202020;
   border-style: none;
   position: relative;
-  top: 34px;
-  left: 218px;
+  /* top: 34px;*/
+  /*left: 218px;*/
   margin: auto;
   width: 63%;
   height: 459px;
@@ -1112,6 +1119,7 @@ top:30%;
   box-shadow: 5px 5px 5px #101010;
   padding-top: 15px;
   font-size: 0.85em;
+  display: block;
 }
 
 .carpeta-presupuestos, .carpeta-pliegos {
@@ -1204,7 +1212,9 @@ top:30%;
 @keyframes resalta {
   from {top: 0px;}
   to	{top: -10px;}
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
+}
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
 function tiene(objeto) { return objeto in inventario(); }
 
 Macro.add("agarrar", {
@@ -1226,13 +1236,17 @@ State.variables.inventario = {};
 
 
 
-</script><tw-passagedata pid="1" name="Oficina" tags="nobr" position="656,182" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
+
+
+</script><tw-passagedata pid="1" name="Oficina" tags="nobr" position="660,180" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; loop&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.5&gt;&gt;
 
 &lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/INAP_fondo.png&quot;]]
-	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés revisar los emails?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés consultar los textos?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés ver los emails?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés consultar la biblioteca?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;impresora&quot; data-passage=&quot;Oficina Impresora&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Ir hacia impresora&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 	
 &lt;&lt;set $MostrarFooter to true&gt;&gt;
 
@@ -1281,7 +1295,7 @@ Abrazo y contá conmigo!
 &lt;div class=&quot;E&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;S&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="273,23" size="200,100">&lt;&lt;set $Glosario to [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;I&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;M&quot;,&quot;N&quot;,&quot;O&quot;,&quot;P&quot;,&quot;Q&quot;,&quot;R&quot;,&quot;S&quot;,&quot;T&quot;,&quot;U&quot;,&quot;V&quot;,&quot;W&quot;,&quot;X&quot;,&quot;Y&quot;,&quot;Z&quot;]&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="274,24" size="200,100">&lt;&lt;set $Glosario to [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;I&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;M&quot;,&quot;N&quot;,&quot;O&quot;,&quot;P&quot;,&quot;Q&quot;,&quot;R&quot;,&quot;S&quot;,&quot;T&quot;,&quot;U&quot;]&gt;&gt;
 &lt;&lt;set $Contenido to &quot;TEST&quot;&gt;&gt;
 &lt;&lt;set $MostrarFooter to false&gt;&gt;
 &lt;&lt;set $MostrarAvatar to false&gt;&gt;
@@ -1370,7 +1384,7 @@ Total: 472 módulos
 &lt;/ul&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="49,128" size="200,100">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="49,127" size="200,100">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
 &lt;div class=&quot;cabecera&quot;&gt;
   &lt;div id=&quot;avatar&quot;&gt;
   &lt;&lt;print &quot;&lt;div class=\&quot;avatar-foto foto&quot; + $avatar + &quot;\&quot;&gt;&lt;/div&gt;&quot;&gt;&gt;
@@ -1411,7 +1425,7 @@ Total: 472 módulos
 		&lt;&lt;/link&gt;&gt;
 
 		&lt;div class=&quot;tooltip&quot;&gt;
-			&lt;span class=&quot;tooltiptext&quot;&gt;Libros de Consulta&lt;/span&gt;
+			&lt;span class=&quot;tooltiptext&quot;&gt;Tomos 1 y 2 de la normativa.&lt;/span&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
@@ -1420,27 +1434,12 @@ Total: 472 módulos
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina Este&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;S&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Peritos" tags="nobr" position="692,674" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
-[img[&quot;imagenes/INAP_fondo_compu.png&quot;]]
-&lt;div class=&quot;texto_compu&quot;&gt;
-	&lt;p&gt;Informe de Peritaje Puente.
-	Texto aleatorio de muestra. Aqui podria ir cualquier disposicion, incluso imagenes que ilustren el texto.&lt;img src=&quot;imagenes/expediente.png&quot;&gt;
-	&lt;/p&gt;
-	&lt;&lt;button Volver Computadora&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="Contabilidad" tags="nobr" position="805,673" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
-[img[&quot;imagenes/INAP_fondo_compu.png&quot;]]
-&lt;div class=&quot;texto_compu&quot;&gt;
-	&lt;p&gt;Informe de Contabilidad
-	Otro texto de ejemplo solo para mostrar que podemos linkear a distintos documentos.
-	&lt;/p&gt;
-	&lt;&lt;button Volver Computadora&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Evaluar" tags="nobr" position="1042,185" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Evaluar" tags="nobr" position="1042,185" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/INAP_fondo.png&quot;]]
 &lt;div class=&quot;contenedor-exterior&quot;&gt;
 &lt;div class=&quot;mensaje&quot;&gt;
 &lt;&lt;if $Destino is &quot;formacion&quot; and $Asunto is &quot;condiciones&quot;&gt;&gt;
+	&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
   	&lt;h4&gt;Bien!&lt;/h4&gt;
 	&lt;p&gt;Mariela es la Coordinadora del Área de Formación, que en este caso es la unidad requiriente. Por eso es pertinente que no eligieras la dirección de correo que indica que Mariela trabaja en la unidad operativa de compras, dado que ese puesto está siendo ocupado por vos en este entrenamiento.”
 	&lt;/p&gt;
@@ -1456,7 +1455,7 @@ Total: 472 módulos
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Componer" tags="nobr" position="1227,38" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="Componer" tags="nobr" position="1228,38" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/fondo_compu.png&quot;]]
 
 &lt;div class=&quot;mail_compu&quot;&gt;
@@ -1482,7 +1481,7 @@ Total: 472 módulos
 &lt;/div&gt;
 	
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="ConfiguracionAvatar" tags="nobr" position="49,356" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="ConfiguracionAvatar" tags="nobr" position="51,356" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;contenedorCentrado&quot;&gt;
 &lt;div class=&quot;texto-bienvenida&quot;&gt;Por favor ingresá tu nombre.&lt;/div&gt;
 &lt;&lt;textbox &quot;$usuario&quot; &quot;Anónimo&quot;&gt;&gt;
@@ -1517,7 +1516,8 @@ $(function(){
 			.style.backgroundPositionX = offset + &#39;px&#39;;
 		});
 	});	
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="15" name="Wassap" tags="nobr" position="768,27" size="100,100">&lt;&lt;set $Notificacion to false&gt;&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="13" name="Wassap" tags="nobr" position="770,27" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
+&lt;&lt;set $Notificacion to false&gt;&gt;
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 	&lt;div class=&quot;celular&quot;&gt;
 		&lt;div class=&quot;celular-pantalla&quot;&gt;
@@ -1528,8 +1528,9 @@ $(function(){
 	&lt;/div&gt;
 &lt;/div&gt;
 
-/* &lt;&lt;set $MostrarFooter to true&gt;&gt;
-&lt;&lt;set $MostrarAvatar to true&gt;&gt; */</tw-passagedata><tw-passagedata pid="16" name="Desafio2" tags="nobr" position="1210,551" size="200,100">Elige el texto que enviarías a Juan para resolver la duda que te planteó Mariela
+</tw-passagedata><tw-passagedata pid="14" name="Desafio2" tags="nobr" position="1210,551" size="200,100">Elige el texto que enviarías a Juan para resolver la duda que te planteó Mariela
+
+&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
 
 &lt;div class=&quot;opcion-celular&quot;
      data-passage=&quot;Wassap&quot;
@@ -1541,14 +1542,14 @@ Hola Juan, Mariela me está preguntando si pueden comprar notebooks y tablets. N
      data-passage=&quot;Wassap&quot;
 	 data-setter=&quot;$mensaje to &#39;Desafio2-error&#39;&quot;&gt;
 Hola Juan, Mariela me está preguntando cuándo pueden comprar las notebooks y tablets. ¿Qué le digo? 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Desafio3" tags="nobr" position="1208,667" size="200,100">&lt;&lt;if $TieneDefinicion is false&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Desafio3" tags="nobr" position="1208,667" size="200,100">&lt;&lt;if $TieneDefinicion is false&gt;&gt;
 &lt;div class=&quot;mensaje-celular&quot;&gt;
 Tengo la respuesta, pero vamos a aprovechar esta pregunta para tu entrenamiento. 
 &lt;/div&gt;
 &lt;&lt;include Desafio3-comun&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;include Desafio3-opciones&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Desafio2-error" tags="nobr" position="988,666" size="200,100">&lt;&lt;if $TieneDefinicion is false&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Desafio2-error" tags="nobr" position="988,666" size="200,100">&lt;&lt;if $TieneDefinicion is false&gt;&gt;
   &lt;div class=&quot;mensaje-celular&quot;&gt;
 	&lt;p&gt;Mariela me comentó su duda, pero fijate que te está preguntando otra cosa. Te pregunta si pueden comprarlas o no.&lt;/p&gt; 
   &lt;/div&gt;
@@ -1559,7 +1560,9 @@ Tengo la respuesta, pero vamos a aprovechar esta pregunta para tu entrenamiento.
 
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;include Desafio3-opciones&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="PalabrasClave" tags="nobr" position="1671,491" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="PalabrasClave" tags="nobr" position="1671,491" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
+
+&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;glosario&quot;&gt;
   &lt;div class=&quot;contenedor-botonera&quot;&gt;
 	&lt;&lt;for _i, _letra range $Glosario&gt;&gt;
@@ -1577,169 +1580,160 @@ Tengo la respuesta, pero vamos a aprovechar esta pregunta para tu entrenamiento.
  &lt;div id=&quot;definicion&quot; class=&quot;contenedor-definiciones&quot;&gt;No hay resultados que mostrar. Haga clic sobre una letra para ver las definiciones.&lt;/div&gt;
   
   &lt;div class=&quot;botones&quot;&gt;
-  	&lt;&lt;button Volver Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
+  	&lt;&lt;button &quot;Cerrar Glosario&quot; Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="L" tags="L nobr" position="2296,602" size="100,100">&lt;h2&gt;Licitación Directa&lt;/h2&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="L" tags="L nobr" position="2296,602" size="100,100">&lt;h2&gt;Licitación Directa&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-Una licitación directa es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
+Licitación Privada o Concurso Privado
+Se diferencia de la Licitación Pública cuando el llamado a participar está dirigido a proveedores que se encuentran inscriptos en el SISTEMA DE PROVEEDORES DEL ESTADO (SIPRO) y respecto del monto, se aplicará cuando se estime hasta la suma de SEIS MIL MÓDULOS (6000 M), equivalentes a PESOS SEIS MILLONES ($ 6.000.000.-).
 &lt;/div&gt;
-&lt;h2&gt;Licitación Indirecta&lt;/h2&gt;
+
+&lt;h2&gt;Licitación Pública o Concurso Público&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-Una licitación indirecta es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="Test" tags="test" position="578,677" size="100,100">&lt;div class=&quot;contenedor-definiciones&quot;&gt;
+La licitación o el concurso son públicos cuando el llamado a participar está dirigido a una cantidad indeterminada de posibles oferentes y  es aplicable cuando el monto presunto del contrato supere el monto que establezca la reglamentación. Actualmente, dicho monto es de SEIS MIL MÓDULOS (6000 M), equivalentes a PESOS SEIS MILLONES ($ 6.000.000.-).
+
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="19" name="Test" tags="test" position="578,677" size="100,100">&lt;div class=&quot;contenedor-definiciones&quot;&gt;
 &lt;h4&gt;Un texto que aparecerá solo en una prueba&lt;/h4&gt;
 &lt;p&gt; Thanks! That seems to work great for populating the list but I&#39;m seeing an issue with linking to actual passages. It autocreates a passage called $title and isn&#39;t interpreting the variable in the passage. I just get a number of broken links that all display &lt;/p&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="A" tags="A nobr" position="1780,490" size="100,100">&lt;h2&gt;Absolutismo&lt;/h2&gt;
-&lt;div class=&quot;definicion&quot;&gt;
-Una licitación directa es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
-&lt;/div&gt;
-&lt;h2&gt;Aberracion&lt;/h2&gt;
-&lt;div class=&quot;definicion&quot;&gt;
-Una licitación indirecta es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="B" tags="B nobr" position="1885,491" size="100,100">&lt;h2&gt;Absolutismo&lt;/h2&gt;
-&lt;div class=&quot;definicion&quot;&gt;
-Una licitación directa es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
-&lt;/div&gt;
-&lt;h2&gt;Aberracion&lt;/h2&gt;
-&lt;div class=&quot;definicion&quot;&gt;
-Una licitación indirecta es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="C" tags="C nobr" position="1987,493" size="100,100">&lt;h2&gt;Contratación Directa&lt;/h2&gt;
-&lt;div class=&quot;definicion&quot;&gt;
-Distintos supuestos:
-Contratación directa por monto
-Contratación directa por especialidad
-Contratación directa por exclusividad
-Contratación directa por licitación o concurso desierto o fracasado
-Contratación directa por urgencia o emergencia
-Contratación directa secreta:
-Contratación directa por desarme:
-Contratación directa interadministrativa
-Contratación directa con universidades
-Contratación directa con efectores de desarrollo social
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="A" tags="A nobr" position="1781,490" size="100,100">&lt;h2&gt;Apertura de ofertas&lt;/h2&gt;
 
-&lt;/div&gt;
-&lt;h2&gt;Compras electrónicas&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-Aarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
+Transcurridos los plazos de convocatoria, se realizará la apertura de las ofertas presentadas en acto público, en el lugar, día y horario establecidos en el Pliego que rige la contratación. Durante el acto de apertura de las ofertas, deben estar presentes los funcionarios designados al efecto, los proveedores que deseen hacerlo y cualquier otra persona que se encuentra interesada en presenciarlo.
+Una vez abiertas las ofertas, se labra un acta en la que se deberán plasmar una serie de datos correspondientes al procedimiento que se lleva a cabo, al organismo contratante y a las ofertas propiamente dichas.
+Durante el acto de apertura, no se pueden desestimar ofertas. Si alguien desea dejar asentada alguna observación, ello puede hacerse en el  acta.
+Luego de la apertura de ofertas, existe un plazo para tomar vista de las ofertas y para elaborar el cuadro comparativo de precios, actuaciones de las que puede prescindirse cuando se presente un único oferente.
+Además, la Unidad Operativa de Contrataciones verificará que los proveedores se encuentren inscriptos en el SIPRO, y en caso contrario, les informará que deben registrarse, a efectos de poder continuar compitiendo.
 &lt;/div&gt;
 
-&lt;h2&gt;Criterio de Sustentabilidad&lt;/h2&gt;
+&lt;h2&gt;Autorización del procedimiento&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-Aarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
+Elaborado el PBCP, y definido el procedimiento de selección aplicable, la Unidad Operativa de Contrataciones lo propondrá a la autoridad competente para aprobar la selección del procedimiento.
+Luego, se proyecta el acto administrativo, por el cual se aprobará el PBCP (que forma parte de la medida que se propicia), se determinará el procedimiento de selección aplicable y se autorizará la convocatoria.
+Previo a ser suscripto por la autoridad competente, el acto debe pasar por el servicio jurídico permanente del organismo, a efectos de tomar intervención en el ámbito de su competencia, que emite el dictamen jurídico previo.
+Una vez analizada la legalidad y validez del acto, se elevan las actuaciones a la autoridad competente, quien suscribirá el acto administrativo, y a partir de ello, se puede dar inicio a la etapa de convocatoria. 
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="B" tags="B nobr" position="1885,491" size="100,100">&lt;div class=&quot;definicion&quot;&gt;
+&lt;p&gt;No hay definiciones que mostrar&lt;/p&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="C" tags="C nobr" position="1988,492" size="100,100">&lt;h2&gt;Compras electrónicas&lt;/h2&gt;
+&lt;div class=&quot;definicion&quot;&gt;
+A través del Decreto N.° 1023/01 cuando estableció que las contrataciones pueden hacerse por medio de un sistema electrónico de compras, utilizando los procedimientos de selección que regula y las modalidades que se verán posteriormente.
+Actualmente, se encuentra en un proceso de implementación muy avanzado en la mayoría de los organismos y jurisdicciones de la Administración Nacional, el COMPR.AR, el sistema electrónico de contrataciones habilitado por medio de la Disposición ONC N.° 65/16, contemporáneo al nuevo reglamento de compras. Por la disposición mencionada, se aprueban el Manual de Procedimientos, las políticas, términos y condiciones de uso, el procedimiento para el registro y autenticación de usuarios tanto de proveedores como de agentes y funcionarios.
+El COMPR.AR prevé que todos los actos que deben celebrarse a través de un procedimiento de compras se realicen en forma virtual, con excepción de aquellos que resulten materialmente imposibles, como por ejemplo, la presentación de muestras. Para mayor información consultar el Tomo 1 de la Biblioteca (Caja de Herramientas).
+&lt;/div&gt;
+
+&lt;h2&gt;Contratación Directa o Compulsa Abreviada&lt;/h2&gt;
+&lt;div class=&quot;definicion&quot;&gt;
+La contratación directa es un tipo procedimiento de selección que puede hacerse por compulsa abreviada cuando existe más de un oferente que pueda satisfacer la prestación del bien o servicio, o por adjudicación simple cuando por razones legales, por circunstancias de hecho, por causas vinculadas al objeto o al sujeto contratante, solo sea factible de cumplimiento por un único proveedor.  El monto para este tipo de contratación corresponde hasta UN MIL TRESCIENTOS MÓDULOS (M 1300).
+Existen diez supuestos distintos de procedimiento de contratación directa cuyo uso dependerá de poder satisfacer los requisitos que prevé la normativa, estos supuestos pueden ser consultados en el Tomo 1 de la biblioteca (Caja de Herramientas).
 &lt;/div&gt;
 
 &lt;h2&gt;Convocatoria&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-Aarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="D" tags="D nobr" position="2090,496" size="100,100">&lt;h2&gt;Derogacion&lt;/h2&gt;
-&lt;div class=&quot;definicion&quot;&gt;
-Una licitación directa es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
+La etapa de convocatoria es el período a partir del cual se da a difusión el llamado. Es el momento en que los interesados se pueden enterar de que se pretende adquirir determinado bien o servicio en determinado organismo. El modo en que pueden tomar conocimiento de ello dependerá del tipo de procedimiento de selección que se haya adoptado, puesto que de ello dependen los requisitos de publicidad y difusión correspondientes. 
+Cada uno de los procedimientos de selección tiene requisitos y plazos específicos de difusión.
 &lt;/div&gt;
-&lt;h2&gt;Desdoblamiento&lt;/h2&gt;
+
+&lt;h2&gt;Criterio de Sustentabilidad&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
+De acuerdo con la definición aprobada por el Grupo de Trabajo de Marrakech para las Compras Públicas Sostenibles, ellas son un proceso mediante el cual las organizaciones satisfacen sus necesidades de bienes, servicios, obras y servicios públicos utilizando sus recursos de manera óptima a lo largo de toda su vida útil, de modo que se generen beneficios no solo para la organización, sino también para la sociedad y la economía, minimizando al mismo tiempo los daños al medio ambiente.
+La Oficina Nacional de Contrataciones, en el marco de su interés en propulsar que las compras que realicen los organismos satisfagan el equilibrio entre los tres pilares del desarrollo sustentable: económico, social y medioambiental, ha elaborado los siguientes criterios de sustentabilidad, que podrán ser aplicados para elaborar los requerimientos de los organismos. Para mayor información consultar el Tomo 1 de la Biblioteca (Caja de Herramientas).
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="D" tags="D nobr" position="2090,496" size="100,100">&lt;h2&gt;Desdoblamiento&lt;/h2&gt;
+&lt;div class=&quot;definicion&quot;&gt;
+
+El desdoblamiento es una práctica que está expresamente prohibida por la norma, que implica que no se puede realizar la adquisición del mismo bien o servicio en un lapso de TRES (3) meses desde la primera convocatoria (fecha de difusión del procedimiento), cuando ello se hace con el fin de eludir los montos de los procedimientos de selección o las autoridades competentes, aunque admite prueba en contrario, poniendo en cabeza exclusiva de estas autoridades la responsabilidad ante el incumplimiento de esta manda. 
+Esta información debe ser remitida a la ONC en los plazos estipulados, que centraliza la información y los difunde en su sitio. Para más información consultar el Tomo 1 de la Biblioteca (Caja de Herramientas).
+
 &lt;&lt;if $TieneDefinicion is false&gt;&gt;
 	&lt;&lt;set $TieneDefinicion to true&gt;&gt;
 	&lt;&lt;set $Progreso += 1 &gt;&gt;
 	&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-Esta definicion debe leerse para poder seguir el juego
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="E" tags="E nobr" position="2193,496" size="100,100">&lt;h2&gt;Evaluación de ofertas&lt;/h2&gt;
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="E" tags="E nobr" position="2193,496" size="100,100">&lt;h2&gt;Evaluación de ofertas&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-Una licitación directa es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
-&lt;/div&gt;
-&lt;h2&gt;Aberracion&lt;/h2&gt;
+Transcurridos los plazos de convocatoria, se realizará la apertura de las ofertas presentadas en acto público, en el lugar, día y horario establecidos en el Pliego que rige la contratación. Durante el acto de apertura de las ofertas, deben estar presentes los funcionarios designados al efecto, los proveedores que deseen hacerlo y cualquier otra persona que se encuentra interesada en presenciarlo.
+Una vez abiertas las ofertas, se labra un acta en la que se deberán plasmar una serie de datos correspondientes al procedimiento que se lleva a cabo, al organismo contratante y a las ofertas propiamente dichas.
+Durante el acto de apertura, no se pueden desestimar ofertas. Si alguien desea dejar asentada alguna observación, ello puede hacerse en el  acta.
+Luego de la apertura de ofertas, existe un plazo para tomar vista de las ofertas y para elaborar el cuadro comparativo de precios, actuaciones de las que puede prescindirse cuando se presente un único oferente. Para mayor información consultar el Tomo 1 de la Biblioteca (caja de herramientas)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="U" tags="U nobr" position="2295,495" size="100,100">&lt;h2&gt;UOC&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-Una licitación indirecta es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="U" tags="U nobr" position="2295,495" size="100,100">&lt;h2&gt;UOC&lt;/h2&gt;
+Las UNIDADES OPERATIVAS DE CONTRATACIONES (UOC) funcionan en cada una de las entidades y jurisdicciones contratantes que pertenecen al ámbito de aplicación subjetivo del Decreto Delegado N.° 1023/01 y tienen como función llevar a cabo la gestión de las contrataciones. &lt;/div&gt;
+
+
+&lt;h2&gt;Unidades Requirientes&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-UOC es una sigla por Unidad Operativa de Compras, y representa cosasdasdasdasdasd
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="P" tags="P nobr" position="1782,597" size="100,100">&lt;h2&gt;Principio de Concurrencia&lt;/h2&gt;
+Son los órganos de los ORGANISMOS CONTRATANTES, que formulan los requerimientos de bienes y servicios a las UNIDADES OPERATIVAS DE CONTRATACIONES que se encuentran en cada jurisdicción o entidad contratante. A partir de que las Unidades Requirentes detectan la necesidad de satisfacer el interés público, a través de la adquisición de determinados bienes y/o servicios, se inicia la gestión del procedimiento. &lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="26" name="P" tags="P nobr" position="1782,597" size="100,100">&lt;h2&gt;Pago de bienes y/o servicios&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-Una licitación directa es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
+Una vez recibida la conformidad de la recepción, los cocontratantes podrán presentar las facturas en la forma y lugar establecidos en el pliego, dando así inicio del plazo de pago, que es de TREINTA (30) días corridos, salvo que se disponga uno distinto en los pliegos.
+Los pagos deben realizarse en la moneda que corresponda, de acuerdo a las disposiciones de la Secretaría de Hacienda, del Ministerio de Hacienda.
 &lt;/div&gt;
 
-&lt;h2&gt;Principio de Competencia&lt;/h2&gt;
-&lt;div class=&quot;definicion&quot;&gt;
-Una licitación directa es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
-&lt;/div&gt;
-
-&lt;h2&gt;Principio de Transparencia&lt;/h2&gt;
-&lt;div class=&quot;definicion&quot;&gt;
-Una licitación directa es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
-&lt;/div&gt;
-
-&lt;h2&gt;Plan Anual de Contrataciones&lt;/h2&gt;
-&lt;div class=&quot;definicion&quot;&gt;
-Esta entrada debe leerse para poder seguir el juego
+&lt;h2&gt;Plan Anual de Contrataciones/Desdoblamiento&lt;/h2&gt;
 &lt;&lt;if $TieneDefinicion is false&gt;&gt;
   &lt;&lt;set $Progreso += 1 &gt;&gt;
   &lt;&lt;audio &quot;exito&quot; play&gt;&gt;
   &lt;&lt;set $TieneDefinicion to true&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+&lt;div class=&quot;definicion&quot;&gt;
+El Plan Anual de Contrataciones es el documento que debe elaborar anualmente cada jurisdicción o entidad contratante, en el que se establece la programación de las contrataciones que se harán a lo largo del ejercicio financiero, teniendo en cuenta sus actividades y los créditos que se les asignan a través de la ley de Presupuesto.
+Es una herramienta fundamental, elaborada por la Unidad Operativa de Compras, que se nutre de la información que le remiten las Unidades Requirentes sobre los requerimientos (ya sea de bienes y/o servicios) a lo largo del año, y que permite planificar adecuadamente en forma trimestral las adquisiciones del organismo, de manera de poder unificar los requerimientos en un mismo procedimiento y así ahorrar tiempo y recursos. Así se coadyuva a realizar las adquisiciones en forma eficaz y eficiente utilizando la menor cantidad de recursos, a la vez que evitamos incurrir en desdoblamiento.
+El desdoblamiento es una práctica que está expresamente prohibida por la norma, que implica que no se puede realizar la adquisición del mismo bien o servicio en un lapso de TRES (3) meses desde la primera convocatoria (fecha de difusión del procedimiento), cuando ello se hace con el fin de eludir los montos de los procedimientos de selección o las autoridades competentes, aunque admite prueba en contrario, poniendo en cabeza exclusiva de estas autoridades la responsabilidad ante el incumplimiento de esta manda. 
+Esta información debe ser remitida a la ONC en los plazos estipulados, que centraliza la información y los difunde en su sitio. Para más información consultar el Tomo 1 de la Biblioteca (Caja de Herramientas).
+&lt;/div&gt;
+
+&lt;h2&gt;Pliego de Bases y Condiciones Particulares (PBCP)&lt;/h2&gt;
+&lt;div class=&quot;definicion&quot;&gt;
+Existen dos especies de pliegos: el Pliego de Bases y Condiciones Generales (PBCG) y el Pliego de Bases y Condiciones Particulares (PBCP). 
+En el ámbito de aplicación que regula el Régimen de Contrataciones, el PBCG se encuentra aprobado por la Disposición ONC N.° 63/16, que establece el piso mínimo de cláusulas que deben contener los PBCP; es una norma que regula todos los pliegos en forma general.
+En cambio, el PBCP es un documento que cada jurisdicción o entidad contratante elabora para cada procedimiento de selección, es decir, para cada adquisición de un bien o servicio. Está compuesto por las cláusulas particulares y por las especificaciones técnicas.
+Las cláusulas particulares regulan los aspectos formales y normativos del procedimiento de selección concreto. 
+Las especificaciones técnicas describen las características del bien o servicio a adquirir y deben elaborarse de manera que permitan el acceso al procedimiento de selección en condiciones de igualdad de los oferentes y no tengan por efecto la creación de obstáculos injustificados a la competencia.
+&lt;/div&gt;
+
+&lt;h2&gt;Principio de Concurrencia&lt;/h2&gt;
+&lt;div class=&quot;definicion&quot;&gt;
+Entrelazado al principio de publicidad ya que el principio de concurrencia se cumple a través de la publicidad y difusión de los llamados en los medios establecidos en la normativa (como el Boletín Oficial, o la página del órgano rector, o  el sistema electrónico de contrataciones), y asì los posibles interesados toman conocimiento de la existencia de la convocatoria para presentar ofertas en un determinado organismo.
 &lt;/div&gt;
 
 &lt;h2&gt;Principio de Igualdad&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-Una licitación directa es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
+El principio de igualdad es también un principio fundamental en los procedimientos de selección. Tiene raigambre constitucional; se encuentra preceptuado en el artículo 16 de la Constitución Nacional, y como ya se dijo en referencia a los demás principios debe respetarse a lo largo de todo el procedimiento, y también durante la ejecución del contrato, no pudiendo modificarse  indebidamente las bases licitatorias, para favorecer o perjudicar a la contraparte (Tomado de Comadira, Julio Rodolfo, La Licitación Pública. Nociones. Principios. Cuestiones, 2da. edición, Buenos Aires, Abeledo Perrot, 2010, pág. 63).  Para mayor información consultar el Tomo 1 de la Biblioteca (Caja de Herramientas).
 &lt;/div&gt;
 
-&lt;h2&gt;Publicidad de las actuaciones&lt;/h2&gt;
+&lt;h2&gt;Principio de Publicidad de las actuaciones&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
-Una licitación directa es un procedimiento sarasasadasdasd asdasdas asdasda asdasd que finalmente asdasdakajhsdkj asdas dasda sdasdas asd
-asdasasdasd adasdasdasd
-asdaa asdasdas
-sdasdasfasdfuyaisudfy
+Este principio implica garantizar el adecuado y libre conocimiento del llamado a licitación por parte de los eventuales interesados, asegurando la correcta tramitación del procedimiento. Es un principio que se deriva de la forma republicana de gobierno y como tal, resulta una garantía y un derecho a favor de todos los administrados. Se entrelaza con el principio de igualdad, de transparencia y de concurrencia.
+El Régimen de Contrataciones prevé que todas las actuaciones que se lleven a cabo a lo largo del procedimiento, como la convocatoria, la emisión de circulares, el acta de apertura de ofertas, el cuadro comparativo de ofertas, el dictamen de evaluación, los actos administrativos, la orden de compra o contrato, entre otros, deben ser difundidas en la página web de la Oficina Nacional de Contrataciones, o en el portal del sistema electrónico de contrataciones COMPR.AR (https://compr.ar/).
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="29" name="Desafio2-Intro" tags="nobr" position="989,552" size="100,100">&lt;h4&gt;ACA VA UN AUDIO&lt;/h4&gt;
+
+&lt;h2&gt;Principio de Transparencia&lt;/h2&gt;
+&lt;div class=&quot;definicion&quot;&gt;
+Entrelazado al principio de publicidad ya que el principio de transparencia se cumple al permitir, por medio de la difusión de las actuaciones, que los administrados puedan tomar conocimiento de la actividad de gobierno, lo que es una garantía de que todo se hará correctamente.
+&lt;/div&gt;
+
+&lt;h2&gt;Proveedores&lt;/h2&gt;
+&lt;div class=&quot;definicion&quot;&gt;
+Son las personas (humanas y/o jurídicas) a las que van dirigidos los llamados. Según su participación en el procedimiento, podemos identificar distintos “estatus” de los proveedores: interesados, oferentes, adjudicatarios, cocontratantes. 
+
+A saber:
+Interesados 
+Grupo de proveedores a los que se dirige en forma indirecta o genérica el llamado a contratación, de acuerdo al objeto que se va a adquirir. Por ejemplo, si la gestión del procedimiento de selección está dirigida a la contratación de un servicio de limpieza, entenderemos que los interesados son todas las personas cuya actividad principal u objeto social es la prestación de servicios de limpieza.
+
+
+Oferentes
+Los proveedores/interesados adquieren la calidad de “oferentes” cuando se presentan efectivamente a un procedimiento de selección, a través de la presentación de una oferta, y así se someten por propia voluntad al régimen jurídico aplicable.
+
+
+Adjudicatarios
+Hablamos de “adjudicatarios” cuando a los proveedores oferentes, a través del acto administrativo que pone final procedimiento de selección, se les adjudica alguno o algunos de los renglones que identifican los bienes o servicios a adquirir. 
+
+Cocontratantes
+Resultan ser “cocontratantes” aquellos proveedores adjudicatarios cuando se les notifica la orden de compra que perfecciona el contrato, que desata las obligaciones recíprocas, existentes entre estos y el organismo contratante, propias de la ejecución del contrato.
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="27" name="Desafio2-Intro" tags="nobr" position="989,552" size="100,100">&lt;h4&gt;ACA VA UN AUDIO&lt;/h4&gt;
 &lt;p&gt;Hola $usuario recibí tu mail. Me dijo Juan que ibas a ayudarnos con este tema, estoy muy entusiasmada con este proyecto. La idea es armar para la nueva sala un espacio novedoso que oficie tanto para la consulta de material de diferentes tipos de usuarios (alumnos, docentes, especialistas) así como soporte para los cursos de formación que vamos a dictar en el museo (nuestros expertos!).&lt;/p&gt;
 
 &lt;p&gt;Te adjunto el listado de equipamiento mínimo indispensable que necesitaríamos para arrancar. &lt;/p&gt;
@@ -1752,7 +1746,7 @@ sdasdasfasdfuyaisudfy
   &lt;&lt;set $Accion to true&gt;&gt;
   &lt;&lt;set $OpcionesAccion to &quot;AccionIntroDesafio2&quot;&gt;&gt;
   &lt;&lt;set $MostrarFooter to true&gt;&gt;
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="Desafio4-OK" tags="nobr" position="1203,782" size="200,100">&lt;&lt;set $Progreso += 1 &gt;&gt;
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="Desafio4-OK" tags="nobr" position="1203,782" size="200,100">&lt;&lt;set $Progreso += 1 &gt;&gt;
 &lt;&lt;audio &quot;exito&quot; play&gt;&gt;
 
 &lt;div class=&quot;mensaje-celular&quot;&gt;
@@ -1772,11 +1766,11 @@ Sí.
      data-passage=&quot;Wassap&quot;
 	 data-setter=&quot;$mensaje to &#39;Desafio4-error&#39;&quot;&gt;
 No.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="Desafio4-error" tags="nobr" position="984,783" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="Desafio4-error" tags="nobr" position="984,783" size="200,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
 Mariela me avisó que puso todo lo necesario así que tranquilo, avancemos!. 
 &lt;/div&gt;
 &lt;&lt;include Desafio4-exito&gt;&gt;
-</tw-passagedata><tw-passagedata pid="32" name="Desafio4-exito" tags="nobr" position="1421,786" size="200,100">&lt;&lt;set $Progreso += 1 &gt;&gt;
+</tw-passagedata><tw-passagedata pid="30" name="Desafio4-exito" tags="nobr" position="1421,786" size="200,100">&lt;&lt;set $Progreso += 1 &gt;&gt;
 &lt;&lt;audio &quot;exito&quot; play&gt;&gt;
 
 &lt;div class=&quot;mensaje-celular&quot;&gt;
@@ -1793,18 +1787,17 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;&lt;set $MostrarPresupuestos to true&gt;&gt;
 	&lt;&lt;set $MostrarFooter to true&gt;&gt;
 /* &lt;/div&gt; */
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="libro1" tags="item nobr" position="101,799" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;libro1&quot; data-passage=&quot;Docus&quot;&gt;
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="libro1" tags="item nobr" position="101,799" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;libro1&quot; data-passage=&quot;Docus&quot;&gt;
 	/*&lt;img src=&quot;imagenes/tomo1.png&quot;&gt;*/
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Tomo 1&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="glosario" tags="item nobr" position="101,906" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;glosario&quot; data-passage=&quot;PalabrasClave&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="glosario" tags="item nobr" position="101,906" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;glosario&quot; data-passage=&quot;PalabrasClave&quot;&gt;
 	/* &lt;img src=&quot;imagenes/herramientas/glosario.png&quot;&gt; */
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="Oficina Oeste" tags="nobr" position="523,224" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
-&lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Oficina Oeste" tags="nobr" position="525,224" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
 
 &lt;div class=&quot;pantalla&quot;&gt;
 &lt;&lt;if $MostrarPresupuestos is true&gt;&gt;
@@ -1816,19 +1809,19 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;hotspot&quot; id=&quot;gomez&quot; data-passage=&quot;Gomez&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés ver el escritorio de Gómez?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Oficina Este" tags="nobr" position="910,186" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="Oficina Este" tags="nobr" position="910,186" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 
 &lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/oficina-ESTE.png&quot;]]
 	&lt;&lt;set $MostrarFooter to true&gt;&gt;
 	&lt;div class=&quot;W&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="Bebedero" tags="nobr" position="402,316" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="Bebedero" tags="nobr" position="402,316" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/bebedero-fichero.png&quot;]]
 
 &lt;div class=&quot;E&quot; data-passage=&quot;Gomez&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;S&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Gomez" tags="nobr" position="403,173" size="100,100">
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Gomez" tags="nobr" position="403,173" size="100,100">
 &lt;div class=&quot;pantalla&quot;&gt;
 	
 [img[&quot;imagenes/escritorio-gomez-1.png&quot;]]
@@ -1853,12 +1846,14 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina Impresora&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;S&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="presupuestos" tags="item nobr" position="103,1011" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;presupuestos&quot; data-passage=&quot;Desafio Presupuestos&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="presupuestos" tags="item nobr" position="103,1011" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;presupuestos&quot; data-passage=&quot;Desafio Presupuestos&quot;&gt;
 	/*&lt;img src=&quot;imagenes/expediente.png&quot;&gt;*/
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Presupuestos de compras&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="Desafio Presupuestos" tags="nobr" position="989,907" size="100,100">&lt;&lt;set $MostrarFooter to false&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Desafio Presupuestos" tags="nobr" position="989,907" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
+&lt;&lt;set $MostrarFooter to false&gt;&gt;
+
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;&lt;set $MostrarCabecera to false&gt;&gt;
 &lt;div class=&quot;overlay&quot;&gt;
@@ -1912,7 +1907,7 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-    </tw-passagedata><tw-passagedata pid="41" name="Desafio6" tags="nobr" position="1117,907" size="100,100">&lt;&lt;set $EligioPresupuesto to true&gt;&gt;
+    </tw-passagedata><tw-passagedata pid="39" name="Desafio6" tags="nobr" position="1117,907" size="100,100">&lt;&lt;set $EligioPresupuesto to true&gt;&gt;
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;contenedor-exterior&quot;&gt;
 
@@ -1926,10 +1921,13 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;&lt;set $mensaje to &quot;Desafio7-intro&quot;&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="AccionComponer" tags="accion nobr" position="308,794" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Componer&quot; data-setter= &quot;$Accion to false&quot;&gt;Escribir un email a Mariela&lt;/div&gt;
-&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina&quot; data-setter= &quot;$Accion to false&quot;&gt;Seguir recorriendo la oficina&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="AccionIntroDesafio2" tags="accion nobr" position="309,899" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Wassap&quot; data-setter=&quot;$mensaje to &#39;Desafio2&#39;&quot;&gt;Mensajear a Juan &lt;&lt;set $Accion to false&gt;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="AccionComponer" tags="accion nobr" position="308,794" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Componer&quot; data-setter= &quot;$Accion to false&quot;&gt;Escribir un email a Mariela&lt;/div&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina&quot; data-setter= &quot;$Accion to false&quot;&gt;Seguir recorriendo la oficina&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="AccionIntroDesafio2" tags="accion nobr" position="310,898" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Wassap&quot; data-setter=&quot;$mensaje to &#39;Desafio2&#39;&quot;&gt;Mensajear a Juan &lt;&lt;set $Accion to false&gt;&gt;&lt;/div&gt;
 &lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina&quot; data-setter=&quot;$Accion to false&quot;&gt;Seguir explorando la Oficina&lt;/div&gt;
-&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Listado&quot;&gt;Ver Listado&lt;&lt;set $Accion to false&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="Listado" tags="nobr" position="473,677" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Listado&quot;&gt;Ver Listado&lt;&lt;set $Accion to false&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Listado" tags="nobr" position="473,677" size="100,100">&lt;&lt;set $MostrarAvatar to false&gt;&gt;
+&lt;&lt;set $MostrarFooter to false&gt;&gt;
+
+&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
   &lt;div class=&quot;overlay&quot;&gt;
 	&lt;div class=&quot;papel&quot;&gt;
 		&lt;div style=&quot;position: relative; top: 30px; margin-bottom: 70px;&quot;&gt;
@@ -1941,16 +1939,19 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 		  &lt;li&gt;1 Pantalla”&lt;/li&gt;
 		  &lt;/ul&gt;
 	  &lt;/div&gt;
-	  &lt;&lt;button Ok Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
+	  &lt;&lt;button Ok Oficina&gt;&gt;
+	  	&lt;&lt;set $MostrarFooter to true&gt;&gt;
+		&lt;&lt;set $MostrarAvatar to true&gt;&gt;
+	  &lt;&lt;/button&gt;&gt;
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="AccionPresupuestos" tags="accion nobr" position="306,1004" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Gomez&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir al escritorio de Gómez&lt;/div&gt;
-&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina&quot; data-setter=&quot;$Accion to false&quot;&gt;Seguir explorando la Oficina&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Opcion-error" tags="nobr" position="1226,906" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="AccionPresupuestos" tags="accion nobr" position="306,1004" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Gomez&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir al escritorio de Gómez&lt;/div&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina&quot; data-setter=&quot;$Accion to false&quot;&gt;Seguir explorando la Oficina&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="Opcion-error" tags="nobr" position="1226,906" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;contenedor-exterior&quot;&gt;
 &lt;p&gt;Mmm, no parece que este presupuesto cubra todos los requerimientos. ¿ Revisaste los otros ?&lt;/p&gt;
 &lt;&lt;button &quot;Continuar&quot; &quot;Desafio Presupuestos&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Desafio7-intro" tags="nobr" position="986,1023" size="100,100">
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="Desafio7-intro" tags="nobr" position="986,1023" size="100,100">
 &lt;div class=&quot;mensaje-celular&quot;&gt;
 
 &lt;p&gt;¡Bien! Ahora, ya tenemos el monto presunto para el requerimiento que nos hace el sector del Mariela. El paso siguiente es identificar qué tipo de procedimiento debemos poner en marcha. Pero antes de seguir avanzando, me gustaría que te sientas seguro respecto al tema de los módulos. 
@@ -1971,12 +1972,12 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 &lt;&lt;/button&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="48" name="experto" tags="item nobr" position="103,1118" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;experto&quot; data-passage=&quot;Consulta Experto&quot;&gt;
+</tw-passagedata><tw-passagedata pid="46" name="experto" tags="item nobr" position="103,1118" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;experto&quot; data-passage=&quot;Consulta Experto&quot;&gt;
 	/*&lt;img src=&quot;imagenes/herramientas/experto.png&quot;&gt;*/
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consulta con Experto&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="Consulta Experto" tags="nobr" position="875,25" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Consulta Experto" tags="nobr" position="875,25" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;videoplayer&quot;&gt;
 	&lt;div class=&quot;video&quot;&gt;
 		&lt;p&gt;ACA VA UN REPRODCUTOR DE VIDEO CON LAS ENTREVISTAS&lt;/p&gt;
@@ -1985,7 +1986,7 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 &lt;/div&gt;
 
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="Desafio3-comun" tags="nobr" position="1418,662" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="Desafio3-comun" tags="nobr" position="1418,662" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
 &lt;&lt;if not tiene(&quot;glosario&quot;)&gt;&gt;En la biblioteca hay un Glosario de Palabras Clave, buscá: &lt;&lt;else&gt;&gt;Buscá en Palabras Clave &lt;&lt;/if&gt;&gt;“Plan Anual de Contrataciones/Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses. 
 &lt;/div&gt;
 
@@ -1995,10 +1996,11 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Oficina&quot;&gt;Ok&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-  </tw-passagedata><tw-passagedata pid="51" name="Desafio3-opciones" tags="nobr" position="1523,662" size="100,100">&lt;p&gt;Entonces, ¿ qué le contestamos a Juan ?&lt;/p&gt;
+  </tw-passagedata><tw-passagedata pid="49" name="Desafio3-opciones" tags="nobr" position="1523,662" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
+&lt;p&gt;Entonces, ¿ qué le contestamos a Juan ?&lt;/p&gt;
 
   &lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Wassap&quot; data-setter=&quot;$mensaje to &#39;Desafio4-OK&#39;&quot;&gt;Sí, se puede realizar la compra.&lt;/div&gt;
-  &lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Wassap&quot; data-setter=&quot;$mensaje to &#39;Desafio4-mal&#39;&quot;&gt;No, no se puede realizar la compra.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Desafio4-mal" tags="nobr" position="1628,785" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+  &lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Wassap&quot; data-setter=&quot;$mensaje to &#39;Desafio4-mal&#39;&quot;&gt;No, no se puede realizar la compra.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="Desafio4-mal" tags="nobr" position="1628,785" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
 &lt;p&gt;En realidad $usuario, sí se puede realizar la compra porque al momento de adquirir las computadoras no se conocía este nuevo requerimiento. &lt;/p&gt;
 &lt;p&gt;Tené en cuenta que en estos casos siempre se deberá utilizar el procedimiento y determinar a la autoridad competente teniendo en cuenta la totalidad de los montos que hubieran correspondido en caso de haber realizado ambas compras en un solo procedimiento.&lt;/p&gt;&lt;/div&gt;
 
@@ -2016,8 +2018,8 @@ Sí.
      data-passage=&quot;Wassap&quot;
 	 data-setter=&quot;$mensaje to &#39;Desafio4-error&#39;&quot;&gt;
 No.
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="AccionPliegos" tags="nobr accion" position="307,1108" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina Impresora&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir a impresora.&lt;/div&gt;
-&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina Este&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir a la oficina de Juan.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="Oficina Impresora" tags="nobr" position="394,446" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="AccionPliegos" tags="nobr accion" position="307,1108" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina Impresora&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir a impresora.&lt;/div&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina Este&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir a la oficina de Juan.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Oficina Impresora" tags="nobr" position="394,446" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 	
 [img[&quot;imagenes/oficina-impresora.png&quot;]]
 
@@ -2058,8 +2060,9 @@ No.
 
 &lt;div class=&quot;W&quot; data-passage=&quot;Gomez&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Computadora&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;S&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="Desafio Pliegos" tags="nobr" position="1117,1022" size="100,100">&lt;&lt;set $MostrarFooter to false&gt;&gt;
+&lt;div class=&quot;S&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;	
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="Desafio Pliegos" tags="nobr" position="1117,1022" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+&lt;&lt;set $MostrarFooter to false&gt;&gt;
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;&lt;set $MostrarCabecera to false&gt;&gt;
 &lt;div class=&quot;overlay&quot;&gt;
@@ -2089,11 +2092,15 @@ No.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-    </tw-passagedata><tw-passagedata pid="56" name="Pliegos-error" tags="nobr" position="1229,1022" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+    </tw-passagedata><tw-passagedata pid="54" name="Pliegos-error" tags="nobr" position="1229,1022" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
 Lamentablemente no es la opción correcta. El tipo de contratación es la compulsa abreviada por monto.&lt;/div&gt; 
 &lt;div class=&quot;mensaje-celular&quot;&gt;La elección del procedimiento depende del monto presunto de la contratación.
 &lt;p&gt; Antes de iniciar el Nivel 2, te sugiero que repases este tema consultando el tomo 1 de la biblioteca o en la Pizarra. &lt;/p&gt;
-&lt;p&gt; Es imprescindible que tengas claro este punto para superar la próxima instancia del juego. ¡Ánimos!&lt;/p&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="Pliegos-ok" tags="nobr" position="1338,1024" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+&lt;p&gt; Es imprescindible que tengas claro este punto para superar la próxima instancia del juego. ¡Ánimos!&lt;/p&gt;&lt;/div&gt;
+
+&lt;&lt;button &quot;Volver a intentar&quot;&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;
+</tw-passagedata><tw-passagedata pid="55" name="Pliegos-ok" tags="nobr" position="1338,1024" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
 &lt;p&gt;&lt;h4&gt;¡¡¡Exacto!!!&lt;/h4&gt; ¡Es una compulsa abreviada por monto, bravo! Casi pego un salto en la butaca, los mendocinos no entienden por qué estoy tan contento y me escapé de la conferencia jaja.&lt;/p&gt;
 &lt;/div&gt;
 
@@ -2102,16 +2109,49 @@ Lamentablemente no es la opción correcta. El tipo de contratación es la compul
 
 &lt;p&gt;Este fue sólo un entrenamiento, ahora comenzamos a jugar en serio. &lt;/p&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="58" name="pliegos" tags="nobr item" position="100,1227" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;pliegos&quot; data-passage=&quot;Desafio Pliegos&quot;&gt;
+
+&lt;p&gt;
+¡ Muy bien $usuario ! Conseguiste resolver $Progreso de un total de $Total posibles !&lt;/p&gt;
+
+&lt;&lt;button &quot;Jugar otra vez&quot;&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="pliegos" tags="nobr item" position="100,1227" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;pliegos&quot; data-passage=&quot;Desafio Pliegos&quot;&gt;
 	/* &lt;img src=&quot;imagenes/pliegos-item.png&quot;&gt; */
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Pliegos de contratación&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="libro2" tags="item nobr" position="101,694" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;libro2&quot; data-passage=&quot;Docus&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="libro2" tags="item nobr" position="101,694" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;libro2&quot; data-passage=&quot;Docus&quot;&gt;
 	/* &lt;img src=&quot;imagenes/tomo2.png&quot;&gt;*/
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Tomo 2&lt;/span&gt;
 	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="S" tags="S nobr" position="2192,601" size="100,100">&lt;h2&gt;Subasta Pública&lt;/h2&gt;
+
+&lt;div class=&quot;definicion&quot;&gt;
+La subasta pública será procedente cualquiera fuere el monto estimado del contrato y podrá ser aplicada en los siguientes casos:
+
+-Compra de bienes muebles, inmuebles, semovientes, incluyendo dentro de los primeros los objetos de arte o de interés histórico.
+-Venta de bienes de propiedad del Estado Nacional.
+
+Por Decreto Nº 29/2018, se aprobó la implementación del Sistema de Gestión Electrónica para las subastas públicas, “SUBAST.AR”, como medio para efectuar en forma electrónica todos los procedimientos de subasta pública que realicen las jurisdicciones y entidades del Sector Público Nacional.
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="O" tags="O nobr" position="1886,600" size="100,100">&lt;h2&gt;ONC&lt;/h2&gt;
+&lt;div class=&quot;definicion&quot;&gt;
+La OFICINA NACIONAL DE CONTRATACIONES (ONC) es el órgano rector del Sistema Nacional de Contrataciones, ambos creados por el Decreto N.° 1545 del 31 de agosto de 1994, y es responsable de establecer las normas, sistemas y procedimientos que rigen las contrataciones (centralización). Actualmente, funciona en el ámbito de la SECRETARÍA DE MODERNIZACIÓN ADMINISTRATIVA del MINISTERIO DE MODERNIZACIÓN.
+&lt;/div&gt;
+
+&lt;h2&gt;Organismos contratantes&lt;/h2&gt;
+&lt;div class=&quot;definicion&quot;&gt;
+Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un procedimiento para adquirir bienes y servicios, y son las que surgen del artículo 8., inciso a) de la Ley 24156 de Administración Financiera y de los Sistemas de Control del Sector Público Nacional.
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="60" name="F" tags="" position="2219,379" size="100,100">&lt;div class=&quot;definicion&quot;&gt;
+&lt;p&gt;No hay definiciones que mostrar&lt;/p&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="G" tags="" position="2108,380" size="100,100">&lt;div class=&quot;definicion&quot;&gt;
+&lt;p&gt;No hay definiciones que mostrar&lt;/p&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="H" tags="" position="1998,380" size="100,100">&lt;div class=&quot;definicion&quot;&gt;
+&lt;p&gt;No hay definiciones que mostrar&lt;/p&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="I" tags="" position="1888,380" size="100,100">&lt;div class=&quot;definicion&quot;&gt;
+&lt;p&gt;No hay definiciones que mostrar&lt;/p&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="J" tags="" position="1778,380" size="100,100">&lt;div class=&quot;definicion&quot;&gt;
+&lt;p&gt;No hay definiciones que mostrar&lt;/p&gt;
 &lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
