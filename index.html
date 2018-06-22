@@ -1241,12 +1241,26 @@ transform: translateX(-50%);
 
 .opciones-portada{
   border-style: none;
-  position: absolute;
-  /*top: 78%;*/
-  height:100%;
+  position: relative;
+  top: 5%;
+  width: 15%;
+  height: 80%;
   z-index: 3000;
   display: block;
   margin: auto;
+  left: 63px;
+}
+
+.opciones-video{
+  border-style: none;
+  position: absolute;
+  top: 0%;
+  width: 15%;
+  height: 80%;
+  z-index: 3000;
+  display: block;
+  margin: auto;
+  left: -7px;
 }
 
 .opciones-portada > .opcion-accion {
@@ -1255,13 +1269,14 @@ transform: translateX(-50%);
 }
 
 .opciones-portada > .opcion-accion#portada {
-  top: 60%;
-  width: 200px;
-  left: 164%;
-  background-color: #f99118;
+ top: 60%;
+width: 200px;
+background-color: #f99118;
+position: relative;
+left: 0px;
 }
 
-.opciones-portada > .opcion-accion#skip {
+.opciones-video > .opcion-accion#skip {
   top: 13%;
   width: 200px;
 }
@@ -1297,8 +1312,34 @@ overflow: scroll;
   width: 82px;
   height: 68px;
   display: inline-flex;
+  cursor: pointer;
+   border-style: solid;
+border-width: 1px;
+  border-color: transparent;
 }
 
+.video-item:hover {
+ border-color: #5ef9ff;
+background-color: #9ec8cf4d;
+}
+
+.video-item > .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms;
+  color: #fff;
+  left: 10%;
+  height: 32px;
+  top: -32%;
+  background-color: #ff9d28;
+}
+
+.video-item:hover .tooltip {
+  visibility:visible;
+  opacity: 1;
+  
+ 
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
 function tiene(objeto) { return objeto in inventario(); }
 
@@ -2260,7 +2301,7 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 [img[&quot;docs/tomo2/00.jpg&quot;]]
 &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="VideoInicio" tags="nobr" position="111,373" size="100,100">&lt;div class=&quot;pantalla-video&quot;&gt;
-&lt;div class=&quot;opciones-portada&quot;&gt;
+&lt;div class=&quot;opciones-video&quot;&gt;
 &lt;div class=&quot;opcion-accion&quot; id=&quot;skip&quot; data-passage=&quot;ConfiguracionAvatar&quot;&gt;Saltear Intro&lt;/div&gt;
 &lt;/div&gt;
 
@@ -2276,16 +2317,16 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="vista-iconos" tags="nobr" position="963,1160" size="100,100">&lt;div class=&quot;videolista&quot;&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 2&quot;&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 3&quot;&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 4&quot;&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 5&quot;&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 6&quot;&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 7&quot;&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 8&quot;&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 1&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 2&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 2&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 3&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 3&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 4&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 4&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 5&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 5&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 6&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 6&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 7&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 7&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 8&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 8&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 9&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 10&lt;/div&gt;&lt;/div&gt;
 	
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="videos" tags="nobr" position="860,1037.5" size="100,100">&lt;&lt;switch $video&gt;&gt;
 &lt;&lt;case 1&gt;&gt;
