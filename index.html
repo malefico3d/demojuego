@@ -1224,6 +1224,61 @@ top: 92px;
 transform: translateX(-50%);
   
 }
+.portada {
+  background-image:url("imagenes/portada.jpg");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 800px;
+  height: 600px;
+}
+
+.opciones-portada{
+  border-style: none;
+  position: relative;
+  /*top: 78%;*/
+  height:100%;
+  z-index: 3000;
+  display: block;
+  margin: auto;
+}
+
+.opciones-portada > .opcion-accion {
+  top:80%;
+}
+
+.pantalla-video {
+ height: 600px; 
+}
+
+.contenedor-video {
+  display: contents;
+}
+
+.botonera-videoplayer {
+  display: block;
+  position: absolute;
+  top: 352px;
+  left: 219px;  
+}
+
+video {
+ /* height: 600px;*/
+}
+.video-lista {
+ height: 280px;
+overflow: scroll; 
+}
+
+.video-item {
+  background-image:url("imagenes/video-icono.png");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 82px;
+  height: 68px;
+  display: inline-flex;
+}
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
 function tiene(objeto) { return objeto in inventario(); }
@@ -1250,6 +1305,8 @@ State.variables.inventario = {};
 
 
 
+
+
 </script><tw-passagedata pid="1" name="Oficina" tags="nobr" position="662,179" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; loop&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadeto 0.5&gt;&gt;
@@ -1261,6 +1318,7 @@ State.variables.inventario = {};
 	&lt;div class=&quot;hotspot&quot; id=&quot;impresora&quot; data-passage=&quot;Oficina Impresora&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Ir hacia impresora&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 	
 &lt;&lt;set $MostrarFooter to true&gt;&gt;
+&lt;&lt;agarrar &quot;experto&quot;&gt;&gt;
 
 &lt;div class=&quot;W&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina Este&quot;&gt;&lt;/div&gt;
@@ -1331,6 +1389,8 @@ Abrazo y contá conmigo!
 &lt;&lt;set $TieneMail to true&gt;&gt;
 &lt;&lt;set $EligioPresupuesto to false&gt;&gt;
 &lt;&lt;set $cajon to &quot;cerrado&quot;&gt;&gt;
+&lt;&lt;set $video to 0&gt;&gt;
+&lt;&lt;set $videonombre to &quot;&quot;&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;ambiente&quot; &quot;sonidos/musica.ogg&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambiente2&quot; &quot;sonidos/musica2.mp3&quot;&gt;&gt;
@@ -1359,19 +1419,11 @@ Abrazo y contá conmigo!
 	&lt;/div&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="6" name="Inicio" tags="nobr" position="50,243" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
-&lt;&lt;if $primeraVez is true&gt;&gt;
-&lt;div class=&quot;contenedor-exterior&quot;&gt;
-	&lt;div class=&quot;mensaje&quot;&gt;
-	[img[&quot;imagenes/usuario-hombre.png&quot;]]
-		&lt;p&gt;¡Hola!&lt;/p&gt;
-		&lt;p&gt;Aquí va un video de presentación&lt;/p&gt;
-		&lt;h4&gt;Esta es sólo una demo que muestra las funcionalidades disponibles en un juego interactivo. Los textos son solo a modo de ejemplo.&lt;/h4&gt;
-		[[Comenzar|ConfiguracionAvatar]] 
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Portada" tags="nobr" position="52,242" size="200,100">&lt;div class=&quot;portada&quot;&gt;
 
+&lt;div class=&quot;opciones-portada&quot;&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;VideoInicio&quot;&gt;Comenzar&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="Docus" tags="nobr" position="1694,177" size="200,100">&lt;&lt;set $MostrarFooter to false&gt;&gt;
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
@@ -1493,7 +1545,7 @@ Total: 472 módulos
 &lt;/div&gt;
 	
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="ConfiguracionAvatar" tags="nobr" position="51,356" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="ConfiguracionAvatar" tags="nobr" position="50,503" size="200,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;contenedorCentrado&quot;&gt;
 &lt;div class=&quot;texto-bienvenida&quot;&gt;Por favor ingresá tu nombre.&lt;/div&gt;
 &lt;&lt;textbox &quot;$usuario&quot; &quot;Anónimo&quot;&gt;&gt;
@@ -1989,12 +2041,45 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consulta con Experto&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Consulta Experto" tags="nobr" position="875,25" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Consulta Experto" tags="nobr" position="850,1160" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;videoplayer&quot;&gt;
-	&lt;div class=&quot;video&quot;&gt;
-		&lt;p&gt;ACA VA UN REPRODCUTOR DE VIDEO CON LAS ENTREVISTAS&lt;/p&gt;
+	&lt;div class=&quot;video&quot; id=&quot;visor&quot;&gt;
+	&lt;&lt;if $video is 0&gt;&gt;
+		&lt;&lt;include &quot;videolista&quot;&gt;&gt;
+	&lt;&lt;else&gt;&gt;
+	&lt;&lt;switch $video&gt;&gt;
+	  &lt;&lt;case 1&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay&gt;&lt;/video&gt; 
+	  &lt;&lt;case 2&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_02_PROCEDIMIENTO_SELECCION_APLICABLE.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay&gt;&lt;/video&gt; 
+	  &lt;&lt;case 3&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_03_DESARROLLO_PROCEDIMIENTO.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay&gt;&lt;/video&gt; 
+	  &lt;&lt;case 4&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_A_INICIO_DE_LA_GESTION.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay&gt;&lt;/video&gt; 
+	  &lt;&lt;case 5&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_B_ELABORACION_DE_PLIEGO.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay&gt;&lt;/video&gt; 
+	  &lt;&lt;case 6&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_C_CONVOCATORIA.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot;autoplay&gt;&lt;/video&gt; 
+	  &lt;&lt;case 7&gt;&gt;
+	  &lt;video src=to &quot;videos/ANGELA_PEPA-JUEGO-PRG_04_D_EVALUACION_DE_OFERTAS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay&gt;&lt;/video&gt; 
+	  &lt;&lt;case 8&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_E_FINALIZACION_DE_PROCEDIMIENTO.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay&gt;&lt;/video&gt; 
+	  &lt;&lt;case 9&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_F_RECEPCION_DE_BIENES_O_SERVICIOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay&gt;&lt;/video&gt; 
+	  &lt;&lt;case 10&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_05_PRINCIPIOS_GENERALES_GESTION_DE_COMPRA.mp4&quot; width=&quot;800px&quot; height=&quot;280px autoplay&quot;&gt;&lt;/video&gt; 
+	 &lt;&lt;/switch&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
 	&lt;/div&gt;
+&lt;div class=&quot;botonera-videoplayer&quot;&gt;
+
+&lt;&lt;button &quot;Ver Listado&quot;&gt;&gt;
+  &lt;&lt;set $video to 0&gt;&gt;
+  &lt;&lt;script&gt;&gt;Engine.play(&quot;Consulta Experto&quot;)&lt;&lt;/script&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+
 &lt;&lt;button &quot;Ok&quot; Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
 
@@ -2164,18 +2249,66 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 &lt;p&gt;No hay definiciones que mostrar&lt;/p&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="J" tags="" position="1778,380" size="100,100">&lt;div class=&quot;definicion&quot;&gt;
 &lt;p&gt;No hay definiciones que mostrar&lt;/p&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="Tomo-1" tags="pdf nobr" position="695,897.5" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="Tomo-1" tags="pdf nobr" position="695,897" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 
 &lt;div class=&quot;display&quot;&gt;
-&lt;p&gt; &lt;a href=&quot;docs/tomo1.pdf&quot; target=&quot;_blank&quot;&gt;Descargar como PDF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;docs/tomo1.pdf&quot; target=&quot;_blank&quot;&gt;Abrir/Descargar como PDF&lt;/a&gt;&lt;/p&gt;
 [img[&quot;docs/tomo1/00.png&quot;]]
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="Tomo-2" tags="pdf nobr" position="804,899.5" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="Tomo-2" tags="pdf nobr" position="806,898" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 
 &lt;div class=&quot;display&quot;&gt;
-&lt;p&gt; &lt;a href=&quot;docs/tomo2.pdf&quot; target=&quot;_blank&quot;&gt;Descargar como PDF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;docs/tomo2.pdf&quot; target=&quot;_blank&quot;&gt;Abrir/Descargar como PDF&lt;/a&gt;&lt;/p&gt;
 [img[&quot;docs/tomo2/00.jpg&quot;]]
 &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="VideoInicio" tags="nobr" position="111,373" size="100,100">&lt;div class=&quot;pantalla-video&quot;&gt;
+&lt;&lt;if $primeraVez is true&gt;&gt;
+&lt;div class=&quot;contenedor-video&quot;&gt;
+&lt;video src=&quot;videos/bienvenida.mp4&quot; width=&quot;1280&quot; height=&quot;600&quot; autoplay&gt;&lt;/video&gt;&lt;/div&gt;
+
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;ConfiguracionAvatar&quot;&gt;Saltear Intro&lt;/div&gt;
+
+&lt;&lt;timed 56s&gt;&gt;
+&lt;div class=&quot;ventana-accion&quot;&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;ConfiguracionAvatar&quot;&gt;Comenzar a jugar&lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="video1" tags="video" position="986,1162" size="100,100">&lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay&gt;&lt;/video&gt;</tw-passagedata><tw-passagedata pid="69" name="videos" tags="video nobr" position="1094,1161" size="100,100">&lt;video src=$videonombre width=&quot;800px&quot; height=&quot;280px&quot;&gt;&lt;/video&gt;
+
+&lt;&lt;switch $video&gt;&gt;
+&lt;&lt;case 1&gt;&gt;
+&lt;&lt;set $videonombre to &quot;ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot;&gt;&gt;
+&lt;&lt;case 2&gt;&gt;
+&lt;&lt;set $videonombre to &quot;ANGELA_PEPA-JUEGO-PRG_02_PROCEDIMIENTO_SELECCION_APLICABLE.mp4&quot;&lt;&lt;/set&gt;&gt;
+&lt;&lt;case 3&gt;&gt;
+&lt;&lt;set $videonombre to &quot;ANGELA_PEPA-JUEGO-PRG_03_DESARROLLO_PROCEDIMIENTO.mp4&quot;&lt;&lt;/set&gt;&gt;
+&lt;&lt;case 4&gt;&gt;
+&lt;&lt;set $videonombre to &quot;ANGELA_PEPA-JUEGO-PRG_04_A_INICIO_DE_LA_GESTION.mp4&quot;&lt;&lt;/set&gt;&gt;
+&lt;&lt;case 5&gt;&gt;
+&lt;&lt;set $videonombre to &quot;ANGELA_PEPA-JUEGO-PRG_04_B_ELABORACION_DE_PLIEGO.mp4&quot;&lt;&lt;/set&gt;&gt;
+&lt;&lt;case 6&gt;&gt;
+&lt;&lt;set $videonombre to &quot;ANGELA_PEPA-JUEGO-PRG_04_C_CONVOCATORIA.mp4&quot;&lt;&lt;/set&gt;&gt;
+&lt;&lt;case 7&gt;&gt;
+&lt;&lt;set $videonombre to &quot;ANGELA_PEPA-JUEGO-PRG_04_D_EVALUACION_DE_OFERTAS.mp4&quot;&lt;&lt;/set&gt;&gt;
+&lt;&lt;case 8&gt;&gt;
+&lt;&lt;set $videonombre to &quot;ANGELA_PEPA-JUEGO-PRG_04_E_FINALIZACION_DE_PROCEDIMIENTO.mp4&quot;&lt;&lt;/set&gt;&gt;
+&lt;&lt;case 9&gt;&gt;
+&lt;&lt;set $videonombre to &quot;ANGELA_PEPA-JUEGO-PRG_04_F_RECEPCION_DE_BIENES_O_SERVICIOS.mp4&quot;&lt;&lt;/set&gt;&gt;
+&lt;&lt;case 10&gt;&gt;
+&lt;&lt;set $videonombre to &quot;ANGELA_PEPA-JUEGO-PRG_05_PRINCIPIOS_GENERALES_GESTION_DE_COMPRA.mp4&quot;&lt;&lt;/set&gt;&gt;
+&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="video3" tags="video" position="1201,1162" size="100,100">&lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;450px&quot;&gt;&lt;/video&gt;</tw-passagedata><tw-passagedata pid="71" name="video4" tags="" position="1306,1159" size="100,100">&lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;450px&quot;&gt;&lt;/video&gt;</tw-passagedata><tw-passagedata pid="72" name="video5" tags="video" position="1412,1162" size="100,100">&lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;450px&quot;&gt;&lt;/video&gt;</tw-passagedata><tw-passagedata pid="73" name="videolista" tags="nobr" position="847,1268" size="100,100">&lt;div class=&quot;videolista&quot;&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 2&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 3&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 4&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 5&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 6&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 7&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 8&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;/div&gt;
+	
 &lt;/div&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
