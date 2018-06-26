@@ -102,7 +102,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<div id="store-area" hidden><tw-storydata name="Contrataciones-nivel2" startnode="1" creator="Twine" creator-version="2.2.1" ifid="6DC0A223-5336-4CB9-A6E3-01A3E56A2D35" zoom="1" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#pista {
+	<div id="store-area" hidden><tw-storydata name="Contrataciones-nivel2" startnode="3" creator="Twine" creator-version="2.2.1" ifid="6DC0A223-5336-4CB9-A6E3-01A3E56A2D35" zoom="1" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#pista {
   background-color: cornsilk;
   color: brown;
   opacity: 0.7;
@@ -1363,6 +1363,7 @@ background-color: #9ec8cf4d;
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
 function tiene(objeto) { return objeto in inventario(); }
 
@@ -1388,157 +1389,98 @@ State.variables.inventario = {};
 
 
 
-</script><tw-passagedata pid="1" name="Intro" tags="sin-celu" position="246,329" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+
+</script><tw-passagedata pid="1" name="_StoryInterface" tags="" position="75,150" size="100,100">&lt;div id=&quot;aplicacion&quot;&gt;
+&lt;div id=&quot;passages&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="_PassageHeader" tags="nobr" position="200,25" size="100,100">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
+&lt;div class=&quot;cabecera&quot;&gt;
+  &lt;div id=&quot;avatar&quot;&gt;
+  &lt;&lt;print &quot;&lt;div class=\&quot;avatar-foto foto&quot; + $avatar + &quot;\&quot;&gt;&lt;/div&gt;&quot;&gt;&gt;
+	&lt;div id=&quot;avatar-texto&quot;&gt;$usuario&lt;/div&gt;
+	&lt;div id=&quot;progreso&quot;&gt;$Progreso / $Total&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;desarrollo&quot;&gt;
+	  &lt;&lt;button Reiniciar&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Intro" tags="sin-celu" position="75,300" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &#39;&#39;Al ingresar el participante recibe el audio de una voz en off que lo introduce en las reglas del juego y los objetivos que deberá sortear para resolver el desafío.&#39;&#39;
 
 [[Comenzar!|ConfiguracionAvatar]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Oficina" tags="nobr" position="388,329" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
-	[img[&quot;imagenes/INAP_fondo.png&quot;]]
-	&lt;div class=&quot;hotspot&quot; id=&quot;computadora&quot; data-passage=&quot;Computadora&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés ver los emails?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés consultar la biblioteca?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;hotspot&quot; id=&quot;impresora&quot; data-passage=&quot;Oficina Impresora&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Ir hacia impresora&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-	
-&lt;&lt;set $MostrarFooter to true&gt;&gt;
-&lt;&lt;agarrar &quot;experto&quot;&gt;&gt;
-&lt;&lt;agarrar &quot;glosario&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Oficina" tags="nobr" position="400,300" size="100,100">Estás en la oficina.
 
-&lt;div class=&quot;W&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;E&quot; data-passage=&quot;Oficina Este&quot;&gt;&lt;/div&gt;
-	
-&lt;/div&gt;
-
-Estás en la oficina.
-
-Podés ver los escritorios de [[Gómez|Escritorio Gómez]], [[Sara|Escritorio Sara]] y el [[tuyo|Escritorio]].</tw-passagedata><tw-passagedata pid="3" name="Escritorio Gómez" tags="" position="98,669" size="100,100">Estás en el escritorio de Gómez. Detrás de él se encuentra el [[fichero]] con expedientes y pliegos anteriores.
-
-[[Ir a tu escritorio|Escritorio]]
-[[Ir al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="4" name="Escritorio Sara" tags="" position="400,500" size="100,100">El escritorio de Sara y se vé ordenado, tiene en su oficina una [[pizarra]], su [[computadora]] y un [[rotafolios]].
+Podés ver los escritorios de [[Gómez|Escritorio Gómez]], [[Sara|Escritorio Sara]] y el [[tuyo|Escritorio]].</tw-passagedata><tw-passagedata pid="5" name="Escritorio Sara" tags="" position="400,500" size="100,100">El escritorio de Sara y se vé ordenado, tiene en su oficina una [[pizarra]], su [[computadora]] y un [[rotafolios]].
 
 &lt;&lt;if $mensajes.foto_sala&gt;&gt;Notás una [[pila de papeles|listado muebles]] sobre el escritorio.&lt;&lt;/if&gt;&gt;
 
 [[Ir a tu escritorio|Escritorio]]
-[[Ir al escritorio de Gómez|Escritorio Gómez]]</tw-passagedata><tw-passagedata pid="5" name="Escritorio" tags="" position="796,667" size="100,100">Estás en tu escritorio, podés acceder a tu [[computadora]], buscar algo interesante en la [[biblioteca]].
-
-[[Ir al escritorio de Gómez|Escritorio Gómez]]
-[[Ir al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="6" name="pizarra" tags="" position="169,843" size="100,100">Tiene varios Post-It pegados:
-* [[Nota de tu jefe|postit]].
-&lt;&lt;if $desafios.redactar&gt;&gt;* [[Nota con presupuesto|modulos]]
-&lt;&lt;else&gt;&gt;* Nota con presupuesto&lt;&lt;/if&gt;&gt;
-\
-&lt;&lt;if $desafios.redactar&gt;&gt;&#39;&#39;Nota:&#39;&#39; El documento oficial dice que está pegado en la compu de Sara pero vuelve medio incómodo dado cómo desarrollé esto. Se puede charlar si es estrictamente necesario&lt;&lt;/if&gt;&gt;
-
-[[Volver al escritorio|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="7" name="rotafolios" tags="sin-celu" position="499,843" size="100,100">&lt;&lt;switch $hoja&gt;&gt;
-&lt;&lt;case 0&gt;&gt;
-	Lorem Ipsum Hoja 1
-&lt;&lt;case 1&gt;&gt;
-	&lt;&lt;if $mensajes.modulos&gt;&gt;\
-	¿&lt;&lt;link &quot;Licitación pública&quot;&gt;&gt;
-		&lt;&lt;set $popup to &quot;Primer desafío aprobado!&quot;&gt;&gt;
-		&lt;&lt;set $siguiente_popup to &quot;Próximo paso autorizar el procedimiento.&quot;&gt;&gt;
-		&lt;&lt;set $pista to &quot;Tomate un descanso&quot;&gt;&gt;
-		&lt;&lt;goto &quot;rotafolios&quot;&gt;&gt;
-	&lt;&lt;/link&gt;&gt; o \
-	&lt;&lt;link &quot;Compulsa Abreviada&quot;&gt;&gt;
-		&lt;&lt;goto &quot;procedimiento incorrecto&quot;&gt;&gt;
-	&lt;&lt;/link&gt;&gt;?
-	&lt;&lt;else&gt;&gt;\
-	¿Licitación pública o Compulsa Abreviada?
-	&lt;&lt;/if&gt;&gt;
-&lt;&lt;case 2&gt;&gt;
-	Lorem Ipsum Hoja 3
-&lt;&lt;/switch&gt;&gt;
-
-[[Siguiente|rotafolios][$hoja to ($hoja + 1) % 3]]
-[[Anterior|rotafolios][$hoja to ($hoja + 1) % 3]]
-[[Volver al escritorio|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="8" name="postit" tags="" position="165,998" size="100,100">&lt;&lt;set $postit to &quot;leido&quot;&gt;&gt;
-//Acá te dejo una línea de tiempo de los pasos a seguir en los Procesos de Contrataciones. La descripción en profundidad de cada instancia lo tenes disponible en el Tomo 2, en la Biblioteca.//
-# Requerimiento
-# Pedido de la Unidad requiriente
-# Análisis y Agrupamiento con otros pedidos
-# Determinar el proceso de selección
-# Elaboración del Pliego
-# Observaciones al Proyecto del Pliego (etapa no obligatoria)
-# Formular proyecto de acto y remitir a Jurídico
-# Acto administrativo que autoriza el procedimiento
-# Recepción de Ofertas: recepción de ofertas, consultas y circulares
-# Apertura de Ofertas
-# Confeccionar cuadro comparativo
-# Vista de Oferentes
-# Verificación SIPRO
-# Evaluación de Ofertas
-# Remisión de las actuaciones a Comisión Evaluadora
-# Emisión de Dictamen de Evaluación
-# Notificar dictamen de evaluación
-# Posibles Impugnaciones al dictamen de evaluación
-# FIN DEL PROCEDIMIENTO
-# Acto administrativo que pone fin del procedimiento
-# Notificar ACTO
-# Notificar de la ORDEN de COMPRA
-# RECEPCIÓN Y PAGO
-
-[[Mirar la pizarra|pizarra]]</tw-passagedata><tw-passagedata pid="9" name="computadora" tags="sin-celu" position="743,837" size="100,100">!Autluk - Mails de &lt;vos@mail.com&gt;
-&lt;&lt;switch $ultimo_mail&gt;&gt;
-
-&lt;&lt;case &quot;inicio&quot;&gt;&gt;
-&#39;&#39;Asunto:&#39;&#39; Arrancamos!
-&#39;&#39;De:&#39;&#39; persona@mail.com
-&#39;&#39;Para:&#39;&#39; vos@mail.com
-
-Ahora sí que comenzó la acción!
-Nuestro plan de trabajo consiste en comprar el mobiliario y contratar el servicio de limpieza para el área nueva del museo.
-Le voy a delegar a un colega la contratación para la Biblioteca Multimedial, ya que por suerte hemos avanzado y sabemos que se trata de una compilsa abrevidada por monto.
-También me adelanté y le escribí a Mariela para que nos detalle el requerimiento del equipamiento mobiliario. Ya nos respondió. Deberás buscar su respuesta. Lo dejo en tus manos. Nos vemos!
-
-&lt;&lt;nobr&gt;&gt;
-&lt;&lt;if not $mensajes.foto_sala&gt;&gt;
-&lt;&lt;set $pista to &quot;Seguí las pantallas&quot;&gt;&gt;
-&lt;&lt;set $ultimo_mensaje to &quot;foto_sala&quot;&gt;&gt;
-&lt;&lt;set $nuevo_mensaje to true&gt;&gt;
-&lt;&lt;set $mails.inicio to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;\
-
-&lt;&lt;case &quot;redactar_mail&quot;&gt;&gt;
-&lt;&lt;set _form to {}&gt;&gt;\
-!!!Indicar que el desafío es decidir a quién mandar el mail.
-&#39;&#39;Asunto&#39;&#39;:
-&lt;&lt;radiobutton &quot;_form.asunto&quot; &quot;presupuesto&quot;&gt;&gt; Solicitud de presupuesto
-&lt;&lt;radiobutton &quot;_form.asunto&quot; &quot;especificaciones&quot;&gt;&gt; Solicitud de especificaciones técnicas
-&#39;&#39;De:&#39;&#39; vos@mail.com
-&#39;&#39;Para:&#39;&#39;
-&lt;&lt;radiobutton &quot;_form.destinatario&quot; &quot;muebles&quot;&gt;&gt; mueblestigre@gmail.com, ventas@hipermercadodelmueble.com, contacto@ofimuebles.com, mariela@formacion.museo.gob.ar
-&lt;&lt;radiobutton &quot;_form.destinatario&quot; &quot;mercados&quot;&gt;&gt; entregasya@gmail.com, infotech@orangetech.com, ventas@hipermercadodelhogar.com, mariela@formacion.museo.gob.ar
-
-!!!!Cuerpo
-Hola, estamos en busca de presupuestos para los siguientes ítems:
-# Rellenar esto
-# con las especificaciones
-# técnicas
-
-@@#evaluacion;@@
-
-&lt;&lt;if not $desafios.redactar&gt;&gt;\
-&lt;&lt;button &quot;Enviar&quot;&gt;&gt;
-	&lt;&lt;if  _form.asunto is &quot;presupuesto&quot;
-	  and _form.destinatario is &quot;muebles&quot;&gt;&gt;
-		&lt;&lt;set $popup to &quot;Para completar el requerimiento necesitás establecer un monto presunto que se puede obtener solicitando los presupuestos. ¿Cuál es el próximo paso? Calcular a cuántos módulos equivale. Alguien lo hizo por vos.&quot;&gt;&gt;
-		&lt;&lt;set $pista to &quot;Ya estuviste por ahí&quot;&gt;&gt;
-		&lt;&lt;set $desafios.redactar to true&gt;&gt;
-		&lt;&lt;goto &quot;computadora&quot;&gt;&gt;
+[[Ir al escritorio de Gómez|Escritorio Gómez]]</tw-passagedata><tw-passagedata pid="6" name="PassageFooter" tags="nobr" position="200,150" size="100,100">/* Si no está el tag sin-celu entonces tengo que mostrar el celu */	
+&lt;&lt;if not tags().includes(&quot;sin-celu&quot;)&gt;&gt;
+	&lt;&lt;if $nuevo_mensaje&gt;&gt;
+		[[Tenés un mensaje sin leer en tu celu!|celular]]
 	&lt;&lt;else&gt;&gt;
-		&lt;&lt;replace &quot;#evaluacion&quot;&gt;&gt;El documento oficial dice que el feedback es el mismo si se responde bien o mal esto. A mí me parece que queda muy raro así que puse esto.&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;&lt;else&gt;&gt;\
-	&lt;&lt;button &quot;Enviado&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+		[[Revisar tu celular|celular]]
+ 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;default&gt;&gt;
-No tenés mails.
 
-&lt;&lt;/switch&gt;&gt;
+&lt;&lt;if $pista&gt;&gt;@@#pista;&#39;&#39;Pista:&#39;&#39; $pista@@&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $popup&gt;&gt;
+	&lt;&lt;run UI.alert($popup)&gt;&gt;
+	&lt;&lt;set $popup to &quot;&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+/* Solución muy fea */
+&lt;&lt;if $siguiente_popup&gt;&gt;
+	&lt;&lt;set $popup to $siguiente_popup&gt;&gt;
+	&lt;&lt;set $siguiente_popup to &quot;&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="DOCUMENTACIÓN" tags="" position="400,25" size="100,100">Acá voy a ir poniendo la forma en que funciona la historia para cuando haya que editarla al agregar los contenidos gráficos.
 
-&lt;&lt;return &quot;Volver al escritorio&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="biblioteca" tags="" position="873,838" size="100,100">[[Volver al escritorio|Escritorio]]</tw-passagedata><tw-passagedata pid="11" name="celular" tags="sin-celu" position="385,158" size="100,100">&lt;&lt;set $nuevo_mensaje to false&gt;&gt; \
+La historia consta de 12 partes:
+
+1. Paso inicial
+El usuario está libre de explorar.
+Debe interactuar con la computadora para avanzar.
+
+2. Requerimiento
+Debe interactuar con su celular para avanzar.
+
+3. Especificaciones técnicas I
+El usuario debe interactuar con una pila de papeles en el escritorio de Sara.
+
+4. Especificaciones técnicas II
+Recibe un mensaje a su celular el cuál debe responder por sí o por no.
+
+5. Armado del formulario para el pliego:
+El participante debe abrir un fichero y encontrar allí dentro un cuestionario multiple-choice que se completa por ensayo y error.
+
+NOTA: estaría bueno dar algún tipo de feedback?
+
+6. Solicitar presupuesto mobiliario:
+El participante debe usar alguna computadora para enviar un mail, el desafío está diseñado para poder reutilizar lo hecho en el primer desafío del nivel 1.
+
+NOTA: el feedback para responder bien o mal es el mismo, esto no me queda claro cómo implementarlo.
+
+7. Identificar tipo de procedimiento:
+El participante tiene que encontrar un post-it en la compu de sara.
+Se le notifica que hay una acción más que realizar.
+El participante debe responder la pregunta planteada en la segunda hoja del rotafolios
+
+8. Autorización del procedimiento y aprobación del pliego
+El participante debe sentarse en una silla.
+Un cadete debe ingresar traerle las buenasnuevas.
+
+9. La convocatoria
+El participante debe interactuar con una computadora. La interfaz deseada no queda clara (tocar la computadora hace que se apruebe sólo?).
+Luego le llega un mensaje de audio del entrenador.
+Luego una llamada al teléfono fijo de la oficina.
+Esta última llamada le plantea una desición por sí o no.
+
+10. Identificación de últimos pasos
+El participante debe tomar el cuaderno azul de la biblioteca y resolver el ordenar (numerar) los pasos a seguir.
+
+11. Fin del proceso de selección
+El participante debe acceder a una sala contigua y recibir las felicitaciones del entrenador.
+Al finalizar le hace una pregunta con tres opciones posibles.</tw-passagedata><tw-passagedata pid="8" name="celular" tags="sin-celu" position="400,150" size="100,100">&lt;&lt;set $nuevo_mensaje to false&gt;&gt; \
 &lt;&lt;set $mensajes[$ultimo_mensaje] to true&gt;&gt; \
 &lt;&lt;switch $ultimo_mensaje&gt;&gt;
 
@@ -1609,12 +1551,63 @@ Esas no son las especificaciones técnicas, simplemente se trata de una enumerac
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;\
 
+&lt;&lt;case &quot;audio_entrecortado&quot;&gt;&gt;
+!!Conversacion con Juan
+@@.mensaje;
+&#39;&#39;mensaje de audio&#39;&#39;
+Hola, cómo estás? Estoy llegando a Buenos Aires y si bien mañana me incorporo a la oficina, quería acompañarte en estos últimos pasos. Ya estás a punto de cumplir la misión, bravo! Ya te han llegado las ofertas me dijo Sara (el audio se interrumpe...)
+@@
+@@.mensaje;
+Disculpá, me está entrando una llamada
+@@
+&lt;&lt;set $ultimo_mensaje to &quot;oferta dudosa&quot;&gt;&gt;
+&lt;&lt;set $nuevo_mensaje to true&gt;&gt;
+
+&lt;&lt;case &quot;oferta dudosa&quot;&gt;&gt;
+!!Conversación con Atilio Ofimuebles
+@@.mensaje;
+Hola soy Atilio Ceretti de la empresa Ofimuebles
+@@
+@@.mensaje;
+Quería tener referencias sobre las ofertas recibidas, en la medida de lo posible, para saber si debo ajustar algo en la propuesta que hemos enviado.
+@@
+&lt;&lt;if not $desafios.cometa&gt;&gt;
+	@@.respuesta;
+	&lt;&lt;link &quot;Todavía no tuve el tiempo de leer la propuesta, pero para ajustarte mejor podrías...&quot;&gt;&gt;
+		&lt;&lt;set $popup to &quot;No, no podés hacerlo, estarías incurriendo en una falta al principio de transparencia.&quot;&gt;&gt;
+		&lt;&lt;goto &quot;celular&quot;&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	@@
+	@@.respuesta;
+	&lt;&lt;link &quot;Lo lamento, no puedo darte ninguna información sobre las ofertas.&quot;&gt;&gt;
+		&lt;&lt;set $popup to &quot;Así es, no puedes porque de hacerlo estarías incurriendo en una falta al principio de transparencia&quot;&gt;&gt;
+		&lt;&lt;set $desafios.cometa to true&gt;&gt;
+		&lt;&lt;goto &quot;celular&quot;&gt;&gt;
+	&lt;&lt;/link&gt;&gt;
+	@@
+&lt;&lt;else&gt;&gt;
+	@@.respuesta;
+	Lo lamento, no puedo darte ninguna información sobre las ofertas.
+	@@
+	&lt;&lt;set $ultimo_mensaje to &quot;ultimo_mensaje&quot;&gt;&gt;
+	&lt;&lt;set $nuevo_mensaje to true&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;case &quot;ultimo_mensaje&quot;&gt;&gt;
+@@.mensaje;
+Justo me pasaron a buscar por el aeropuesto, personame. Sé que estamos casi en el final, nos quedan unos pocos pasos para completar el procedimiento y al fin tener los muebles!!
+@@
+@@.mensaje;
+Te pido que le dejes a Sara escritos los pasos siguientes en el cuaderno de novedades del área.
+&lt;&lt;set $pista to &quot;El cuaderno no se encuentra en un escritorio&quot;&gt;&gt;
+@@
+
 &lt;&lt;default&gt;&gt;
 No tenés mensajes.
 
 &lt;&lt;/switch&gt;&gt;\
 
-&lt;&lt;return &quot;Volver&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="StoryInit" tags="" position="42,157" size="100,100">/* Generales */
+&lt;&lt;return &quot;Volver&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="StoryInit" tags="" position="75,25" size="100,100">/* Generales */
 &lt;&lt;set $popup to &quot;&quot;&gt;&gt;
 &lt;&lt;set $siguiente_popup to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pista to &quot;&quot;&gt;&gt;
@@ -1661,92 +1654,45 @@ No tenés mensajes.
 
 &lt;&lt;cacheaudio &quot;ambiente&quot; &quot;sonidos/musica.ogg&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambiente2&quot; &quot;sonidos/musica2.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="PassageFooter" tags="nobr" position="161,156" size="100,100">/* Si no está el tag sin-celu entonces tengo que mostrar el celu */
-&lt;div class=&quot;toolbox&quot;&gt;
-		&lt;&lt;for _item, _data range $inventario&gt;&gt;
-			&lt;&lt;include _item&gt;&gt;
-		&lt;&lt;/for&gt;&gt;
+&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="ConfiguracionAvatar" tags="nobr" position="250,300" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;div class=&quot;contenedorCentrado&quot; id=&quot;ventana-avatar&quot;&gt;
+&lt;div class=&quot;texto-bienvenida&quot;&gt;Por favor ingresá tu nombre.&lt;/div&gt;
+&lt;&lt;textbox &quot;$usuario&quot; &quot;Anónimo&quot;&gt;&gt;
+&lt;div class=&quot;avatar-selector&quot;&gt;&lt;/div&gt;	
+&lt;div class=&quot;botones&quot;&gt;
+  &lt;div class=&quot;avatar-atras&quot;&gt;Anterior&lt;/div&gt;
+  &lt;div class=&quot;label-config&quot;&gt;Elegí un avatar&lt;/div&gt;
+  &lt;div class=&quot;avatar-adelante&quot;&gt;Siguiente&lt;/div&gt;
 &lt;/div&gt;
-	
-&lt;&lt;if not tags().includes(&quot;sin-celu&quot;)&gt;&gt;
-	&lt;&lt;if $nuevo_mensaje&gt;&gt;
-		[[Tenés un mensaje sin leer en tu celu!|celular]]
-	&lt;&lt;else&gt;&gt;
-		[[Revisar tu celular|celular]]
- 	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
+&lt;&lt;button &quot;Listo !&quot; Oficina&gt;&gt;&lt;&lt;set $MostrarAvatar to true&gt;&gt;&lt;&lt;set $primeraVez to false&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-&lt;&lt;if $pista&gt;&gt;@@#pista;&#39;&#39;Pista:&#39;&#39; $pista@@&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $popup&gt;&gt;
-	&lt;&lt;run UI.alert($popup)&gt;&gt;
-	&lt;&lt;set $popup to &quot;&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-/* Solución muy fea */
-&lt;&lt;if $siguiente_popup&gt;&gt;
-	&lt;&lt;set $popup to $siguiente_popup&gt;&gt;
-	&lt;&lt;set $siguiente_popup to &quot;&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="listado muebles" tags="sin-celu" position="303,844" size="100,100">Encontrás entre los papeles la lista a mano alzada con los muebles necesarios:
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(function(){
+		var vars = SugarCube.State.variables;
+		var offset = 0;
 
-* 150 sillas
-* 2 cafeteras
-* Biblioteca para 2500 libros
-* Sillones
+		jQuery(&#39;.avatar-atras&#39;).click(function() {
+			vars.avatar = (4 + vars.avatar - 1) % 4;
+			offset += 256;
 
-[[Volver al escritorio|Escritorio Sara]]
+			jQuery(&#39;.avatar-selector&#39;)[0]
+			.style.backgroundPositionX = offset + &#39;px&#39;;
+		});
+		jQuery(&#39;.avatar-adelante&#39;).click(function() {
+			vars.avatar = (4 + vars.avatar + 1) % 4;
+			offset -= 256;
 
-&lt;&lt;if not $mensajes[&quot;especificaciones validas?&quot;]&gt;&gt;
-&lt;&lt;set $nuevo_mensaje to true&gt;&gt;
-&lt;&lt;set $ultimo_mensaje to &quot;especificaciones validas?&quot;&gt;&gt;
-&lt;&lt;set $pista to &quot;&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="DOCUMENTACIÓN" tags="" position="390,30" size="100,100">Acá voy a ir poniendo la forma en que funciona la historia para cuando haya que editarla al agregar los contenidos gráficos.
+			jQuery(&#39;.avatar-selector&#39;)[0]
+			.style.backgroundPositionX = offset + &#39;px&#39;;
+		});
+	});	
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="11" name="Escritorio Gómez" tags="" position="100,700" size="100,100">Estás en el escritorio de Gómez. Detrás de él se encuentra el [[fichero]] con expedientes y pliegos anteriores.
 
-La historia consta de 12 partes:
-
-1. Paso inicial
-El usuario está libre de explorar.
-Debe interactuar con la computadora para avanzar.
-
-2. Requerimiento
-Debe interactuar con su celular para avanzar.
-
-3. Especificaciones técnicas I
-El usuario debe interactuar con una pila de papeles en el escritorio de Sara.
-
-4. Especificaciones técnicas II
-Recibe un mensaje a su celular el cuál debe responder por sí o por no.
-
-5. Armado del formulario para el pliego:
-El participante debe abrir un fichero y encontrar allí dentro un cuestionario multiple-choice que se completa por ensayo y error.
-
-NOTA: estaría bueno dar algún tipo de feedback?
-
-6. Solicitar presupuesto mobiliario:
-El participante debe usar alguna computadora para enviar un mail, el desafío está diseñado para poder reutilizar lo hecho en el primer desafío del nivel 1.
-
-NOTA: el feedback para responder bien o mal es el mismo, esto no me queda claro cómo implementarlo.
-
-7. Identificar tipo de procedimiento:
-El participante tiene que encontrar un post-it en la compu de sara.
-Se le notifica que hay una acción más que realizar.
-El participante debe responder la pregunta planteada en la segunda hoja del rotafolios
-
-8. Autorización del procedimiento y aprobación del pliego
-El participante debe sentarse en una silla.
-Un cadete debe ingresar traerle las buenasnuevas.
-
-9. La convocatoria
-El participante debe interactuar con una computadora. La interfaz deseada no queda clara (tocar la computadora hace que se apruebe sólo?).
-Luego le llega un mensaje de audio del entrenador.
-Luego una llamada al teléfono fijo de la oficina.
-Esta última llamada le plantea una desición por sí o no.
-
-10. Identificación de últimos pasos
-El participante debe tomar el cuaderno azul de la biblioteca y resolver el ordenar (numerar) los pasos a seguir.
-
-11. Fin del proceso de selección
-El participante debe acceder a una sala contigua y recibir las felicitaciones del entrenador.
-Al finalizar le hace una pregunta con tres opciones posibles.</tw-passagedata><tw-passagedata pid="16" name="fichero" tags="" position="39,844" size="100,100">Estás frente a un fichero muy grande, la mayoría de los cajones están cerrados con llave.
+[[Ir a tu escritorio|Escritorio]]
+[[Ir al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="12" name="fichero" tags="" position="100,900" size="100,100">Estás frente a un fichero muy grande, la mayoría de los cajones están cerrados con llave.
 
 * &lt;&lt;linkreplace &quot;Cajon.&quot;&gt;&gt;\
 Cajon.
@@ -1772,7 +1718,14 @@ Está lleno de especificaciones técnicas de pliegos anteriores.
 * &lt;&lt;linkreplace &quot;Cajon.&quot;&gt;&gt;Cajon. Está vacío.&lt;&lt;/linkreplace&gt;&gt;
 * &lt;&lt;linkreplace &quot;Cajon.&quot;&gt;&gt;Cajon. Está cerrado con llave.&lt;&lt;/linkreplace&gt;&gt;
 
-[[Volver al escritorio|Escritorio Gómez]]</tw-passagedata><tw-passagedata pid="17" name="especificaciones técnicas" tags="sin-celu" position="35,994" size="100,100">&lt;&lt;set _solucion to {
+[[Volver al escritorio|Escritorio Gómez]]</tw-passagedata><tw-passagedata pid="13" name="pizarra" tags="" position="225,900" size="100,100">Tiene varios Post-It pegados:
+* [[Nota de tu jefe|postit]].
+&lt;&lt;if $desafios.redactar&gt;&gt;* [[Nota con presupuesto|modulos]]
+&lt;&lt;else&gt;&gt;* Nota con presupuesto&lt;&lt;/if&gt;&gt;
+\
+&lt;&lt;if $desafios.redactar&gt;&gt;&#39;&#39;Nota:&#39;&#39; El documento oficial dice que está pegado en la compu de Sara pero vuelve medio incómodo dado cómo desarrollé esto. Se puede charlar si es estrictamente necesario&lt;&lt;/if&gt;&gt;
+
+[[Volver al escritorio|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="14" name="especificaciones técnicas" tags="sin-celu" position="75,1100" size="100,100">&lt;&lt;set _solucion to {
 	0: true,
 	5: true,
 	21: true,
@@ -1853,7 +1806,33 @@ Al principio del formulario tiene que haber un post-it pegado que rece:
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-[[Volver al fichero|fichero]]</tw-passagedata><tw-passagedata pid="18" name="modulos" tags="sin-celu" position="299,1001" size="100,100">Muebles: 8.300 módulos
+[[Volver al fichero|fichero]]</tw-passagedata><tw-passagedata pid="15" name="postit" tags="" position="200,1100" size="100,100">&lt;&lt;set $postit to &quot;leido&quot;&gt;&gt;
+//Acá te dejo una línea de tiempo de los pasos a seguir en los Procesos de Contrataciones. La descripción en profundidad de cada instancia lo tenes disponible en el Tomo 2, en la Biblioteca.//
+# Requerimiento
+# Pedido de la Unidad requiriente
+# Análisis y Agrupamiento con otros pedidos
+# Determinar el proceso de selección
+# Elaboración del Pliego
+# Observaciones al Proyecto del Pliego (etapa no obligatoria)
+# Formular proyecto de acto y remitir a Jurídico
+# Acto administrativo que autoriza el procedimiento
+# Recepción de Ofertas: recepción de ofertas, consultas y circulares
+# Apertura de Ofertas
+# Confeccionar cuadro comparativo
+# Vista de Oferentes
+# Verificación SIPRO
+# Evaluación de Ofertas
+# Remisión de las actuaciones a Comisión Evaluadora
+# Emisión de Dictamen de Evaluación
+# Notificar dictamen de evaluación
+# Posibles Impugnaciones al dictamen de evaluación
+# FIN DEL PROCEDIMIENTO
+# Acto administrativo que pone fin del procedimiento
+# Notificar ACTO
+# Notificar de la ORDEN de COMPRA
+# RECEPCIÓN Y PAGO
+
+[[Mirar la pizarra|pizarra]]</tw-passagedata><tw-passagedata pid="16" name="modulos" tags="sin-celu" position="325,1100" size="100,100">Muebles: 8.300 módulos
 &lt;&lt;if not $desafios.procedimiento&gt;&gt;\
 &lt;&lt;set $siguiente_popup to &quot;Identificar el tipo de procedimiento de selección.&quot;&gt;&gt;\
 &lt;&lt;set $pista to &quot;La pregunta está oculta en un objeto que se usa para dar capacitaciones&quot;&gt;&gt;\
@@ -1861,126 +1840,139 @@ Al principio del formulario tiene que haber un post-it pegado que rece:
 &lt;&lt;set $mensajes.modulos to true&gt;&gt;\
 &lt;&lt;/if&gt;&gt;
 
-[[Volver a la pizarra|pizarra]]</tw-passagedata><tw-passagedata pid="19" name="procedimiento incorrecto" tags="sin-celu" position="576,993" size="100,100">&lt;&lt;set $siguiente_popup to &quot;Próximo paso autorizar el procedimiento, pero primero leé la documentación necesaria.&quot;&gt;&gt;
-&lt;&lt;set $pista to &quot;Tomate un descanso&quot;&gt;&gt;
+[[Volver a la pizarra|pizarra]]</tw-passagedata><tw-passagedata pid="17" name="listado muebles" tags="sin-celu" position="350,900" size="100,100">Encontrás entre los papeles la lista a mano alzada con los muebles necesarios:
 
-Esto se supone que es un celular con el entrenador enojado mandándote a leer los libracos.
+* 150 sillas
+* 2 cafeteras
+* Biblioteca para 2500 libros
+* Sillones
 
-[[DOCUMENTOS NO IMPLEMENTADOS: Ir a la oficina|Oficina]]</tw-passagedata><tw-passagedata pid="20" name="StoryInterface" tags="" position="41,273.5" size="100,100">&lt;div id=&quot;aplicacion&quot;&gt;
-&lt;div id=&quot;passages&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="PassageHeader" tags="nobr" position="155,41.5" size="100,100">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
-&lt;div class=&quot;cabecera&quot;&gt;
-  &lt;div id=&quot;avatar&quot;&gt;
-  &lt;&lt;print &quot;&lt;div class=\&quot;avatar-foto foto&quot; + $avatar + &quot;\&quot;&gt;&lt;/div&gt;&quot;&gt;&gt;
-	&lt;div id=&quot;avatar-texto&quot;&gt;$usuario&lt;/div&gt;
-	&lt;div id=&quot;progreso&quot;&gt;$Progreso / $Total&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div id=&quot;desarrollo&quot;&gt;
-	  &lt;&lt;button Reiniciar&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="ConfiguracionAvatar" tags="nobr" position="48,394.5" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
-&lt;div class=&quot;contenedorCentrado&quot; id=&quot;ventana-avatar&quot;&gt;
-&lt;div class=&quot;texto-bienvenida&quot;&gt;Por favor ingresá tu nombre.&lt;/div&gt;
-&lt;&lt;textbox &quot;$usuario&quot; &quot;Anónimo&quot;&gt;&gt;
-&lt;div class=&quot;avatar-selector&quot;&gt;&lt;/div&gt;	
-&lt;div class=&quot;botones&quot;&gt;
-  &lt;div class=&quot;avatar-atras&quot;&gt;Anterior&lt;/div&gt;
-  &lt;div class=&quot;label-config&quot;&gt;Elegí un avatar&lt;/div&gt;
-  &lt;div class=&quot;avatar-adelante&quot;&gt;Siguiente&lt;/div&gt;
-&lt;/div&gt;
+[[Volver al escritorio|Escritorio Sara]]
 
-&lt;&lt;button &quot;Listo !&quot; Oficina&gt;&gt;&lt;&lt;set $MostrarAvatar to true&gt;&gt;&lt;&lt;set $primeraVez to false&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script type=&quot;text/javascript&quot;&gt;
-$(function(){
-		var vars = SugarCube.State.variables;
-		var offset = 0;
-
-		jQuery(&#39;.avatar-atras&#39;).click(function() {
-			vars.avatar = (4 + vars.avatar - 1) % 4;
-			offset += 256;
-
-			jQuery(&#39;.avatar-selector&#39;)[0]
-			.style.backgroundPositionX = offset + &#39;px&#39;;
-		});
-		jQuery(&#39;.avatar-adelante&#39;).click(function() {
-			vars.avatar = (4 + vars.avatar + 1) % 4;
-			offset -= 256;
-
-			jQuery(&#39;.avatar-selector&#39;)[0]
-			.style.backgroundPositionX = offset + &#39;px&#39;;
-		});
-	});	
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="23" name="Consulta Experto" tags="nobr" position="860,401.5" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
-
-&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
-&lt;div class=&quot;videoplayer&quot;&gt;
-	&lt;div class=&quot;video&quot; id=&quot;visor&quot;&gt;
-	&lt;&lt;if $video is 0&gt;&gt;
-		&lt;&lt;include &quot;vista-iconos&quot;&gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;include &quot;videos&quot;&gt;&gt;	
-	&lt;&lt;/if&gt;&gt;
-	&lt;/div&gt;
-&lt;div class=&quot;botonera-videoplayer&quot;&gt;
-
-&lt;&lt;button &quot;Ver Listado&quot;&gt;&gt;
-  &lt;&lt;set $video to 0&gt;&gt;
-  &lt;&lt;script&gt;&gt;Engine.play(&quot;Consulta Experto&quot;)&lt;&lt;/script&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-
-&lt;&lt;button &quot;Ok&quot; Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="videos" tags="nobr" position="969,507.5" size="100,100">&lt;&lt;switch $video&gt;&gt;
+&lt;&lt;if not $mensajes[&quot;especificaciones validas?&quot;]&gt;&gt;
+&lt;&lt;set $nuevo_mensaje to true&gt;&gt;
+&lt;&lt;set $ultimo_mensaje to &quot;especificaciones validas?&quot;&gt;&gt;
+&lt;&lt;set $pista to &quot;&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="rotafolios" tags="sin-celu" position="550,900" size="100,100">&lt;&lt;switch $hoja&gt;&gt;
+&lt;&lt;case 0&gt;&gt;
+	Lorem Ipsum Hoja 1
 &lt;&lt;case 1&gt;&gt;
-	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
-
+	&lt;&lt;if $mensajes.modulos and not $desafios.tipo&gt;&gt;\
+	¿&lt;&lt;link [[Licitación pública|cadete]]&gt;&gt;
+		&lt;&lt;set $popup to &quot;Primer desafío aprobado!&quot;&gt;&gt;
+		&lt;&lt;set $desafios.tipo to true&gt;&gt;
+	&lt;&lt;/link&gt;&gt; o \
+	&lt;&lt;link [[Compulsa Abreviada|procedimiento incorrecto]]&gt;&gt;
+	&lt;&lt;/link&gt;&gt;?
+	&lt;&lt;else&gt;&gt;\
+	¿Licitación pública o Compulsa Abreviada?
+	&lt;&lt;/if&gt;&gt;
 &lt;&lt;case 2&gt;&gt;
-	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_02_PROCEDIMIENTO_SELECCION_APLICABLE.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+	Lorem Ipsum Hoja 3
+&lt;&lt;/switch&gt;&gt;
 
-&lt;&lt;case 3&gt;&gt;
-	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_03_DESARROLLO_PROCEDIMIENTO.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+[[Siguiente|rotafolios][$hoja to ($hoja + 1) % 3]]
+[[Anterior|rotafolios][$hoja to ($hoja + 1) % 3]]
+[[Volver al escritorio|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="19" name="procedimiento incorrecto" tags="sin-celu" position="650,1100" size="100,100">Esto se supone que es un celular con el entrenador enojado mandándote a leer los libracos.
 
-&lt;&lt;case 4&gt;&gt;
-	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_A_INICIO_DE_LA_GESTION.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+[[DOCUMENTOS NO IMPLEMENTADOS: Ir a la oficina|Oficina]]</tw-passagedata><tw-passagedata pid="20" name="computadora" tags="sin-celu" position="700,900" size="100,100">!Autluk - Mails de &lt;vos@mail.com&gt;
+&lt;&lt;switch $ultimo_mail&gt;&gt;
 
-&lt;&lt;case 5&gt;&gt;
-	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_B_ELABORACION_DE_PLIEGO.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+&lt;&lt;case &quot;inicio&quot;&gt;&gt;
+&#39;&#39;Asunto:&#39;&#39; Arrancamos!
+&#39;&#39;De:&#39;&#39; persona@mail.com
+&#39;&#39;Para:&#39;&#39; vos@mail.com
 
-&lt;&lt;case 6&gt;&gt;
-	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_C_CONVOCATORIA.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot;autoplay controls&gt;&lt;/video&gt; 
+Ahora sí que comenzó la acción!
+Nuestro plan de trabajo consiste en comprar el mobiliario y contratar el servicio de limpieza para el área nueva del museo.
+Le voy a delegar a un colega la contratación para la Biblioteca Multimedial, ya que por suerte hemos avanzado y sabemos que se trata de una compilsa abrevidada por monto.
+También me adelanté y le escribí a Mariela para que nos detalle el requerimiento del equipamiento mobiliario. Ya nos respondió. Deberás buscar su respuesta. Lo dejo en tus manos. Nos vemos!
 
-&lt;&lt;case 7&gt;&gt;
-	  &lt;video src=to &quot;videos/ANGELA_PEPA-JUEGO-PRG_04_D_EVALUACION_DE_OFERTAS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if not $mensajes.foto_sala&gt;&gt;
+&lt;&lt;set $pista to &quot;Seguí las pantallas&quot;&gt;&gt;
+&lt;&lt;set $ultimo_mensaje to &quot;foto_sala&quot;&gt;&gt;
+&lt;&lt;set $nuevo_mensaje to true&gt;&gt;
+&lt;&lt;set $mails.inicio to true&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;\
 
-&lt;&lt;case 8&gt;&gt;
-	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_E_FINALIZACION_DE_PROCEDIMIENTO.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+&lt;&lt;case &quot;redactar_mail&quot;&gt;&gt;
+&lt;&lt;set _form to {}&gt;&gt;\
+!!!Indicar que el desafío es decidir a quién mandar el mail.
+&#39;&#39;Asunto&#39;&#39;:
+&lt;&lt;radiobutton &quot;_form.asunto&quot; &quot;presupuesto&quot;&gt;&gt; Solicitud de presupuesto
+&lt;&lt;radiobutton &quot;_form.asunto&quot; &quot;especificaciones&quot;&gt;&gt; Solicitud de especificaciones técnicas
+&#39;&#39;De:&#39;&#39; vos@mail.com
+&#39;&#39;Para:&#39;&#39;
+&lt;&lt;radiobutton &quot;_form.destinatario&quot; &quot;muebles&quot;&gt;&gt; mueblestigre@gmail.com, ventas@hipermercadodelmueble.com, contacto@ofimuebles.com, mariela@formacion.museo.gob.ar
+&lt;&lt;radiobutton &quot;_form.destinatario&quot; &quot;mercados&quot;&gt;&gt; entregasya@gmail.com, infotech@orangetech.com, ventas@hipermercadodelhogar.com, mariela@formacion.museo.gob.ar
 
-&lt;&lt;case 9&gt;&gt;
-	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_F_RECEPCION_DE_BIENES_O_SERVICIOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+!!!!Cuerpo
+Hola, estamos en busca de presupuestos para los siguientes ítems:
+# Rellenar esto
+# con las especificaciones
+# técnicas
 
-&lt;&lt;case 10&gt;&gt;
-	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_05_PRINCIPIOS_GENERALES_GESTION_DE_COMPRA.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+@@#evaluacion;@@
 
-&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="vista-iconos" tags="nobr" position="969,401.5" size="100,100">&lt;div class=&quot;videolista&quot;&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 1&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 2&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 2&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 3&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 3&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 4&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 4&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 5&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 5&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 6&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 6&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 7&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 7&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 8&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 8&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 9&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 10&lt;/div&gt;&lt;/div&gt;
-	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="PalabrasClave" tags="nobr" position="859,289.5" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
+&lt;&lt;if not $desafios.redactar&gt;&gt;\
+&lt;&lt;button &quot;Enviar&quot;&gt;&gt;
+	&lt;&lt;if  _form.asunto is &quot;presupuesto&quot;
+	  and _form.destinatario is &quot;muebles&quot;&gt;&gt;
+		&lt;&lt;set $popup to &quot;Para completar el requerimiento necesitás establecer un monto presunto que se puede obtener solicitando los presupuestos. ¿Cuál es el próximo paso? Calcular a cuántos módulos equivale. Alguien lo hizo por vos.&quot;&gt;&gt;
+		&lt;&lt;set $pista to &quot;Ya estuviste por ahí&quot;&gt;&gt;
+		&lt;&lt;set $desafios.redactar to true&gt;&gt;
+		&lt;&lt;goto &quot;computadora&quot;&gt;&gt;
+	&lt;&lt;else&gt;&gt;
+		&lt;&lt;replace &quot;#evaluacion&quot;&gt;&gt;El documento oficial dice que el feedback es el mismo si se responde bien o mal esto. A mí me parece que queda muy raro así que puse esto.&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+&lt;&lt;else&gt;&gt;\
+	&lt;&lt;button &quot;Enviado&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;case &quot;boletin&quot;&gt;&gt;
+&#39;&#39;Nota:&#39;&#39; Diceñar la interfaz, el documento oficial dice: //El participante clickea sobre la pantalla de una de las computadoras. Al clickearlo le aparece un mensaje con un boletín oficial de fondo y con la leyenda &quot;Convocatoria cumplida y publicada&quot;//
+!!Boletín Oficial
+&lt;&lt;if not $desafios.boletin&gt;&gt;
+	&lt;&lt;button &quot;Publicar&quot;&gt;&gt;
+		&lt;&lt;set $desafios.boletin to true&gt;&gt;
+		&lt;&lt;set $popup to &quot;Convocatoria cumplida y publicada&quot;&gt;&gt;
+		&lt;&lt;set $pista to &quot;&quot;&gt;&gt;
+		&lt;&lt;set $ultimo_mensaje to &quot;audio_entrecortado&quot;&gt;&gt;
+		&lt;&lt;set $nuevo_mensaje to true&gt;&gt;
+		&lt;&lt;goto &quot;computadora&quot;&gt;&gt;
+	&lt;&lt;/button&gt;&gt;
+&lt;&lt;else&gt;&gt;
+Mostrar el boletin oficial aca
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;default&gt;&gt;
+No tenés mails.
+
+&lt;&lt;/switch&gt;&gt;
+
+&lt;&lt;return &quot;Volver al escritorio&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="biblioteca" tags="" position="900,900" size="100,100">[[Volver al escritorio|Escritorio]]</tw-passagedata><tw-passagedata pid="22" name="Escritorio" tags="" position="800,700" size="100,100">Estás en tu escritorio, podés acceder a tu [[computadora]], buscar algo interesante en la [[biblioteca]].
+
+[[Ir al escritorio de Gómez|Escritorio Gómez]]
+[[Ir al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="23" name="glosario" tags="nobr item" position="700,200" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;glosario&quot; data-passage=&quot;PalabrasClave&quot;&gt;
+	/* &lt;img src=&quot;imagenes/herramientas/glosario.png&quot;&gt; */
+	&lt;div class=&quot;item-tooltip&quot;&gt;
+		&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="experto" tags="nobr item" position="700,325" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;experto&quot; data-passage=&quot;Consulta Experto&quot;&gt;
+	/*&lt;img src=&quot;imagenes/herramientas/experto.png&quot;&gt;*/
+	&lt;div class=&quot;item-tooltip&quot;&gt;
+		&lt;span class=&quot;tooltiptext&quot;&gt;Consulta con Experto&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="Portada" tags="nobr" position="825,75" size="100,100">&lt;div class=&quot;portada&quot;&gt;
+
+&lt;div class=&quot;opciones-portada&quot;&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;VideoInicio&quot; id=&quot;portada&quot; &gt;Comenzar&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="PalabrasClave" tags="nobr" position="825,200" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
 
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;glosario&quot;&gt;
@@ -2003,7 +1995,30 @@ $(function(){
   	&lt;&lt;button &quot;Cerrar Glosario&quot; Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="P" tags="P nobr" position="972,289.5" size="100,100">&lt;h2&gt;Pago de bienes y/o servicios&lt;/h2&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="Consulta Experto" tags="nobr" position="825,325" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+
+&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;div class=&quot;videoplayer&quot;&gt;
+	&lt;div class=&quot;video&quot; id=&quot;visor&quot;&gt;
+	&lt;&lt;if $video is 0&gt;&gt;
+		&lt;&lt;include &quot;vista-iconos&quot;&gt;&gt;
+	&lt;&lt;else&gt;&gt;
+		&lt;&lt;include &quot;videos&quot;&gt;&gt;	
+	&lt;&lt;/if&gt;&gt;
+	&lt;/div&gt;
+&lt;div class=&quot;botonera-videoplayer&quot;&gt;
+
+&lt;&lt;button &quot;Ver Listado&quot;&gt;&gt;
+  &lt;&lt;set $video to 0&gt;&gt;
+  &lt;&lt;script&gt;&gt;Engine.play(&quot;Consulta Experto&quot;)&lt;&lt;/script&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+
+&lt;&lt;button &quot;Ok&quot; Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="P" tags="P nobr" position="950,200" size="100,100">&lt;h2&gt;Pago de bienes y/o servicios&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
 Una vez recibida la conformidad de la recepción, los cocontratantes podrán presentar las facturas en la forma y lugar establecidos en el pliego, dando así inicio del plazo de pago, que es de TREINTA (30) días corridos, salvo que se disponga uno distinto en los pliegos.
 Los pagos deben realizarse en la moneda que corresponda, de acuerdo a las disposiciones de la Secretaría de Hacienda, del Ministerio de Hacienda.
@@ -2071,7 +2086,7 @@ Hablamos de “adjudicatarios” cuando a los proveedores oferentes, a través d
 Cocontratantes
 Resultan ser “cocontratantes” aquellos proveedores adjudicatarios cuando se les notifica la orden de compra que perfecciona el contrato, que desata las obligaciones recíprocas, existentes entre estos y el organismo contratante, propias de la ejecución del contrato.
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="28" name="D" tags="D nobr" position="1086,286.5" size="100,100">&lt;h2&gt;Desdoblamiento&lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="29" name="D" tags="D nobr" position="1075,200" size="100,100">&lt;h2&gt;Desdoblamiento&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
 
 El desdoblamiento es una práctica que está expresamente prohibida por la norma, que implica que no se puede realizar la adquisición del mismo bien o servicio en un lapso de TRES (3) meses desde la primera convocatoria (fecha de difusión del procedimiento), cuando ello se hace con el fin de eludir los montos de los procedimientos de selección o las autoridades competentes, aunque admite prueba en contrario, poniendo en cabeza exclusiva de estas autoridades la responsabilidad ante el incumplimiento de esta manda. 
@@ -2083,23 +2098,56 @@ Esta información debe ser remitida a la ONC en los plazos estipulados, que cent
 	&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="Portada" tags="nobr" position="854,166.5" size="100,100">&lt;div class=&quot;portada&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="vista-iconos" tags="nobr" position="950,325" size="100,100">&lt;div class=&quot;videolista&quot;&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 1&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 2&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 2&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 3&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 3&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 4&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 4&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 5&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 5&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 6&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 6&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 7&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 7&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 8&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 8&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 9&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 10&lt;/div&gt;&lt;/div&gt;
+	
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="videos" tags="nobr" position="1075,325" size="100,100">&lt;&lt;switch $video&gt;&gt;
+&lt;&lt;case 1&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
 
-&lt;div class=&quot;opciones-portada&quot;&gt;
-&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;VideoInicio&quot; id=&quot;portada&quot; &gt;Comenzar&lt;/div&gt;
-&lt;/div&gt;
+&lt;&lt;case 2&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_02_PROCEDIMIENTO_SELECCION_APLICABLE.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="experto" tags="nobr item" position="750,401.5" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;experto&quot; data-passage=&quot;Consulta Experto&quot;&gt;
-	/*&lt;img src=&quot;imagenes/herramientas/experto.png&quot;&gt;*/
-	&lt;div class=&quot;item-tooltip&quot;&gt;
-		&lt;span class=&quot;tooltiptext&quot;&gt;Consulta con Experto&lt;/span&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="glosario" tags="nobr item" position="751,288.5" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;glosario&quot; data-passage=&quot;PalabrasClave&quot;&gt;
-	/* &lt;img src=&quot;imagenes/herramientas/glosario.png&quot;&gt; */
-	&lt;div class=&quot;item-tooltip&quot;&gt;
-		&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata></tw-storydata></div>
+&lt;&lt;case 3&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_03_DESARROLLO_PROCEDIMIENTO.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+
+&lt;&lt;case 4&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_A_INICIO_DE_LA_GESTION.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+
+&lt;&lt;case 5&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_B_ELABORACION_DE_PLIEGO.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+
+&lt;&lt;case 6&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_C_CONVOCATORIA.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot;autoplay controls&gt;&lt;/video&gt; 
+
+&lt;&lt;case 7&gt;&gt;
+	  &lt;video src=to &quot;videos/ANGELA_PEPA-JUEGO-PRG_04_D_EVALUACION_DE_OFERTAS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+
+&lt;&lt;case 8&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_E_FINALIZACION_DE_PROCEDIMIENTO.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+
+&lt;&lt;case 9&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_04_F_RECEPCION_DE_BIENES_O_SERVICIOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+
+&lt;&lt;case 10&gt;&gt;
+	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_05_PRINCIPIOS_GENERALES_GESTION_DE_COMPRA.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
+
+&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="cadete" tags="sin-celu" position="450,1100" size="100,100">Ingresa un cadete con un sobre. Sale globo de díalogo del cadete &quot;Te vimos algo cansado y pensamos en ayudarte. Sara armó el pliego y me avisó que la autorización ya está firmada por el director nacional del museo.&quot;
+
+&lt;&lt;set $siguiente_popup to &quot;Próximo paso la etapa de convocatoria. Publicación en el boletín oficial&quot;&gt;&gt;
+&lt;&lt;set $pista to &quot;Hoy todo se resuelve con un click&quot;&gt;&gt;
+&lt;&lt;set $ultimo_mail to &quot;boletin&quot;&gt;&gt;
+
+[[Volver al escritorio de Sara|Escritorio Sara]]</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(/^(?:(?:uncaught\s+(?:exception:\s+)?)?error:\s+)+/i,"")+".":": unknown error."),"object"===("undefined"==typeof n?"undefined":_typeof(n))&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}();!function(){function e(e,t){var a=String(e);switch(t){case"start":return a&&r.test(a)?a.replace(r,""):a;case"end":return a&&n.test(a)?a.replace(n,""):a;default:throw new Error('_trimFrom called with incorrect where parameter value: "'+t+'"')}}function t(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n="undefined"==typeof t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var r=/^[\s\u00A0\uFEFF][\s\u00A0\uFEFF]*/,n=/[\s\u00A0\uFEFF][\s\u00A0\uFEFF]*$/;Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(t===n||t!==t&&n!==n)return!0}return!1}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(e,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(e,10);return i<=a?n:t(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(e,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(e,10);return i<=a?n:n+t(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return e(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return e(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return e(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return e(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r,r<0&&(r=0)),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n,n<0&&(n=e-1)),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if(null==e||"object"!==("undefined"==typeof e?"undefined":_typeof(e))||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){var r=0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1));return e[r]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function e(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var t=Array.from(this);if(0===arguments.length)return t;var r=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),n=r.length;if(0===n)return t;for(var a=Array.prototype.indexOf,i=Array.prototype.push,o=0;o<n;++o){var e=r[o];a.call(t,e)===-1&&i.call(t,e)}return t}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;(r=e.call(this,t,r))!==-1;)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=Array.prototype.splice,a=Array.prototype.concat.apply([],arguments),i=[],o=0,s=a.length;o<s;++o)for(var u=a[o],l=0;(l=t.call(this,u,l))!==-1;)r.apply(i,n.call(this,l,1));return i}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.reduce.call(this,function(e,t){return e.concat(Array.isArray(t)?t.flatten():t)},[])}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do a.push(n.call(this,_random(0,i--),1)[0]);while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function e(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var t=arguments.length;if(0===t)return this.length>>>0;for(var r=Array.prototype.indexOf,n=Array.prototype.push,a=0;a<t;++a){var e=arguments[a];r.call(this,e)===-1&&n.call(this,e)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return this[t]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do o=_random(0,i);while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function e(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var t=arguments.length;if(0===t)return this.length>>>0;for(var r=Array.prototype.indexOf,n=Array.prototype.unshift,a=0;a<t;++a){var e=arguments[a];r.call(this,e)===-1&&n.call(this,e)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function e(t,r,n){var e=Number(t);return Number.isNaN(e)?NaN:e.clamp(r,n)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||!function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch("undefined"==typeof i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return String.prototype.indexOf.apply(this,arguments)!==-1}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;(n=t.call(this,e,n))!==-1;)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n,a<0&&(a=0)):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return"undefined"!=typeof r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return n===-1?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return n===-1?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Windows:t||e.includes("iemobile"),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null;return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),r=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),n=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),a=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}();return Object.freeze({audio:e,fileAPI:t,geolocation:r,mutationObserver:n,performance:a})}(),_ref3=function(){function e(t){if("object"!==("undefined"==typeof t?"undefined":_typeof(t))||null==t)return t;if("function"==typeof t.clone)return t.clone(!0);if(t.nodeType&&"function"==typeof t.cloneNode)return t.cloneNode(!0);var r=void 0;return Array.isArray(t)?r=[]:t instanceof Date?r=new Date(t.getTime()):t instanceof Map?(r=new Map,t.forEach(function(t,n){r.set(n,e(t))})):t instanceof RegExp?r=new RegExp(t):t instanceof Set?(r=new Set,t.forEach(function(t){r.add(e(t))})):r=Object.create(Object.getPrototypeOf(t)),Object.keys(t).forEach(function(n){return r[n]=e(t[n])}),r}function t(e){for(var t=document.createDocumentFragment(),r=document.createElement("p"),n=void 0;null!==(n=e.firstChild);){if(n.nodeType===Node.ELEMENT_NODE){var a=n.nodeName.toUpperCase();switch(a){case"BR":if(null!==n.nextSibling&&n.nextSibling.nodeType===Node.ELEMENT_NODE&&"BR"===n.nextSibling.nodeName.toUpperCase()){e.removeChild(n.nextSibling),e.removeChild(n),t.appendChild(r),r=document.createElement("p");continue}if(!r.hasChildNodes()){e.removeChild(n);continue}break;case"ADDRESS":case"ARTICLE":case"ASIDE":case"BLOCKQUOTE":case"CENTER":case"DIV":case"DL":case"FIGURE":case"FOOTER":case"FORM":case"H1":case"H2":case"H3":case"H4":case"H5":case"H6":case"HEADER":case"HR":case"MAIN":case"NAV":case"OL":case"P":case"PRE":case"SECTION":case"TABLE":case"UL":r.hasChildNodes()&&(t.appendChild(r),r=document.createElement("p")),t.appendChild(n);continue}}r.appendChild(n)}r.hasChildNodes()&&t.appendChild(r),e.appendChild(t)}function r(){try{return document.activeElement||null}catch(e){return null}}function n(e,t,r){var n="object"===("undefined"==typeof e?"undefined":_typeof(e))?e:document.getElementById(e);if(null==n)return null;var a=Array.isArray(t)?t:[t];jQuery(n).empty();for(var i=0,o=a.length;i<o;++i)if(Story.has(a[i]))return new Wikifier(n,Story.get(a[i]).processText().trim()),n;if(null!=r){var s=String(r).trim();""!==s&&new Wikifier(n,s)}return n}function a(e,t,r){return jQuery(document.createElement("span")).addClass("error").attr("title",r).text(L10n.get("errorTitle")+": "+(t||"unknown error")).appendTo(e),!1}function i(e,t){var r=i;switch("undefined"==typeof e?"undefined":_typeof(e)){case"number":if(Number.isNaN(e))return t;break;case"object":if(null===e)return t;if(Array.isArray(e))return e.map(function(e){return r(e,t)}).join(", ");if(e instanceof Set)return[].concat(_toConsumableArray(e)).map(function(e){return r(e,t)}).join(", ");if(e instanceof Map){var n=[].concat(_toConsumableArray(e)).map(function(e){return r(e[0],t)+" ⇒ "+r(e[1],t)}).join("; ");return"( "+n+" )"}return e instanceof Date?e.toLocaleString():"function"==typeof e.toString?e.toString():Object.prototype.toString.call(e);case"function":case"undefined":return t}return String(e)}return Object.freeze(Object.defineProperties({},{clone:{value:e},convertBreaks:{value:t},safeActiveElement:{value:r},setPageElement:{value:n},throwError:{value:a},toStringOrDefault:{value:i}}))}(),clone=_ref3.clone,convertBreaks=_ref3.convertBreaks,safeActiveElement=_ref3.safeActiveElement,setPageElement=_ref3.setPageElement,throwError=_ref3.throwError,toStringOrDefault=_ref3.toStringOrDefault;!function(){function e(e){13!==e.which&&32!==e.which||(e.preventDefault(),jQuery(safeActiveElement()||this).trigger("click"))}function t(e){return function(){var t=jQuery(this);t.is("[aria-pressed]")&&t.attr("aria-pressed","true"===t.attr("aria-pressed")?"false":"true"),e.apply(this,arguments)}}function r(e){return t(function(){jQuery(this).off(".aria-clickable").removeAttr("tabindex aria-controls aria-pressed").not("a,button").removeAttr("role").end().filter("button").prop("disabled",!0),e.apply(this,arguments)})}jQuery.fn.extend({ariaClick:function(n,a){if(0===this.length||0===arguments.length)return this;var i=n,o=a;return null==o&&(o=i,i=undefined),i=jQuery.extend({namespace:undefined,one:!1,selector:undefined,data:undefined,controls:undefined,pressed:undefined,label:undefined},i),"string"!=typeof i.namespace?i.namespace="":"."!==i.namespace[0]&&(i.namespace="."+i.namespace),"boolean"==typeof i.pressed&&(i.pressed=i.pressed?"true":"false"),this.filter("button").prop("type","button"),this.not("a,button").attr("role","button"),this.attr("tabindex",0),null!=i.controls&&this.attr("aria-controls",i.controls),null!=i.pressed&&this.attr("aria-pressed",i.pressed),null!=i.label&&this.attr({"aria-label":i.label,title:i.label}),this.not("button").on("keypress.aria-clickable"+i.namespace,i.selector,e),this.on("click.aria-clickable"+i.namespace,i.selector,i.data,i.one?r(o):t(o)),this}})}(),function(){jQuery.extend({wikiWithOptions:function(e){for(var t=arguments.length,r=Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];if(0!==r.length){var a=document.createDocumentFragment();r.forEach(function(t){return new Wikifier(a,t,e)});var i=[].concat(_toConsumableArray(a.querySelectorAll(".error"))).map(function(e){return e.textContent.replace(/^(?:(?:Uncaught\s+)?Error:\s+)+/,"")});if(i.length>0)throw new Error(i.join("; "))}},wiki:function(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];this.wikiWithOptions.apply(this,[undefined].concat(t))}}),jQuery.fn.extend({wikiWithOptions:function(e){for(var t=arguments.length,r=Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];if(0===this.length||0===r.length)return this;var a=document.createDocumentFragment();return r.forEach(function(t){return new Wikifier(a,t,e)}),this.append(a),this},wiki:function(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return this.wikiWithOptions.apply(this,[undefined].concat(t))}})}();var Util=function(){function e(e){return Object.freeze(Object.assign(Object.create(null),e))}function t(e){return Object.prototype.toString.call(e).slice(8,-1)}function r(e){var t=void 0;switch("undefined"==typeof e?"undefined":_typeof(e)){case"number":t=e;break;case"string":t=Number(e);break;default:return!1}return!Number.isNaN(t)&&Number.isFinite(t)}function n(e){return"boolean"==typeof e||"string"==typeof e&&("true"===e||"false"===e)}function a(e){return String(e).trim().replace(/[^\w\s\u2013\u2014-]+/g,"").replace(/[_\s\u2013\u2014-]+/g,"-").toLocaleLowerCase()}function i(e){if(null==e)return"";var t=String(e);return t&&h.test(t)?t.replace(p,function(e){return g[e]}):t}function o(e){if(null==e)return"";var t=String(e);return t&&y.test(t)?t.replace(m,function(e){return v[e.toLowerCase()]}):t}function s(e,t){var r=String(e),n=Math.trunc(t),a=r.charCodeAt(n);if(Number.isNaN(a))return{char:"",start:-1,end:-1};var i={char:r.charAt(n),start:n,end:n};if(a<55296||a>57343)return i;if(a>=55296&&a<=56319){var o=n+1;if(o>=r.length)return i;var s=r.charCodeAt(o);return s<56320||s>57343?i:(i.char=i.char+r.charAt(o),i.end=o,i)}if(0===n)return i;var u=n-1,l=r.charCodeAt(u);return l<55296||l>56319?i:(i.char=r.charAt(u)+i.char,i.start=u,i)}function u(){return(Has.performance?performance:Date).now()}function l(e){var t=/^([+-]?(?:\d*\.)?\d+)([Mm]?[Ss])$/,r=t.exec(String(e));if(null===r)throw new SyntaxError('invalid time value syntax: "'+e+'"');var n=Number(r[1]);if(/^[Ss]$/.test(r[2])&&(n*=1e3),Number.isNaN(n)||!Number.isFinite(n))throw new RangeError('invalid time value: "'+e+'"');return n}function c(e){if("number"!=typeof e||Number.isNaN(e)||!Number.isFinite(e)){var t=void 0;switch("undefined"==typeof e?"undefined":_typeof(e)){case"string":t='"'+e+'"';break;case"number":t=String(e);break;default:t=Object.prototype.toString.call(e)}throw new Error("invalid milliseconds: "+t)}return e+"ms"}function d(e){if(!e.includes("-"))switch(e){case"bgcolor":return"backgroundColor";case"float":return"cssFloat";default:return e}var t="-ms-"===e.slice(0,4)?e.slice(1):e;return t.split("-").map(function(e,t){return 0===t?e:e.toUpperFirst()}).join("")}function f(e){var t=document.createElement("a"),r=Object.create(null);t.href=e,t.search&&t.search.replace(/^\?/,"").splitOrEmpty(/(?:&(?:amp;)?|;)/).forEach(function(e){var t=e.split("="),n=_slicedToArray(t,2),a=n[0],i=n[1];r[a]=i});var n=t.host&&"/"!==t.pathname[0]?"/"+t.pathname:t.pathname;return{href:t.href,protocol:t.protocol,host:t.host,hostname:t.hostname,port:t.port,path:""+n+t.search,pathname:n,query:t.search,search:t.search,queries:r,searches:r,hash:t.hash}}var p=/[&<>"'`]/g,h=new RegExp(p.source),g=Object.freeze({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"}),m=/&(?:amp|#38|#x26|lt|#60|#x3c|gt|#62|#x3e|quot|#34|#x22|apos|#39|#x27|#96|#x60);/gi,y=new RegExp(m.source,"i"),v=Object.freeze({"&amp;":"&","&#38;":"&","&#x26;":"&","&lt;":"<","&#60;":"<","&#x3c;":"<","&gt;":">","&#62;":">","&#x3e;":">","&quot;":'"',"&#34;":'"',"&#x22;":'"',"&apos;":"'","&#39;":"'","&#x27;":"'","&#96;":"`","&#x60;":"`"});return Object.freeze(Object.defineProperties({},{toEnum:{value:e},toStringTag:{value:t},isNumeric:{value:r},isBoolean:{value:n},slugify:{value:a},escape:{value:i},unescape:{value:o},charAndPosAt:{value:s},fromCssTime:{value:l},toCssTime:{value:c},fromCssProperty:{value:d},parseUrl:{value:f},now:{value:u},random:{value:Math.random},entityEncode:{value:i},entityDecode:{value:o},evalExpression:{value:function(){return Scripting.evalJavaScript.apply(Scripting,arguments)}},evalStatements:{value:function(){return Scripting.evalJavaScript.apply(Scripting,arguments)}}}))}(),SimpleAudio=function(){function e(){return g}function t(e){g=!!e,l("mute",g)}function r(){return p}function n(e){p=Math.clamp(e,.2,5),l("rate",p)}function a(){return h}function i(e){h=Math.clamp(e,0,1),l("volume",h)}function o(){l("stop")}function s(e,t){if("function"!=typeof t)throw new Error("callback parameter must be a function");f.set(e,t)}function u(e){f.delete(e)}function l(e,t){f.forEach(function(r){return r(e,t)})}function c(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return new(Function.prototype.bind.apply(m,[null].concat(t)))}function d(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return new(Function.prototype.bind.apply(y,[null].concat(t)))}var f=new Map,p=1,h=1,g=!1,m=function(){function e(t){if(_classCallCheck(this,e),Array.isArray(t))this._create(t);else{if(!(t instanceof e))throw new Error("sources parameter must be an array of either URLs or source objects");this._copy(t)}}return _createClass(e,[{key:"_create",value:function(t){if(!Array.isArray(t)||0===t.length)throw new Error("sources parameter must be an array of either URLs or source objects");var r=/^data:\s*audio\/([^;,]+)\s*[;,]/i,n=/\.([^.\/\\]+)$/,a=e.getType,i=[],o=document.createElement("audio");if(t.forEach(function(e){var t=null;switch("undefined"==typeof e?"undefined":_typeof(e)){case"string":var s=void 0;if("data:"===e.slice(0,5)){if(s=r.exec(e),null===s)throw new Error("source data URI missing media type")}else if(s=n.exec(Util.parseUrl(e).pathname),null===s)throw new Error("source URL missing file extension");var u=a(s[1]);null!==u&&(t={src:e,type:u});break;case"object":if(null===e)throw new Error("source object cannot be null");if(!e.hasOwnProperty("src"))throw new Error('source object missing required "src" property');
