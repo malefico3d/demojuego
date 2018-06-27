@@ -1407,14 +1407,12 @@ State.variables.inventario = {};
 &#39;&#39;Al ingresar el participante recibe el audio de una voz en off que lo introduce en las reglas del juego y los objetivos que deberá sortear para resolver el desafío.&#39;&#39;
 
 [[Comenzar!|ConfiguracionAvatar]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Oficina" tags="nobr" position="400,300" size="100,100">Estás en la oficina.
-
-Podés ver los escritorios de [[Gómez|Escritorio Gómez]], [[Sara|Escritorio Sara]] y el [[tuyo|Escritorio]].</tw-passagedata><tw-passagedata pid="5" name="Escritorio Sara" tags="" position="400,500" size="100,100">El escritorio de Sara y se vé ordenado, tiene en su oficina una [[pizarra]], su [[computadora]] y un [[rotafolios]].
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="Escritorio Sara" tags="" position="400,500" size="100,100">El escritorio de Sara y se vé ordenado, tiene en su oficina una [[pizarra]], su [[computadora]] y un [[rotafolios]].
 
 &lt;&lt;if $mensajes.foto_sala&gt;&gt;Notás una [[pila de papeles|listado muebles]] sobre el escritorio.&lt;&lt;/if&gt;&gt;
 
 [[Ir a tu escritorio|Escritorio]]
-[[Ir al escritorio de Gómez|Escritorio Gómez]]</tw-passagedata><tw-passagedata pid="6" name="PassageFooter" tags="nobr" position="200,150" size="100,100">/* Si no está el tag sin-celu entonces tengo que mostrar el celu */	
+[[Ir al escritorio de Gómez|Escritorio Gómez]]</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="200,150" size="100,100">/* Si no está el tag sin-celu entonces tengo que mostrar el celu */	
 &lt;&lt;if not tags().includes(&quot;sin-celu&quot;)&gt;&gt;
 	&lt;&lt;if $nuevo_mensaje&gt;&gt;
 		[[Tenés un mensaje sin leer en tu celu!|celular]]
@@ -1433,7 +1431,7 @@ Podés ver los escritorios de [[Gómez|Escritorio Gómez]], [[Sara|Escritorio Sa
 &lt;&lt;if $siguiente_popup&gt;&gt;
 	&lt;&lt;set $popup to $siguiente_popup&gt;&gt;
 	&lt;&lt;set $siguiente_popup to &quot;&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="DOCUMENTACIÓN" tags="" position="400,25" size="100,100">Acá voy a ir poniendo la forma en que funciona la historia para cuando haya que editarla al agregar los contenidos gráficos.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="DOCUMENTACIÓN" tags="" position="400,25" size="100,100">Acá voy a ir poniendo la forma en que funciona la historia para cuando haya que editarla al agregar los contenidos gráficos.
 
 La historia consta de 12 partes:
 
@@ -1480,7 +1478,7 @@ El participante debe tomar el cuaderno azul de la biblioteca y resolver el orden
 
 11. Fin del proceso de selección
 El participante debe acceder a una sala contigua y recibir las felicitaciones del entrenador.
-Al finalizar le hace una pregunta con tres opciones posibles.</tw-passagedata><tw-passagedata pid="8" name="celular" tags="sin-celu" position="400,150" size="100,100">&lt;&lt;set $nuevo_mensaje to false&gt;&gt; \
+Al finalizar le hace una pregunta con tres opciones posibles.</tw-passagedata><tw-passagedata pid="7" name="celular" tags="sin-celu" position="400,150" size="100,100">&lt;&lt;set $nuevo_mensaje to false&gt;&gt; \
 &lt;&lt;set $mensajes[$ultimo_mensaje] to true&gt;&gt; \
 &lt;&lt;switch $ultimo_mensaje&gt;&gt;
 
@@ -1607,7 +1605,7 @@ No tenés mensajes.
 
 &lt;&lt;/switch&gt;&gt;\
 
-&lt;&lt;return &quot;Volver&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="StoryInit" tags="" position="75,25" size="100,100">/* Generales */
+&lt;&lt;return &quot;Volver&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="StoryInit" tags="" position="75,25" size="100,100">/* Generales */
 &lt;&lt;set $popup to &quot;&quot;&gt;&gt;
 &lt;&lt;set $siguiente_popup to &quot;&quot;&gt;&gt;
 &lt;&lt;set $pista to &quot;&quot;&gt;&gt;
@@ -1654,7 +1652,7 @@ No tenés mensajes.
 
 &lt;&lt;cacheaudio &quot;ambiente&quot; &quot;sonidos/musica.ogg&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambiente2&quot; &quot;sonidos/musica2.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="ConfiguracionAvatar" tags="nobr" position="250,300" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="ConfiguracionAvatar" tags="nobr" position="250,300" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;contenedorCentrado&quot; id=&quot;ventana-avatar&quot;&gt;
 &lt;div class=&quot;texto-bienvenida&quot;&gt;Por favor ingresá tu nombre.&lt;/div&gt;
 &lt;&lt;textbox &quot;$usuario&quot; &quot;Anónimo&quot;&gt;&gt;
@@ -1665,7 +1663,7 @@ No tenés mensajes.
   &lt;div class=&quot;avatar-adelante&quot;&gt;Siguiente&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;&lt;button &quot;Listo !&quot; Oficina&gt;&gt;&lt;&lt;set $MostrarAvatar to true&gt;&gt;&lt;&lt;set $primeraVez to false&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button [[Listo !|Escritorio]]&gt;&gt;&lt;&lt;set $MostrarAvatar to true&gt;&gt;&lt;&lt;set $primeraVez to false&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
@@ -1689,10 +1687,10 @@ $(function(){
 			.style.backgroundPositionX = offset + &#39;px&#39;;
 		});
 	});	
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="11" name="Escritorio Gómez" tags="" position="100,700" size="100,100">Estás en el escritorio de Gómez. Detrás de él se encuentra el [[fichero]] con expedientes y pliegos anteriores.
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="10" name="Escritorio Gómez" tags="" position="200,500" size="100,100">Estás en el escritorio de Gómez. Detrás de él se encuentra el [[fichero]] con expedientes y pliegos anteriores.
 
 [[Ir a tu escritorio|Escritorio]]
-[[Ir al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="12" name="fichero" tags="" position="100,900" size="100,100">Estás frente a un fichero muy grande, la mayoría de los cajones están cerrados con llave.
+[[Ir al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="11" name="fichero" tags="" position="100,900" size="100,100">Estás frente a un fichero muy grande, la mayoría de los cajones están cerrados con llave.
 
 * &lt;&lt;linkreplace &quot;Cajon.&quot;&gt;&gt;\
 Cajon.
@@ -1718,14 +1716,14 @@ Está lleno de especificaciones técnicas de pliegos anteriores.
 * &lt;&lt;linkreplace &quot;Cajon.&quot;&gt;&gt;Cajon. Está vacío.&lt;&lt;/linkreplace&gt;&gt;
 * &lt;&lt;linkreplace &quot;Cajon.&quot;&gt;&gt;Cajon. Está cerrado con llave.&lt;&lt;/linkreplace&gt;&gt;
 
-[[Volver al escritorio|Escritorio Gómez]]</tw-passagedata><tw-passagedata pid="13" name="pizarra" tags="" position="225,900" size="100,100">Tiene varios Post-It pegados:
+[[Volver al escritorio|Escritorio Gómez]]</tw-passagedata><tw-passagedata pid="12" name="pizarra" tags="" position="225,900" size="100,100">Tiene varios Post-It pegados:
 * [[Nota de tu jefe|postit]].
 &lt;&lt;if $desafios.redactar&gt;&gt;* [[Nota con presupuesto|modulos]]
 &lt;&lt;else&gt;&gt;* Nota con presupuesto&lt;&lt;/if&gt;&gt;
 \
 &lt;&lt;if $desafios.redactar&gt;&gt;&#39;&#39;Nota:&#39;&#39; El documento oficial dice que está pegado en la compu de Sara pero vuelve medio incómodo dado cómo desarrollé esto. Se puede charlar si es estrictamente necesario&lt;&lt;/if&gt;&gt;
 
-[[Volver al escritorio|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="14" name="especificaciones técnicas" tags="sin-celu" position="75,1100" size="100,100">&lt;&lt;set _solucion to {
+[[Volver al escritorio|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="13" name="especificaciones técnicas" tags="sin-celu" position="75,1100" size="100,100">&lt;&lt;set _solucion to {
 	0: true,
 	5: true,
 	21: true,
@@ -1806,7 +1804,7 @@ Al principio del formulario tiene que haber un post-it pegado que rece:
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-[[Volver al fichero|fichero]]</tw-passagedata><tw-passagedata pid="15" name="postit" tags="" position="200,1100" size="100,100">&lt;&lt;set $postit to &quot;leido&quot;&gt;&gt;
+[[Volver al fichero|fichero]]</tw-passagedata><tw-passagedata pid="14" name="postit" tags="" position="200,1100" size="100,100">&lt;&lt;set $postit to &quot;leido&quot;&gt;&gt;
 //Acá te dejo una línea de tiempo de los pasos a seguir en los Procesos de Contrataciones. La descripción en profundidad de cada instancia lo tenes disponible en el Tomo 2, en la Biblioteca.//
 # Requerimiento
 # Pedido de la Unidad requiriente
@@ -1832,7 +1830,7 @@ Al principio del formulario tiene que haber un post-it pegado que rece:
 # Notificar de la ORDEN de COMPRA
 # RECEPCIÓN Y PAGO
 
-[[Mirar la pizarra|pizarra]]</tw-passagedata><tw-passagedata pid="16" name="modulos" tags="sin-celu" position="325,1100" size="100,100">Muebles: 8.300 módulos
+[[Mirar la pizarra|pizarra]]</tw-passagedata><tw-passagedata pid="15" name="modulos" tags="sin-celu" position="325,1100" size="100,100">Muebles: 8.300 módulos
 &lt;&lt;if not $desafios.procedimiento&gt;&gt;\
 &lt;&lt;set $siguiente_popup to &quot;Identificar el tipo de procedimiento de selección.&quot;&gt;&gt;\
 &lt;&lt;set $pista to &quot;La pregunta está oculta en un objeto que se usa para dar capacitaciones&quot;&gt;&gt;\
@@ -1840,7 +1838,7 @@ Al principio del formulario tiene que haber un post-it pegado que rece:
 &lt;&lt;set $mensajes.modulos to true&gt;&gt;\
 &lt;&lt;/if&gt;&gt;
 
-[[Volver a la pizarra|pizarra]]</tw-passagedata><tw-passagedata pid="17" name="listado muebles" tags="sin-celu" position="350,900" size="100,100">Encontrás entre los papeles la lista a mano alzada con los muebles necesarios:
+[[Volver a la pizarra|pizarra]]</tw-passagedata><tw-passagedata pid="16" name="listado muebles" tags="sin-celu" position="350,900" size="100,100">Encontrás entre los papeles la lista a mano alzada con los muebles necesarios:
 
 * 150 sillas
 * 2 cafeteras
@@ -1853,7 +1851,7 @@ Al principio del formulario tiene que haber un post-it pegado que rece:
 &lt;&lt;set $nuevo_mensaje to true&gt;&gt;
 &lt;&lt;set $ultimo_mensaje to &quot;especificaciones validas?&quot;&gt;&gt;
 &lt;&lt;set $pista to &quot;&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="rotafolios" tags="sin-celu" position="550,900" size="100,100">&lt;&lt;switch $hoja&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="rotafolios" tags="sin-celu" position="550,900" size="100,100">&lt;&lt;switch $hoja&gt;&gt;
 &lt;&lt;case 0&gt;&gt;
 	Lorem Ipsum Hoja 1
 &lt;&lt;case 1&gt;&gt;
@@ -1873,9 +1871,9 @@ Al principio del formulario tiene que haber un post-it pegado que rece:
 
 [[Siguiente|rotafolios][$hoja to ($hoja + 1) % 3]]
 [[Anterior|rotafolios][$hoja to ($hoja + 1) % 3]]
-[[Volver al escritorio|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="19" name="procedimiento incorrecto" tags="sin-celu" position="650,1100" size="100,100">Esto se supone que es un celular con el entrenador enojado mandándote a leer los libracos.
+[[Volver al escritorio|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="18" name="procedimiento incorrecto" tags="sin-celu" position="650,1100" size="100,100">Esto se supone que es un celular con el entrenador enojado mandándote a leer los libracos.
 
-[[DOCUMENTOS NO IMPLEMENTADOS: Ir a la oficina|Oficina]]</tw-passagedata><tw-passagedata pid="20" name="computadora" tags="sin-celu" position="700,900" size="100,100">!Autluk - Mails de &lt;vos@mail.com&gt;
+[[DOCUMENTOS NO IMPLEMENTADOS: Ir a la oficina|Escritorio]]</tw-passagedata><tw-passagedata pid="19" name="computadora" tags="sin-celu" position="750,900" size="100,100">!Autluk - Mails de &lt;vos@mail.com&gt;
 &lt;&lt;switch $ultimo_mail&gt;&gt;
 
 &lt;&lt;case &quot;inicio&quot;&gt;&gt;
@@ -1953,7 +1951,7 @@ No tenés mails.
 
 &lt;&lt;/switch&gt;&gt;
 
-&lt;&lt;return &quot;Volver al escritorio&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="biblioteca" tags="" position="900,900" size="100,100">Es una biblioteca llena de libros y carpetas que se usan en el día a día de la oficina, identificás algunas cosas que parecen útiles:
+&lt;&lt;return &quot;Volver al escritorio&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="biblioteca" tags="" position="900,900" size="100,100">Es una biblioteca llena de libros y carpetas que se usan en el día a día de la oficina, identificás algunas cosas que parecen útiles:
 * [[Glosario|glosario]]
 &lt;&lt;if not $mensajes.ultimo_mensaje&gt;&gt;\
 * Cuaderno azul
@@ -1961,26 +1959,26 @@ No tenés mails.
 * [[Cuaderno azul]]
 &lt;&lt;/if&gt;&gt;
 
-[[Volver al escritorio|Escritorio]]</tw-passagedata><tw-passagedata pid="22" name="Escritorio" tags="" position="800,700" size="100,100">Estás en tu escritorio, podés acceder a tu [[computadora]], buscar algo interesante en la [[biblioteca]].
+[[Volver al escritorio|Escritorio]]</tw-passagedata><tw-passagedata pid="21" name="Escritorio" tags="" position="600,500" size="100,100">Estás en tu escritorio, podés acceder a tu [[computadora]], buscar algo interesante en la [[biblioteca]].
 
 [[Ir al escritorio de Gómez|Escritorio Gómez]]
-[[Ir al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="23" name="glosario" tags="nobr item" position="700,200" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;glosario&quot; data-passage=&quot;PalabrasClave&quot;&gt;
+[[Ir al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="22" name="glosario" tags="nobr item" position="700,200" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;glosario&quot; data-passage=&quot;PalabrasClave&quot;&gt;
 	/* &lt;img src=&quot;imagenes/herramientas/glosario.png&quot;&gt; */
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="experto" tags="nobr item" position="700,325" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;experto&quot; data-passage=&quot;Consulta Experto&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="experto" tags="nobr item" position="700,325" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;experto&quot; data-passage=&quot;Consulta Experto&quot;&gt;
 	/*&lt;img src=&quot;imagenes/herramientas/experto.png&quot;&gt;*/
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consulta con Experto&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="Portada" tags="nobr" position="825,75" size="100,100">&lt;div class=&quot;portada&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="Portada" tags="nobr" position="825,75" size="100,100">&lt;div class=&quot;portada&quot;&gt;
 
 &lt;div class=&quot;opciones-portada&quot;&gt;
 &lt;div class=&quot;opcion-accion&quot; data-passage=&quot;VideoInicio&quot; id=&quot;portada&quot; &gt;Comenzar&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="PalabrasClave" tags="nobr" position="825,200" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="PalabrasClave" tags="nobr" position="825,200" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
 
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;glosario&quot;&gt;
@@ -2000,10 +1998,10 @@ No tenés mails.
  &lt;div id=&quot;definicion&quot; class=&quot;contenedor-definiciones&quot;&gt;No hay resultados que mostrar. Haga clic sobre una letra para ver las definiciones.&lt;/div&gt;
   
   &lt;div class=&quot;botones&quot;&gt;
-  	&lt;&lt;button &quot;Cerrar Glosario&quot; Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
+  	&lt;&lt;button &quot;Cerrar Glosario&quot; Escritorio&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="Consulta Experto" tags="nobr" position="825,325" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="Consulta Experto" tags="nobr" position="825,325" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
 
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;videoplayer&quot;&gt;
@@ -2021,12 +2019,12 @@ No tenés mails.
   &lt;&lt;script&gt;&gt;Engine.play(&quot;Consulta Experto&quot;)&lt;&lt;/script&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 
-&lt;&lt;button &quot;Ok&quot; Oficina&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Ok&quot; Escritorio&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="P" tags="P nobr" position="950,200" size="100,100">&lt;h2&gt;Pago de bienes y/o servicios&lt;/h2&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="P" tags="P nobr" position="950,200" size="100,100">&lt;h2&gt;Pago de bienes y/o servicios&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
 Una vez recibida la conformidad de la recepción, los cocontratantes podrán presentar las facturas en la forma y lugar establecidos en el pliego, dando así inicio del plazo de pago, que es de TREINTA (30) días corridos, salvo que se disponga uno distinto en los pliegos.
 Los pagos deben realizarse en la moneda que corresponda, de acuerdo a las disposiciones de la Secretaría de Hacienda, del Ministerio de Hacienda.
@@ -2094,7 +2092,7 @@ Hablamos de “adjudicatarios” cuando a los proveedores oferentes, a través d
 Cocontratantes
 Resultan ser “cocontratantes” aquellos proveedores adjudicatarios cuando se les notifica la orden de compra que perfecciona el contrato, que desata las obligaciones recíprocas, existentes entre estos y el organismo contratante, propias de la ejecución del contrato.
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="29" name="D" tags="D nobr" position="1075,200" size="100,100">&lt;h2&gt;Desdoblamiento&lt;/h2&gt;
+</tw-passagedata><tw-passagedata pid="28" name="D" tags="D nobr" position="1075,200" size="100,100">&lt;h2&gt;Desdoblamiento&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
 
 El desdoblamiento es una práctica que está expresamente prohibida por la norma, que implica que no se puede realizar la adquisición del mismo bien o servicio en un lapso de TRES (3) meses desde la primera convocatoria (fecha de difusión del procedimiento), cuando ello se hace con el fin de eludir los montos de los procedimientos de selección o las autoridades competentes, aunque admite prueba en contrario, poniendo en cabeza exclusiva de estas autoridades la responsabilidad ante el incumplimiento de esta manda. 
@@ -2106,7 +2104,7 @@ Esta información debe ser remitida a la ONC en los plazos estipulados, que cent
 	&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="vista-iconos" tags="nobr" position="950,325" size="100,100">&lt;div class=&quot;videolista&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="vista-iconos" tags="nobr" position="950,325" size="100,100">&lt;div class=&quot;videolista&quot;&gt;
 	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 1&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 2&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 2&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 3&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 3&lt;/div&gt;&lt;/div&gt;
@@ -2118,7 +2116,7 @@ Esta información debe ser remitida a la ONC en los plazos estipulados, que cent
 	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 9&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 10&lt;/div&gt;&lt;/div&gt;
 	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="videos" tags="nobr" position="1075,325" size="100,100">&lt;&lt;switch $video&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="videos" tags="nobr" position="1075,325" size="100,100">&lt;&lt;switch $video&gt;&gt;
 &lt;&lt;case 1&gt;&gt;
 	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
 
@@ -2149,13 +2147,13 @@ Esta información debe ser remitida a la ONC en los plazos estipulados, que cent
 &lt;&lt;case 10&gt;&gt;
 	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_05_PRINCIPIOS_GENERALES_GESTION_DE_COMPRA.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
 
-&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="cadete" tags="sin-celu" position="450,1100" size="100,100">Ingresa un cadete con un sobre. Sale globo de díalogo del cadete &quot;Te vimos algo cansado y pensamos en ayudarte. Sara armó el pliego y me avisó que la autorización ya está firmada por el director nacional del museo.&quot;
+&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="cadete" tags="sin-celu" position="450,1100" size="100,100">Ingresa un cadete con un sobre. Sale globo de díalogo del cadete &quot;Te vimos algo cansado y pensamos en ayudarte. Sara armó el pliego y me avisó que la autorización ya está firmada por el director nacional del museo.&quot;
 
 &lt;&lt;set $siguiente_popup to &quot;Próximo paso la etapa de convocatoria. Publicación en el boletín oficial&quot;&gt;&gt;
 &lt;&lt;set $pista to &quot;Hoy todo se resuelve con un click&quot;&gt;&gt;
 &lt;&lt;set $ultimo_mail to &quot;boletin&quot;&gt;&gt;
 
-[[Volver al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="33" name="Cuaderno azul" tags="sin-celu" position="900,1100" size="100,100">&lt;&lt;set _solucion to [
+[[Volver al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="32" name="Cuaderno azul" tags="sin-celu" position="900,1100" size="100,100">&lt;&lt;set _solucion to [
 	&quot;Apertura de ofertas&quot;,
 	&quot;Remisión de actuaciones a la comisión evaluadora&quot;,
 	&quot;Evaluación de ofertas&quot;,
@@ -2251,7 +2249,7 @@ _item\
 [[Volver a la oficina|fin juego]]
 
 !!!Desafío resuelto!
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="fin juego" tags="sin-celu" position="900,1300" size="100,100">&#39;&#39;Nota:&#39;&#39; Según el documento oficial &quot;El participante accede a una sala contigua&quot;. Creo que hacerlo aparecer en la oficina sería suficiente.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="fin juego" tags="sin-celu" position="900,1300" size="100,100">&#39;&#39;Nota:&#39;&#39; Según el documento oficial &quot;El participante accede a una sala contigua&quot;. Creo que hacerlo aparecer en la oficina sería suficiente.
 
 &quot;Hola! he llegado para ayudarte en la última etapa. Estoy muy satisfecho con tu participación! Sé que de las ofertas recibidas sólo ha quedado una admisible y la contratación ha sido adjudicada hace unos cuántos días (?????????). Lo hemos logrado, que buena noticia!
 
@@ -2264,11 +2262,11 @@ Aparecen 3 íconos en un globo de pensamiento del entrenador.
 
 &lt;&lt;button [[Aplausos|fin malo]]&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;button [[Signo pesos, billetes|fin piola]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;&lt;button [[Archivar un expediente adentro de una carpeta|fin malo]]&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="fin malo" tags="sin-celu" position="825,1450" size="100,100">El entrenador está un poco enojado.
+&lt;&lt;button [[Archivar un expediente adentro de una carpeta|fin malo]]&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="fin malo" tags="sin-celu" position="825,1450" size="100,100">El entrenador está un poco enojado.
 
 Lo que se debería hacer es pagar al proveedor. De esta manera finaliza definitivamente el procedimiento de adquisición de mobiliario.
 
-FIN DEL JUEGO</tw-passagedata><tw-passagedata pid="36" name="fin piola" tags="sin-celu" position="975,1450" size="100,100">El entrenador está saltando de alegría.
+FIN DEL JUEGO</tw-passagedata><tw-passagedata pid="35" name="fin piola" tags="sin-celu" position="975,1450" size="100,100">El entrenador está saltando de alegría.
 
 Exacto! Realizado el pago hemos concluído definitivamente con el procedimiento de adquisición del mobiliario.
 
