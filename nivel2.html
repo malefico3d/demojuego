@@ -341,24 +341,29 @@ height: 402px;
 position: absolute;
 top: 162px;
 left: 96px;
-border-style: dashed;
+/*border-style: dashed;*/
 }
 
-.cajon {
+.cajon, .cajon-vacio, .cajon-lleno {
   background-color: transparent;
 width: 142px;
 height: 94px;
 position: absolute;
-border-style: dashed;
+/*border-style: dashed;*/
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.cajon-abierto {
-  background-color: red;
-  width: 142px;
-height: 94px;
-  position: absolute;
-  border-style: dashed;
+.cajon-vacio {
+  background-image: url("imagenes/cajon-vacio.png");
+  
+ }
+
+.cajon-lleno {
+  background-image: url("imagenes/cajon-expedientes.png")
+  
 }
+
 
 #cajon1{
   top:0px;
@@ -563,7 +568,6 @@ border-color: transparent  transparent transparent white;
 left: 599px;
 width: 147px;
 height: 207px;
-border-style: dashed;
 }
 
 #fichero {
@@ -581,11 +585,11 @@ left: 356px;
 }
 
 #computadora-sara {
- width: 214px;
-height: 132px;
+ width: 116px;
+height: 114px;
 top: 262px;
-left: 351px;
-border-style: dashed;
+left: 376px;
+/*border-style: dashed;*/
 }
 
 #pizarra {
@@ -593,7 +597,7 @@ width: 284px;
 height: 178px;
 top: 101px;
 left: 98px;
-border-style: dashed;
+/*border-style: dashed;*/
 }
 
 /* OBJETOS */
@@ -1472,16 +1476,173 @@ background-color: #9ec8cf4d;
 .video-item:hover .tooltip {
   visibility:visible;
   opacity: 1;
-  
- 
 }
 
+.postit {
+ position: absolute;
+background-color: #ffd005;
+left: 100px;
+top: 120px;
+width: 489px;
+height: 391px;
+  color: #505050;
+}
 
+.nota {
+  position: absolute;
+  background-color: white;
+  color: #303030;
+  left: 137px;
+  top: 120px;
+  width: 489px;
+  height: 345px;
+  font-size: 0.8em;
+  text-align: left;
+  overflow-y: scroll;
+  padding: 20px;
+}
 
+.fondo-pizarra {
+     width: 800px;
+    height: 600px;
+    background-color: #527234; /* verde pizarra */
+}
 
+.rotafolios-folio {
+  background-color: #fff;
+  /*border-style: dashed;*/
+  position: absolute;
+  top: 172px;
+left: 262px;
+width: 277px;
+height: 311px;
+  color: red;
+  -ms-transform: skew(-9.8deg, 0deg);
+  -webkit-transform: skew(-9.8deg, 0deg);
+  transform: skew(-9.8deg, 0deg);
+}
 
+.rotafolios-textos {
+  padding: 20px;
+  top: 109px;
+  position: absolute;
+}
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
+.next-folio, .prev-folio {
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*border-style:dashed;*/
+  position: absolute;
+}
+
+.next-folio:hover, .prev-folio:hover {
+  background-color: #80808020;
+  
+}
+
+.next-folio {
+	background-image:url("imagenes/folio-siguiente.png");  
+  top: 480px;
+left: 451px;
+width: 82px;
+height: 67px;
+  cursor: pointer;
+}
+
+.prev-folio {
+  background-image:url("imagenes/folio-anterior.png");
+ top: 105px;
+left: 275px;
+width: 327px;
+height: 183px;
+  cursor: grab;
+}
+
+#papeles-sara {
+ background-image: url("imagenes/pilapapeles.png");
+background-size: contain;
+background-repeat: no-repeat;
+/*border-style: dashed;*/
+position: absolute;
+top: 338px;
+left: 501px;
+width: 82px;
+height: 33px;
+cursor: pointer;
+}
+
+#nota-juan {
+ background-image: url("imagenes/nota-jefe-pizarra.png");
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top: 149px;
+left: 193px;
+width: 82px;
+height: 106px;
+cursor: pointer;
+  
+}
+
+#nota-presupuestos {
+ position: absolute;
+top: 313px;
+left: 281px;
+width: 82px;
+height: 71px;
+cursor: pointer;
+/*border-style: dashed;*/
+  
+}
+.formulario-especificaciones {
+ 
+  position: absolute;
+width: 642px;
+height: 453px;
+top: 129px;
+left: 75px;
+color: black;
+background-color: white;
+    
+}
+
+.cuaderno-azul {
+   background-image: url("imagenes/cuaderno.png");
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top: 149px;
+left: 193px;
+width: 82px;
+height: 106px;
+cursor: pointer;
+}
+
+.cadete {
+background-image: url("imagenes/cadete.png");
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top: 153px;
+left: 260px;
+width: 198px;
+height: 463px;
+}
+
+.globo-cadete {
+ 
+  background-color: white;
+border-radius: 50px;
+width: 339px;
+height: 165px;
+box-shadow: 10px 10px 10px #40404050;
+color: #505050;
+position: absolute;
+top: 153px;
+left: 431px;
+padding: 10px;
+  
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
 function tiene(objeto) { return objeto in inventario(); }
 
 Macro.add("agarrar", {
@@ -1498,6 +1659,7 @@ window.tiene = tiene;
 
 /* Asignación de variables en Twine */
 State.variables.inventario = {};
+
 
 
 
@@ -1533,15 +1695,15 @@ State.variables.inventario = {};
 	&lt;div class=&quot;hotspot&quot; id=&quot;pizarra&quot; data-passage=&quot;pizarra&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Una pizarra con postits&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 	&lt;&lt;if $mensajes.foto_sala&gt;&gt;
 &lt;div class=&quot;hotspot&quot; id=&quot;papeles-sara&quot; data-passage=&quot;listado muebles&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Una pila de papeles&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-Notás una [[pila de papeles|listado muebles]] sobre el escritorio.&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 	
 	&lt;div class=&quot;W&quot; data-passage=&quot;Escritorio&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-El escritorio de Sara y se vé ordenado, tiene en su oficina una [[pizarra]], su [[computadora]] y un [[rotafolios]].
+/*El escritorio de Sara y se vé ordenado, tiene en su oficina una [[pizarra]], su [[computadora]] y un [[rotafolios]].
 
 
-[[Ir a tu escritorio|Escritorio]]</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="200,150" size="100,100">&lt;&lt;if not tags().includes(&quot;sin-toolbox&quot;)&gt;&gt;
+[[Ir a tu escritorio|Escritorio]]*/</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="200,150" size="100,100">&lt;&lt;if not tags().includes(&quot;sin-toolbox&quot;)&gt;&gt;
 &lt;div class=&quot;toolbox&quot;&gt;
 		&lt;&lt;for _item, _data range $inventario&gt;&gt;
 			&lt;&lt;include _item&gt;&gt;
@@ -1854,60 +2016,68 @@ $(function(){
 Estás en el escritorio de Gómez. Detrás de él se encuentra el [[fichero]] con expedientes y pliegos anteriores.
 
 [[Ir a tu escritorio|Escritorio]]
-</tw-passagedata><tw-passagedata pid="11" name="fichero" tags="nobr" position="181,663" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+</tw-passagedata><tw-passagedata pid="11" name="fichero" tags="nobr" position="184,659" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/bebedero-fichero.png&quot;]]
 
 &lt;div class=&quot;cajones&quot;&gt;
-* &lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon1&#39;&gt;Cajon.&lt;/div&gt;&quot;&gt;&gt;\
-&lt;div class=&#39;cajon&#39; id=&#39;1&#39;&gt;Cajon.&lt;/div&gt;
-&lt;div class=&#39;cajon-abierto&#39; id=&#39;cajon1&#39;&gt;Cajon.&lt;/div&gt;
-Está cerrado con llave.&lt;&lt;/linkreplace&gt;&gt;
-* &lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon2&#39;&gt;Cajon.&lt;/div&gt;&quot;&gt;&gt;\
-&lt;div class=&#39;cajon&#39; id=&#39;cajon2&#39;&gt;Cajon.&lt;/div&gt;
-&lt;div class=&#39;cajon-abierto&#39; id=&#39;cajon2&#39;&gt;Cajon.&lt;/div&gt;
-Después de forcejear un tiempo lográs abrirlo.
-Está vacío.&lt;&lt;/linkreplace&gt;&gt;
-* &lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon3&#39;&gt;Cajon.&lt;/div&gt;&quot;&gt;&gt;\
-&lt;div class=&#39;cajon&#39; id=&#39;cajon3&#39;&gt;Cajon.&lt;/div&gt;
-&lt;div class=&#39;cajon-abierto&#39; id=&#39;cajon3&#39;&gt;Cajon.&lt;/div&gt;
-Está lleno de expedientes viejos.&lt;&lt;/linkreplace&gt;&gt;
-* &lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon4&#39;&gt;Cajon.&lt;/div&gt;&quot;&gt;&gt;\
-&lt;div class=&#39;cajon&#39; id=&#39;cajon4&#39;&gt;Cajon.&lt;/div&gt;
-&lt;div class=&#39;cajon-abierto&#39; id=&#39;cajon4&#39;&gt;Cajon.&lt;/div&gt;
-No está cerrado con llave, pero quedó trabado desde la última vez que lo cerraron.&lt;&lt;/linkreplace&gt;&gt;
-* &lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon5&#39;&gt;Cajon.&lt;/div&gt;&quot;&gt;&gt;\
-&lt;div class=&#39;cajon&#39; id=&#39;cajon5&#39;&gt;Cajon.&lt;/div&gt;
-&lt;div class=&#39;cajon-abierto&#39; id=&#39;cajon5&#39;&gt;Cajon.&lt;/div&gt;
-&lt;&lt;if $mensajes[&quot;validas? rta correcta&quot;]
-  or $mensajes[&quot;validas? rta incorrecta&quot;]&gt;&gt;
+
+&lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon1&#39;&gt;&lt;div class=&#39;tooltip-left&#39;&gt;&lt;span class=&#39;tooltiptext&#39;&gt;Este cajón está trabado.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&quot;&gt;&gt;\
+&lt;div class=&#39;cajon&#39; id=&#39;cajon1&#39;&gt;&lt;/div&gt;
+&lt;div class=&#39;cajon&#39; id=&#39;cajon1&#39;&gt;&lt;/div&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+
+&lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon2&#39;&gt;&lt;/div&gt;&quot;&gt;&gt;\
+&lt;div class=&#39;cajon&#39; id=&#39;cajon2&#39;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Un cajon&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&#39;cajon-vacio&#39; id=&#39;cajon2&#39;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;No hay nada dentro.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+
+&lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon3&#39;&gt;&lt;/div&gt;&quot;&gt;&gt;\
+&lt;div class=&#39;cajon&#39; id=&#39;cajon3&#39;&gt;&lt;/div&gt;
+&lt;div class=&#39;cajon-lleno&#39; id=&#39;cajon3&#39;&gt;&lt;/div&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+
+&lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon4&#39;&gt;&lt;/div&gt;&quot;&gt;&gt;\
+&lt;div class=&#39;cajon&#39; id=&#39;cajon4&#39;&gt;&lt;/div&gt;
+&lt;div class=&#39;cajon-vacio&#39; id=&#39;cajon4&#39;&gt;&lt;/div&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+
+&lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon5&#39;&gt;&lt;/div&gt;&quot;&gt;&gt;\
+&lt;div class=&#39;cajon&#39; id=&#39;cajon5&#39;&gt;&lt;/div&gt;
+&lt;div class=&#39;cajon-lleno&#39; id=&#39;cajon5&#39;&gt;&lt;/div&gt;
+&lt;&lt;if $mensajes[&quot;validas? rta correcta&quot;] or $mensajes[&quot;validas? rta incorrecta&quot;]&gt;&gt;
   &lt;&lt;agarrar &quot;especificaciones&quot;&gt;&gt;
   &lt;&lt;script&gt;&gt;Engine.play(&quot;fichero&quot;);&lt;&lt;/script&gt;&gt;
-Está lleno de [[especificaciones técnicas]] de pliegos anteriores.
-&lt;&lt;else&gt;&gt;\
-Está lleno de especificaciones técnicas de pliegos anteriores.
-&lt;&lt;/if&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;
-* &lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon6&#39;&gt;Cajon.&lt;/div&gt;&quot;&gt;&gt;\
-&lt;div class=&#39;cajon&#39; id=&#39;cajon6&#39;&gt;Cajon.&lt;/div&gt;
-&lt;div class=&#39;cajon-abierto&#39; id=&#39;cajon6&#39;&gt;Cajon.&lt;/div&gt;
-Está vacío.&lt;&lt;/linkreplace&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+
+&lt;&lt;linkreplace &quot;&lt;div class=&#39;cajon&#39; id=&#39;cajon6&#39;&gt;&lt;/div&gt;&quot;&gt;&gt;\
+&lt;div class=&#39;cajon&#39; id=&#39;cajon6&#39;&gt;&lt;/div&gt;
+&lt;div class=&#39;cajon-vacio&#39; id=&#39;cajon6&#39;&gt;&lt;/div&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+
 &lt;/div&gt;
-[[Volver al escritorio|Escritorio Gómez]]
+/*[[Volver al escritorio|Escritorio Gómez]]*/
 &lt;div class=&quot;S&quot; data-passage=&quot;Escritorio Gómez&quot;&gt;&lt;/div&gt;	
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="12" name="pizarra" tags="nobr sin-celu sin-toolbox" position="1035,667" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+</tw-passagedata><tw-passagedata pid="12" name="pizarra" tags="nobr sin-celu sin-toolbox" position="1036,666" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+[img[&quot;imagenes/pizarra.png&quot;]]
 &lt;div class=&quot;contenedor-centrado&quot;&gt;
-Tiene varios Post-It pegados:
-* [[Nota de tu jefe|postit]].
-&lt;&lt;if $desafios.redactar&gt;&gt;* [[Nota con presupuesto|modulos]]
-&lt;&lt;else&gt;&gt;* Nota con presupuesto&lt;&lt;/if&gt;&gt;
-\
-&lt;&lt;if $desafios.redactar&gt;&gt;&#39;&#39;Nota:&#39;&#39; El documento oficial dice que está pegado en la compu de Sara pero vuelve medio incómodo dado cómo desarrollé esto. Se puede charlar si es estrictamente necesario&lt;&lt;/if&gt;&gt;
+&lt;div class=&quot;hotspot&quot; id=&quot;nota-juan&quot; data-passage=&quot;postit&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Una nota de Juan&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+/*Tiene varios Post-It pegados:
+* [[Nota de tu jefe|postit]].*/
+&lt;&lt;if $desafios.redactar&gt;&gt;
+&lt;div class=&quot;hotspot&quot; id=&quot;nota-presupuestos&quot; data-passage=&quot;modulos&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Una nota con presupuestos&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+/*[[Nota con presupuesto|modulos]]*/
+&lt;&lt;else&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-[[Volver al escritorio|Escritorio Sara]]
+/*&lt;&lt;if $desafios.redactar&gt;&gt;&#39;&#39;Nota:&#39;&#39; El documento oficial dice que está pegado en la compu de Sara pero vuelve medio incómodo dado cómo desarrollé esto. Se puede charlar si es estrictamente necesario&lt;&lt;/if&gt;&gt;*/
+
+&lt;div class=&quot;S&quot; data-passage=&quot;Escritorio Sara&quot;&gt;&lt;/div&gt;
+/*[[Volver al escritorio|Escritorio Sara]]*/
 &lt;/div&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="especificaciones técnicas" tags="sin-celu nobr sin-toolbox" position="174,851" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;overlay&quot;&gt;
 
-&lt;div class=&quot;carpeta-presupuestos&quot;&gt;
+&lt;div class=&quot;formulario-especificaciones&quot;&gt;
 
 &lt;&lt;set _solucion to {
 	0: true,
@@ -1921,41 +2091,42 @@ Tiene varios Post-It pegados:
 
 Al principio del formulario tiene que haber un post-it pegado que rece:
 !!Seleccioná los items que corresponderían según el listado de referencia que Mariela le dejó a Sara.
-
-# &lt;&lt;checkbox &quot;_form[00]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[01]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[02]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[03]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[04]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[05]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[06]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[07]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[08]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[09]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[10]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[11]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[12]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[13]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[14]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[15]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[16]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[17]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[18]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[19]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[20]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[21]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[22]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[23]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[24]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[25]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[26]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[27]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[28]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[29]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[30]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[31]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[32]&quot; false true&gt;&gt;
-# &lt;&lt;checkbox &quot;_form[33]&quot; false true&gt;&gt;
+&lt;div style=&quot;display:block;&quot;&gt;
+# 1&lt;&lt;checkbox &quot;_form[00]&quot; false true&gt;&gt;
+# 2&lt;&lt;checkbox &quot;_form[01]&quot; false true&gt;&gt;
+# 3&lt;&lt;checkbox &quot;_form[02]&quot; false true&gt;&gt;
+# 4&lt;&lt;checkbox &quot;_form[03]&quot; false true&gt;&gt;
+# 5&lt;&lt;checkbox &quot;_form[04]&quot; false true&gt;&gt;
+# 6&lt;&lt;checkbox &quot;_form[05]&quot; false true&gt;&gt;
+# 7&lt;&lt;checkbox &quot;_form[06]&quot; false true&gt;&gt;
+# 8&lt;&lt;checkbox &quot;_form[07]&quot; false true&gt;&gt;
+# 9&lt;&lt;checkbox &quot;_form[08]&quot; false true&gt;&gt;
+# 10&lt;&lt;checkbox &quot;_form[09]&quot; false true&gt;&gt;
+# 11&lt;&lt;checkbox &quot;_form[10]&quot; false true&gt;&gt;
+# 12&lt;&lt;checkbox &quot;_form[11]&quot; false true&gt;&gt;
+# 13&lt;&lt;checkbox &quot;_form[12]&quot; false true&gt;&gt;
+# 14&lt;&lt;checkbox &quot;_form[13]&quot; false true&gt;&gt;
+# 15&lt;&lt;checkbox &quot;_form[14]&quot; false true&gt;&gt;
+# 16&lt;&lt;checkbox &quot;_form[15]&quot; false true&gt;&gt;
+# 17&lt;&lt;checkbox &quot;_form[16]&quot; false true&gt;&gt;
+# 18&lt;&lt;checkbox &quot;_form[17]&quot; false true&gt;&gt;
+# 19&lt;&lt;checkbox &quot;_form[18]&quot; false true&gt;&gt;
+# 20&lt;&lt;checkbox &quot;_form[19]&quot; false true&gt;&gt;
+# 21&lt;&lt;checkbox &quot;_form[20]&quot; false true&gt;&gt;
+# 22&lt;&lt;checkbox &quot;_form[21]&quot; false true&gt;&gt;
+# 23&lt;&lt;checkbox &quot;_form[22]&quot; false true&gt;&gt;
+# 24&lt;&lt;checkbox &quot;_form[23]&quot; false true&gt;&gt;
+# 25&lt;&lt;checkbox &quot;_form[24]&quot; false true&gt;&gt;
+# 26&lt;&lt;checkbox &quot;_form[25]&quot; false true&gt;&gt;
+# 27&lt;&lt;checkbox &quot;_form[26]&quot; false true&gt;&gt;
+# 28&lt;&lt;checkbox &quot;_form[27]&quot; false true&gt;&gt;
+# 29&lt;&lt;checkbox &quot;_form[28]&quot; false true&gt;&gt;
+# 30&lt;&lt;checkbox &quot;_form[29]&quot; false true&gt;&gt;
+# 31&lt;&lt;checkbox &quot;_form[30]&quot; false true&gt;&gt;
+# 32&lt;&lt;checkbox &quot;_form[31]&quot; false true&gt;&gt;
+# 33&lt;&lt;checkbox &quot;_form[32]&quot; false true&gt;&gt;
+# 34&lt;&lt;checkbox &quot;_form[33]&quot; false true&gt;&gt;
+&lt;/div&gt;
 
 &lt;&lt;if not $desafios.formulario&gt;&gt;\
 @@#evaluacion;@@
@@ -1994,33 +2165,47 @@ Al principio del formulario tiene que haber un post-it pegado que rece:
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="postit" tags="" position="1039,943" size="100,100">&lt;&lt;set $postit to &quot;leido&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="postit" tags="nobr sin-celu" position="1054,946" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;div class=&quot;fondo-pizarra&quot;&gt;
+&lt;div class=&quot;nota&quot;&gt;
+&lt;&lt;set $postit to &quot;leido&quot;&gt;&gt;
 //Acá te dejo una línea de tiempo de los pasos a seguir en los Procesos de Contrataciones. La descripción en profundidad de cada instancia lo tenes disponible en el Tomo 2, en la Biblioteca.//
-# Requerimiento
-# Pedido de la Unidad requiriente
-# Análisis y Agrupamiento con otros pedidos
-# Determinar el proceso de selección
-# Elaboración del Pliego
-# Observaciones al Proyecto del Pliego (etapa no obligatoria)
-# Formular proyecto de acto y remitir a Jurídico
-# Acto administrativo que autoriza el procedimiento
-# Recepción de Ofertas: recepción de ofertas, consultas y circulares
-# Apertura de Ofertas
-# Confeccionar cuadro comparativo
-# Vista de Oferentes
-# Verificación SIPRO
-# Evaluación de Ofertas
-# Remisión de las actuaciones a Comisión Evaluadora
-# Emisión de Dictamen de Evaluación
-# Notificar dictamen de evaluación
-# Posibles Impugnaciones al dictamen de evaluación
-# FIN DEL PROCEDIMIENTO
-# Acto administrativo que pone fin del procedimiento
-# Notificar ACTO
-# Notificar de la ORDEN de COMPRA
-# RECEPCIÓN Y PAGO
+&lt;ol&gt;
+&lt;li&gt;Requerimiento&lt;/li&gt;
+&lt;li&gt;Pedido de la Unidad requiriente&lt;/li&gt;
+&lt;li&gt;Análisis y Agrupamiento con otros pedidos&lt;/li&gt;
+&lt;li&gt;Determinar el proceso de selección&lt;/li&gt;
+&lt;li&gt;Elaboración del Pliego&lt;/li&gt;
+&lt;li&gt;Observaciones al Proyecto del Pliego (etapa no obligatoria)&lt;/li&gt;
+&lt;li&gt;Formular proyecto de acto y remitir a Jurídico&lt;/li&gt;
+&lt;li&gt;Acto administrativo que autoriza el procedimiento&lt;/li&gt;
+&lt;li&gt;Recepción de Ofertas: recepción de ofertas, consultas y circulares&lt;/li&gt;
+&lt;li&gt;Apertura de Ofertas&lt;/li&gt;
+&lt;li&gt;Confeccionar cuadro comparativo&lt;/li&gt;
+&lt;li&gt;Vista de Oferentes&lt;/li&gt;
+&lt;li&gt;Verificación SIPRO&lt;/li&gt;
+&lt;li&gt;Evaluación de Ofertas&lt;/li&gt;
+&lt;li&gt;Remisión de las actuaciones a Comisión Evaluadora&lt;/li&gt;
+&lt;li&gt;Emisión de Dictamen de Evaluación&lt;/li&gt;
+&lt;li&gt;Notificar dictamen de evaluación&lt;/li&gt;
+&lt;li&gt;Posibles Impugnaciones al dictamen de evaluación&lt;/li&gt;
+&lt;li&gt;FIN DEL PROCEDIMIENTO&lt;/li&gt;
+&lt;li&gt;Acto administrativo que pone fin del procedimiento&lt;/li&gt;
+&lt;li&gt;Notificar ACTO&lt;/li&gt;
+&lt;li&gt;Notificar de la ORDEN de COMPRA&lt;/li&gt;
+&lt;li&gt;RECEPCIÓN Y PAGO&lt;/li&gt;
+&lt;/ol&gt;
 
-[[Mirar la pizarra|pizarra]]</tw-passagedata><tw-passagedata pid="15" name="modulos" tags="sin-celu" position="1158,947" size="100,100">Muebles: 8.300 módulos
+&lt;/div&gt;
+
+/* [[Mirar la pizarra|pizarra]] */
+&lt;div class=&quot;S&quot; data-passage=&quot;pizarra&quot;&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="modulos" tags="sin-celu nobr" position="1171,945" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;div class=&quot;fondo-pizarra&quot;&gt;
+&lt;div class=&quot;postit&quot;&gt;
+Muebles: 8.300 módulos
 &lt;&lt;if not $desafios.procedimiento&gt;&gt;\
 &lt;&lt;set $siguiente_popup to &quot;Identificar el tipo de procedimiento de selección.&quot;&gt;&gt;\
 &lt;&lt;set $pista to &quot;La pregunta está oculta en un objeto que se usa para dar capacitaciones&quot;&gt;&gt;\
@@ -2028,7 +2213,12 @@ Al principio del formulario tiene que haber un post-it pegado que rece:
 &lt;&lt;set $mensajes.modulos to true&gt;&gt;\
 &lt;&lt;/if&gt;&gt;
 
-[[Volver a la pizarra|pizarra]]</tw-passagedata><tw-passagedata pid="16" name="listado muebles" tags="sin-celu" position="980,517" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+
+/* [[Volver a la pizarra|pizarra]] */
+&lt;/div&gt;
+&lt;div class=&quot;S&quot; data-passage=&quot;pizarra&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="listado muebles" tags="sin-celu" position="980,517" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;overlay&quot;&gt;
 
 Encontrás entre los papeles la lista a mano alzada con los muebles necesarios:
@@ -2046,7 +2236,13 @@ Encontrás entre los papeles la lista a mano alzada con los muebles necesarios:
 &lt;&lt;set $pista to &quot;&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;/div&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="rotafolios" tags="sin-celu" position="893,655" size="100,100">&lt;&lt;switch $hoja&gt;&gt;
+&lt;/div&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="rotafolios" tags="sin-celu nobr" position="895,655" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+[img[&quot;imagenes/pantalla-rotafolios.png&quot;]]
+
+&lt;div class=&quot;rotafolios-folio&quot;&gt;
+
+&lt;div class=&quot;rotafolios-textos&quot;&gt;
+&lt;&lt;switch $hoja&gt;&gt;
 &lt;&lt;case 0&gt;&gt;
 	Lorem Ipsum Hoja 1
 &lt;&lt;case 1&gt;&gt;
@@ -2063,10 +2259,20 @@ Encontrás entre los papeles la lista a mano alzada con los muebles necesarios:
 &lt;&lt;case 2&gt;&gt;
 	Lorem Ipsum Hoja 3
 &lt;&lt;/switch&gt;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;next-folio&quot; data-passage=&quot;rotafolios&quot; data-setter=&quot;$hoja to ($hoja + 1) % 3&quot;&gt;&lt;/div&gt;
+
+&lt;div class=&quot;prev-folio&quot; data-passage=&quot;rotafolios&quot; data-setter=&quot;$hoja to ($hoja + 1) % 3&quot;&gt;&lt;/div&gt;
+
+
 
 [[Siguiente|rotafolios][$hoja to ($hoja + 1) % 3]]
 [[Anterior|rotafolios][$hoja to ($hoja + 1) % 3]]
-[[Volver al escritorio|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="18" name="procedimiento incorrecto" tags="sin-celu" position="903,954" size="100,100">Esto se supone que es un celular con el entrenador enojado mandándote a leer los libracos.
+[[Volver al escritorio|Escritorio Sara]]
+&lt;div class=&quot;S&quot; data-passage=&quot;Escritorio Sara&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="procedimiento incorrecto" tags="sin-celu" position="903,954" size="100,100">Esto se supone que es un celular con el entrenador enojado mandándote a leer los libracos.
 
 [[DOCUMENTOS NO IMPLEMENTADOS: Ir a la oficina|Escritorio]]</tw-passagedata><tw-passagedata pid="19" name="computadora" tags="sin-celu nobr sin-toolbox" position="588,673" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
 
@@ -2134,7 +2340,7 @@ Hola, estamos en busca de presupuestos para los siguientes ítems:
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;case &quot;boletin&quot;&gt;&gt;
-&#39;&#39;Nota:&#39;&#39; Diceñar la interfaz, el documento oficial dice: //El participante clickea sobre la pantalla de una de las computadoras. Al clickearlo le aparece un mensaje con un boletín oficial de fondo y con la leyenda &quot;Convocatoria cumplida y publicada&quot;//
+&#39;&#39;Nota:&#39;&#39; Diseñar la interfaz, el documento oficial dice: //El participante clickea sobre la pantalla de una de las computadoras. Al clickearlo le aparece un mensaje con un boletín oficial de fondo y con la leyenda &quot;Convocatoria cumplida y publicada&quot;//
 !!Boletín Oficial
 &lt;&lt;if not $desafios.boletin&gt;&gt;
 	&lt;&lt;button &quot;Publicar&quot;&gt;&gt;
@@ -2230,7 +2436,7 @@ Estás en tu escritorio, podés acceder a tu [[computadora]], buscar algo intere
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="experto" tags="nobr item" position="700,325" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;experto&quot; data-passage=&quot;Consulta Experto&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="experto" tags="nobr item" position="701,324" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;experto&quot; data-passage=&quot;Consulta Experto&quot;&gt;
 	/*&lt;img src=&quot;imagenes/herramientas/experto.png&quot;&gt;*/
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consulta con Experto&lt;/span&gt;
@@ -2410,18 +2616,26 @@ Esta información debe ser remitida a la ONC en los plazos estipulados, que cent
 &lt;&lt;case 10&gt;&gt;
 	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_05_PRINCIPIOS_GENERALES_GESTION_DE_COMPRA.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
 
-&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="cadete" tags="sin-celu" position="735,836" size="100,100">Ingresa un cadete con un sobre. Sale globo de díalogo del cadete &quot;Te vimos algo cansado y pensamos en ayudarte. Sara armó el pliego y me avisó que la autorización ya está firmada por el director nacional del museo.&quot;
+&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="cadete" tags="sin-celu" position="741,945" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+[img[&quot;imagenes/oficina-ESTE.png&quot;]]
+&lt;div class=&quot;cadete&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;globo-cadete&quot;&gt;
+&quot;Te vimos algo cansado y pensamos en ayudarte. Sara armó el pliego y me avisó que la autorización ya está firmada por el director nacional del museo.&quot;
+&lt;/div&gt;
 
 &lt;&lt;set $siguiente_popup to &quot;Próximo paso la etapa de convocatoria. Publicación en el boletín oficial&quot;&gt;&gt;
 &lt;&lt;set $pista to &quot;Hoy todo se resuelve con un click&quot;&gt;&gt;
 &lt;&lt;set $ultimo_mail to &quot;boletin&quot;&gt;&gt;
 
-[[Volver al escritorio de Sara|Escritorio Sara]]</tw-passagedata><tw-passagedata pid="32" name="Cuaderno azul" tags="sin-celu sin-toolbox" position="402,854" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
+&lt;div class=&quot;S&quot; data-passage=&quot;Escritorio Sara&quot;&gt;&lt;/div&gt;
+/*[[Volver al escritorio de Sara|Escritorio Sara]]*/
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Cuaderno azul" tags="sin-celu sin-toolbox" position="402,854" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
 
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;overlay&quot;&gt;
 
-&lt;div class=&quot;carpeta-presupuestos&quot;&gt;
+&lt;div class=&quot;cuadeno-azul&quot;&gt;
     
 &lt;&lt;set _solucion to [
 	&quot;Apertura de ofertas&quot;,
@@ -2545,7 +2759,7 @@ FIN DEL JUEGO</tw-passagedata><tw-passagedata pid="35" name="fin piola" tags="si
 
 Exacto! Realizado el pago hemos concluído definitivamente con el procedimiento de adquisición del mobiliario.
 
-FIN DEL JUEGO</tw-passagedata><tw-passagedata pid="36" name="especificaciones" tags="item" position="46,846.5" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;especificaciones&quot; data-passage=&quot;especificaciones técnicas&quot;&gt;
+FIN DEL JUEGO</tw-passagedata><tw-passagedata pid="36" name="especificaciones" tags="item nobr" position="46,846" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;especificaciones&quot; data-passage=&quot;especificaciones técnicas&quot;&gt;
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Especificaciones técnicas&lt;/span&gt;
 	&lt;/div&gt;
