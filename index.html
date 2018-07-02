@@ -199,8 +199,8 @@ img#normativa {
 }
 
 .pantalla {
-  max-width:100%;
-  max-height: 60%;
+  max-width:800px;
+  max-height: 600px;
   margin: auto;
   top: 0px;
 }
@@ -527,6 +527,7 @@ left: 356px;
   width: 348px;
   height: 140px;
 }
+
 
 .texto_compu {
     text-align: left;
@@ -1194,6 +1195,17 @@ top:30%;
   animation: ingresa-instrucciones 500ms linear;
 }
 
+.instrucciones#presupuestos-info, .instrucciones#pliegos-info {
+  top: 205px;
+  width: 198px;
+  left: 94px;
+  padding: 20px;
+  padding-left: 20px;
+  padding-left: 86px;
+  z-index:5000;
+}
+
+
 /***************/
 /* ANIMACIONES */
 /***************/
@@ -1340,6 +1352,129 @@ background-color: #9ec8cf4d;
   
  
 }
+
+.email-cabecera {
+  text-align: left;
+position: absolute;
+top: 54px;
+left: 75px;
+width: 457px;
+height: 129px;
+/* overflow-y: scroll;
+border-style: dashed;
+border-width: 1px;
+border-color: yellow;*/
+background-color: transparent;
+color: #505050;
+font-size: 0.75em;
+}
+.email-remitente {
+left: 8px;
+top: 32px;
+height: 20px;
+width: 437px;
+background-color: white;
+position: absolute;
+overflow-y: scroll;
+  
+}
+
+.email-para {
+left: 2px;
+top: -2px;
+height: 88px;
+width: 443px;
+background-color: white;
+position: absolute;
+overflow-y: scroll;
+}
+
+.email-asunto {
+left: 2px;
+top: 98px;
+position: absolute;
+width: 443px;
+background-color: white;
+  
+}
+
+.email-recibido-asunto {
+left: 2px;
+top: -3px;
+position: absolute;
+width: 443px;
+background-color: transparent;
+font-size: 1.2em;
+font-weight: bold;
+  
+}
+
+.email-recibido-cabecera {
+ text-align: left;
+position: absolute;
+top: 15px;
+left: 75px;
+width: 457px;
+height: 60px;
+color: black;
+
+}
+
+.boton-audio-celular {
+  
+  background-color: transparent;
+  display: inline-block;
+  
+}
+
+.boton-audio-celular > .macro-button {
+  background-image: url("imagenes/play.png");
+  background-repeat: no-repeat;
+  background-position: 71%;
+  color: black;
+  border-style: none;
+  width: 1px;
+  height: 7px;
+  border-radius: 4px;
+  background-color: transparent;
+  background-size: contain;
+  display: inline-block;
+  text-align: left;
+  margin: 2px;
+  padding: 13px;
+}
+
+.boton-audio-celular > .macro-button :hover {
+ background-image: url(imagenes/play-hover.png") ;
+ color: #404040;
+}
+
+.carpeta-violeta-abierta {
+  background-image: url("imagenes/carpeta-violeta-abierta.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  width: 486px;
+  height: 482px;
+  position: absolute;
+  top: 100px;
+  left: 136px;
+}
+
+.hotspot#carpeta-violeta {
+ background-image: url("imagenes/carpeta-violeta.png");
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+background-color: transparent;
+width: 100px;
+height: 40px;
+position: absolute;
+top: 447px;
+left: 269px;
+  
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
 function tiene(objeto) { return objeto in inventario(); }
 
@@ -1367,9 +1502,18 @@ State.variables.inventario = {};
 
 
 
-</script><tw-passagedata pid="1" name="Oficina" tags="nobr" position="662,179" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; loop&gt;&gt;
+
+
+</script><tw-passagedata pid="1" name="Oficina" tags="nobr" position="663,178" size="200,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; loop&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadeto 0.5&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+/*
+&lt;&lt;set $MostrarAvatar to true&gt;&gt;*/
+&lt;&lt;set $MostrarFooter to true&gt;&gt;
+
 
 &lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/INAP_fondo.png&quot;]]
@@ -1377,28 +1521,37 @@ State.variables.inventario = {};
 	&lt;div class=&quot;hotspot&quot; id=&quot;biblioteca&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés consultar la biblioteca?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;hotspot&quot; id=&quot;impresora&quot; data-passage=&quot;Oficina Impresora&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Ir hacia impresora&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 	
-&lt;&lt;set $MostrarFooter to true&gt;&gt;
-&lt;&lt;agarrar &quot;experto&quot;&gt;&gt;
+&lt;&lt;if $TieneCarpetaVioleta is true&gt;&gt;
+	&lt;div class=&quot;hotspot&quot; id=&quot;carpeta-violeta&quot; data-passage=&quot;Listado&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;La carpeta de Mariela&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;
+	
+
+/*&lt;&lt;agarrar &quot;experto&quot;&gt;&gt;*/
 
 &lt;div class=&quot;W&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina Este&quot;&gt;&lt;/div&gt;
 	
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInterface" tags="" position="50,24" size="200,100">&lt;div id=&quot;aplicacion&quot;&gt;
 &lt;div id=&quot;passages&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Computadora" tags="nobr" position="656,303" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Computadora" tags="nobr" position="663,299" size="200,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/INAP_fondo_compu.png&quot;]]
 
 &lt;&lt;if $TieneMail is true&gt;&gt;
-&lt;div class=&quot;mail&quot;&gt;
-[img[&quot;imagenes/mail.png&quot;]]
-&lt;div class=&quot;texto_compu&quot;&gt;
+  &lt;div class=&quot;mail&quot;&gt;
+  [img[&quot;imagenes/mail.png&quot;]]
 
 &lt;&lt;if $Pregunta is 1&gt;&gt;
 
-/* REEMPLAZAR ESTO POR UN INCLUDE */
+&lt;div class=&quot;email-recibido-cabecera&quot;&gt;
+	&lt;div class=&quot;email-recibido-asunto&quot;&gt;¡ Hola !&lt;/div&gt;
+ 	&lt;div class=&quot;email-remitente&quot;&gt;Juan Hernández&lt;/div&gt;
+&lt;/div&gt;
 
+&lt;div class=&quot;texto_compu&quot;&gt;
 &lt;p&gt;
 Hola $usuario :
 Ya llegué a Mendoza, el vuelo esta vez no se demoró, así que puedo tomarme estos minutos para que podamos ir avanzando en el trabajo que tenemos por delante. Ayer estuve conversando con Mariela, del Departamento de Formación del Museo, y me anticipó que vamos a tener que realizar la compra de una biblioteca multimedial.&lt;/p&gt;
@@ -1408,16 +1561,20 @@ Ya llegué a Mendoza, el vuelo esta vez no se demoró, así que puedo tomarme es
 Abrazo y contá conmigo!
 &lt;/p&gt;
 
-&lt;&lt;/if&gt;&gt;	
-
 &lt;&lt;button Ok Computadora&gt;&gt;
   &lt;&lt;set $Accion to true&gt;&gt;
   &lt;&lt;set $OpcionesAccion to &quot;AccionComponer&quot;&gt;&gt;
   &lt;&lt;set $MostrarFooter to true&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 
-&lt;/div&gt;	
+&lt;/div&gt;
+
+&lt;&lt;/if&gt;&gt;	
+
+
+
 &lt;&lt;/if&gt;&gt;
+
 
 &lt;/div&gt;
 
@@ -1435,6 +1592,7 @@ Abrazo y contá conmigo!
 &lt;&lt;set $TieneExpediente to false&gt;&gt;
 &lt;&lt;set $TieneGlosario to false&gt;&gt;
 &lt;&lt;set $TieneDefinicion to false&gt;&gt;
+&lt;&lt;set $TieneCarpetaVioleta to false&gt;&gt;
 &lt;&lt;set $Progreso to 0 &gt;&gt;
 &lt;&lt;set $Total to 4 &gt;&gt;
 &lt;&lt;set $Pregunta to 1&gt;&gt;
@@ -1451,9 +1609,11 @@ Abrazo y contá conmigo!
 &lt;&lt;set $cajon to &quot;cerrado&quot;&gt;&gt;
 &lt;&lt;set $video to 0&gt;&gt;
 &lt;&lt;set $videonombre to &quot;&quot;&gt;&gt;
+&lt;&lt;set $MUSICA to true&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;ambiente&quot; &quot;sonidos/musica.ogg&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ambiente2&quot; &quot;sonidos/musica2.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;mariela&quot; &quot;sonidos/audioswasap/mariela-lista.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;exito&quot; &quot;sonidos/exito.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="532,29" size="200,100">&lt;&lt;if $MostrarFooter is true&gt;&gt;
 	&lt;div class=&quot;toolbox&quot;&gt;
 		&lt;&lt;for _item, _data range $inventario&gt;&gt;
@@ -1508,7 +1668,7 @@ Total: 472 módulos
 &lt;/ul&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="49,127" size="200,100">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="51,126" size="200,100">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
 &lt;div class=&quot;cabecera&quot;&gt;
   &lt;div id=&quot;avatar&quot;&gt;
   &lt;&lt;print &quot;&lt;div class=\&quot;avatar-foto foto&quot; + $avatar + &quot;\&quot;&gt;&lt;/div&gt;&quot;&gt;&gt;
@@ -1516,10 +1676,19 @@ Total: 472 módulos
 	&lt;div id=&quot;progreso&quot;&gt;$Progreso / $Total&lt;/div&gt;
   &lt;/div&gt;
   &lt;div id=&quot;desarrollo&quot;&gt;
-	  &lt;&lt;button Reiniciar&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;
+  		&lt;&lt;button Reiniciar&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;
+		&lt;&lt;if $MUSICA is true&gt;&gt;
+			&lt;&lt;button &quot;Apagar Musica&quot;&gt;&gt;&lt;&lt;set $MUSICA to false&gt;&gt;&lt;&lt;audio &quot;ambiente2&quot; stop&gt;&gt;&lt;&lt;/button&gt;&gt;
+		&lt;&lt;else&gt;&gt;
+			&lt;&lt;button &quot;Encender Musica&quot;&gt;&gt;&lt;&lt;set $MUSICA to true&gt;&gt;&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;&lt;&lt;/button&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+		
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Biblioteca" tags="nobr" position="914,309" size="200,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Biblioteca" tags="nobr" position="914,309" size="200,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
 &lt;div class=&quot;pantalla&quot;&gt;
 [img[&quot;imagenes/INAP_biblioteca.png&quot;]]
 
@@ -1640,7 +1809,11 @@ $(function(){
 			.style.backgroundPositionX = offset + &#39;px&#39;;
 		});
 	});	
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="13" name="Wassap" tags="nobr" position="770,27" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="13" name="Wassap" tags="nobr" position="770,27" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+
+&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;set $Notificacion to false&gt;&gt;
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 	&lt;div class=&quot;celular&quot;&gt;
@@ -1684,9 +1857,7 @@ Tengo la respuesta, pero vamos a aprovechar esta pregunta para tu entrenamiento.
 
 &lt;&lt;else&gt;&gt;
 	&lt;&lt;include Desafio3-opciones&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="PalabrasClave" tags="nobr" position="1671,491" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
-
-&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="PalabrasClave" tags="nobr" position="1671,491" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;glosario&quot;&gt;
   &lt;div class=&quot;contenedor-botonera&quot;&gt;
 	&lt;&lt;for _i, _letra range $Glosario&gt;&gt;
@@ -1857,16 +2028,29 @@ Hablamos de “adjudicatarios” cuando a los proveedores oferentes, a través d
 Cocontratantes
 Resultan ser “cocontratantes” aquellos proveedores adjudicatarios cuando se les notifica la orden de compra que perfecciona el contrato, que desata las obligaciones recíprocas, existentes entre estos y el organismo contratante, propias de la ejecución del contrato.
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="27" name="Desafio2-Intro" tags="nobr" position="989,552" size="100,100">&lt;h4&gt;ACA VA UN AUDIO&lt;/h4&gt;
-&lt;p&gt;Hola $usuario recibí tu mail. Me dijo Juan que ibas a ayudarnos con este tema, estoy muy entusiasmada con este proyecto. La idea es armar para la nueva sala un espacio novedoso que oficie tanto para la consulta de material de diferentes tipos de usuarios (alumnos, docentes, especialistas) así como soporte para los cursos de formación que vamos a dictar en el museo (nuestros expertos!).&lt;/p&gt;
+</tw-passagedata><tw-passagedata pid="27" name="Desafio2-Intro" tags="nobr" position="990,551" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
+&lt;div class=&quot;boton-audio-celular&quot;&gt;
+&lt;&lt;button &quot;.&quot;&gt;&gt;
+	&lt;&lt;audio &quot;mariela&quot; play&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+Mensaje de audio de Mariela
+&lt;/div&gt;
 
-&lt;p&gt;Te adjunto el listado de equipamiento mínimo indispensable que necesitaríamos para arrancar. &lt;/p&gt;
+&lt;div class=&quot;mensaje-celular&quot;&gt;
+Hola $usuario recibí tu mail. Me dijo Juan que ibas a ayudarnos con este tema, estoy muy entusiasmada con este proyecto. La idea es armar para la nueva sala un espacio novedoso que oficie tanto para la consulta de material de diferentes tipos de usuarios (alumnos, docentes, especialistas) así como soporte para los cursos de formación que vamos a dictar en el museo (nuestros expertos!).
+&lt;/div&gt;
 
-&lt;p&gt;Hay un tema que me genera dudas… Todavía no sé si comprar las compus y las tablets o si podremos utilizar las que compraron el mes pasado para el área de investigación, le tengo que preguntar a Mariano Fernández, porque estamos contrarreloj, (uf!). Vos tenés idea de este tema?&lt;/p&gt;
+&lt;div class=&quot;mensaje-celular&quot;&gt;
+Te adjunto el listado de equipamiento mínimo indispensable que necesitaríamos para arrancar.
+Hay un tema que me genera dudas… Todavía no sé si comprar las compus y las tablets o si podremos utilizar las que compraron el mes pasado para el área de investigación, le tengo que preguntar a Mariano Fernández, porque estamos contrarreloj, (uf!). Vos tenés idea de este tema?
+&lt;/div&gt;
 
-&lt;p&gt;Bueno, me estoy yendo a una reunión. Fijate la lista y cualquier cosa que necesites ahora consultale  a Juan que va a estar libre hasta dentro de un rato.&lt;/p&gt;
-
+&lt;div class=&quot;mensaje-celular&quot;&gt;
+Bueno, me estoy yendo a una reunión. Fijate la lista y cualquier cosa que necesites ahora consultale  a Juan que va a estar libre hasta dentro de un rato.
+&lt;/div&gt;
 &lt;&lt;button Ok Wassap&gt;&gt;
+  &lt;&lt;set $TieneCarpetaVioleta to true&gt;&gt;
   &lt;&lt;set $Accion to true&gt;&gt;
   &lt;&lt;set $OpcionesAccion to &quot;AccionIntroDesafio2&quot;&gt;&gt;
   &lt;&lt;set $MostrarFooter to true&gt;&gt;
@@ -1921,7 +2105,9 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Oficina Oeste" tags="nobr" position="525,224" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Oficina Oeste" tags="nobr" position="525,224" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;pantalla&quot;&gt;
 &lt;&lt;if $MostrarPresupuestos is true&gt;&gt;
@@ -1933,8 +2119,10 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;hotspot&quot; id=&quot;gomez&quot; data-passage=&quot;Gomez&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés ver el escritorio de Gómez?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="Oficina Este" tags="nobr" position="910,186" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="Oficina Este" tags="nobr" position="910,186" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/oficina-ESTE.png&quot;]]
@@ -1945,7 +2133,7 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 
 &lt;div class=&quot;E&quot; data-passage=&quot;Gomez&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;S&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Gomez" tags="nobr" position="403,173" size="100,100">
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Gomez" tags="nobr" position="403,172" size="100,100">
 &lt;div class=&quot;pantalla&quot;&gt;
 	
 [img[&quot;imagenes/escritorio-gomez-1.png&quot;]]
@@ -1975,7 +2163,10 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Presupuestos de compras&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Desafio Presupuestos" tags="nobr" position="989,907" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Desafio Presupuestos" tags="nobr" position="989,907" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;set $MostrarFooter to false&gt;&gt;
 
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
@@ -2014,6 +2205,7 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
   &lt;/ul&gt;
   &lt;/div&gt;
  &lt;/div&gt;
+ &lt;div class=&quot;instrucciones&quot; id=&quot;presupuestos-info&quot;&gt;Elige el presupuesto que mejor se aproxime a nuestro requerimiento&lt;/div&gt;
  
 &lt;&lt;else&gt;&gt;
    &lt;div class=&quot;papel&quot; data-passage=&quot;Oficina&quot;&gt;
@@ -2046,28 +2238,16 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="AccionComponer" tags="accion nobr" position="308,794" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Componer&quot; data-setter= &quot;$Accion to false&quot;&gt;Escribir un email a Mariela&lt;/div&gt;
-&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina&quot; data-setter= &quot;$Accion to false&quot;&gt;Seguir recorriendo la oficina&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="AccionIntroDesafio2" tags="accion nobr" position="310,898" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Wassap&quot; data-setter=&quot;$mensaje to &#39;Desafio2&#39;&quot;&gt;Mensajear a Juan &lt;&lt;set $Accion to false&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina&quot; data-setter= &quot;$Accion to false&quot;&gt;Seguir recorriendo la oficina&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="AccionIntroDesafio2" tags="accion nobr" position="312,895" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Wassap&quot; data-setter=&quot;$mensaje to &#39;Desafio2&#39;&quot;&gt;Mensajear a Juan &lt;&lt;set $Accion to false&gt;&gt;&lt;/div&gt;
 &lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina&quot; data-setter=&quot;$Accion to false&quot;&gt;Seguir explorando la Oficina&lt;/div&gt;
-&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Listado&quot;&gt;Ver Listado&lt;&lt;set $Accion to false&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Listado" tags="nobr" position="473,677" size="100,100">&lt;&lt;set $MostrarAvatar to false&gt;&gt;
-&lt;&lt;set $MostrarFooter to false&gt;&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Listado&quot;&gt;Ver Listado&lt;&lt;set $Accion to false&gt;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Listado" tags="nobr" position="473,676" size="100,100">/*&lt;&lt;set $MostrarAvatar to false&gt;&gt;
+&lt;&lt;set $MostrarFooter to false&gt;&gt;*/
 
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
   &lt;div class=&quot;overlay&quot;&gt;
-	&lt;div class=&quot;papel&quot;&gt;
-		&lt;div style=&quot;position: relative; top: 30px; margin-bottom: 70px;&quot;&gt;
-		  &lt;p&gt;Lista de equipamiento mínimo:&lt;/p&gt;
-		  &lt;ul&gt;
-		  &lt;li&gt;20 Tablets&lt;/li&gt;
-		  &lt;li&gt;6 Notebooks&lt;/li&gt;
-		  &lt;li&gt;1 Cañón&lt;/li&gt;
-		  &lt;li&gt;1 Pantalla”&lt;/li&gt;
-		  &lt;/ul&gt;
-	  &lt;/div&gt;
-	  &lt;&lt;button Ok Oficina&gt;&gt;
-	  	&lt;&lt;set $MostrarFooter to true&gt;&gt;
-		&lt;&lt;set $MostrarAvatar to true&gt;&gt;
-	  &lt;&lt;/button&gt;&gt;
+	&lt;div class=&quot;carpeta-violeta-abierta&quot;&gt;
 	&lt;/div&gt;
+	&lt;div class=&quot;S&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="AccionPresupuestos" tags="accion nobr" position="306,1004" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Gomez&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir al escritorio de Gómez&lt;/div&gt;
 &lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina&quot; data-setter=&quot;$Accion to false&quot;&gt;Seguir explorando la Oficina&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="Opcion-error" tags="nobr" position="1226,906" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
@@ -2101,7 +2281,9 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consulta con Experto&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Consulta Experto" tags="nobr" position="850,1160" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Consulta Experto" tags="nobr" position="850,1160" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+	&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;div class=&quot;videoplayer&quot;&gt;
@@ -2134,7 +2316,10 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Oficina&quot;&gt;Ok&lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 
-  </tw-passagedata><tw-passagedata pid="49" name="Desafio3-opciones" tags="nobr" position="1523,662" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
+  </tw-passagedata><tw-passagedata pid="49" name="Desafio3-opciones" tags="nobr" position="1523,662" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; fadeto 0.25&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
 &lt;p&gt;Entonces, ¿ qué le contestamos a Juan ?&lt;/p&gt;
 
   &lt;div class=&quot;opcion-celular&quot; data-passage=&quot;Wassap&quot; data-setter=&quot;$mensaje to &#39;Desafio4-OK&#39;&quot;&gt;Sí, se puede realizar la compra.&lt;/div&gt;
@@ -2157,31 +2342,26 @@ Sí.
 	 data-setter=&quot;$mensaje to &#39;Desafio4-error&#39;&quot;&gt;
 No.
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="AccionPliegos" tags="nobr accion" position="307,1108" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina Impresora&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir a impresora.&lt;/div&gt;
-&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina Este&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir a la oficina de Juan.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Oficina Impresora" tags="nobr" position="394,446" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina Este&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir a la oficina de Juan.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Oficina Impresora" tags="nobr" position="397,446" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 	
 [img[&quot;imagenes/oficina-impresora.png&quot;]]
 
 &lt;&lt;if tiene(&quot;presupuestos&quot;)&gt;&gt; /* Si ya tiene los presupuestos, entonces habilita esta etapa */
 	&lt;div class=&quot;objeto&quot; id=&quot;cajon&quot;&gt;
-	&lt;&lt;if $cajon is &quot;abierto&quot;&gt;&gt;
-		&lt;&lt;link &quot;&lt;img src=&#39;imagenes/cajon-abierto.png&#39;&gt;&quot;&gt;&gt;
-			&lt;&lt;if not tiene(&quot;pliegos&quot;)&gt;&gt;
-			  &lt;&lt;agarrar &quot;pliegos&quot;&gt;&gt;
-			  &lt;&lt;set $Progreso += 1 &gt;&gt;
-			  &lt;&lt;audio &quot;exito&quot; play&gt;&gt;
-			&lt;&lt;/if&gt;&gt;
-			&lt;&lt;set $cajon to &quot;cerrado&quot;&gt;&gt;
+	&lt;&lt;if $cajon is &quot;abierto&quot; and not tiene(&quot;pliegos&quot;)&gt;&gt;
+		&lt;&lt;link &quot;&lt;img src=&#39;imagenes/cajon-abierto-expedientes.png&#39;&gt;&quot;&gt;&gt;
+			&lt;&lt;agarrar &quot;pliegos&quot;&gt;&gt;
+		  	&lt;&lt;set $Progreso += 1 &gt;&gt;
+		  	&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
 			&lt;&lt;script&gt;&gt;Engine.play(&quot;Oficina Impresora&quot;)&lt;&lt;/script&gt;&gt;
 		&lt;&lt;/link&gt;&gt;
-		
-		&lt;div class=&quot;tooltip&quot;&gt;
-		&lt;&lt;if not tiene(&quot;pliegos&quot;)&gt;&gt;
-			&lt;span class=&quot;tooltiptext&quot;&gt;Aqui estan los pliegos !&lt;/span&gt;
-		&lt;&lt;else&gt;&gt;
-			&lt;span class=&quot;tooltiptext&quot;&gt;No hay nada aquí !&lt;/span&gt;
-		&lt;&lt;/if&gt;&gt;
-		&lt;/div&gt;
-		
+		&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;Aqui estan los pliegos !&lt;/span&gt;&lt;/div&gt;
+	&lt;&lt;elseif $cajon is &quot;abierto&quot; and tiene(&quot;pliegos&quot;)&gt;&gt;
+		&lt;&lt;link &quot;&lt;img src=&#39;imagenes/cajon-abierto.png&#39;&gt;&quot;&gt;&gt;
+		  &lt;&lt;set $cajon to &quot;cerrado&quot;&gt;&gt;
+		  &lt;&lt;script&gt;&gt;Engine.play(&quot;Oficina Impresora&quot;)&lt;&lt;/script&gt;&gt;
+		&lt;&lt;/link&gt;&gt;
+		&lt;div class=&quot;tooltip&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;No hay nada aquí.&lt;/span&gt;&lt;/div&gt;
 	&lt;&lt;else&gt;&gt;
 		&lt;&lt;link &quot;&lt;img src=&#39;imagenes/nulo.png&#39;&gt;&quot;&gt;&gt;
 			&lt;&lt;set $cajon to &quot;abierto&quot;&gt;&gt;
@@ -2199,7 +2379,10 @@ No.
 &lt;div class=&quot;W&quot; data-passage=&quot;Gomez&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Computadora&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;S&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="Desafio Pliegos" tags="nobr" position="1117,1022" size="100,100">&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="Desafio Pliegos" tags="nobr" position="1117,1022" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;set $MostrarFooter to false&gt;&gt;
 &lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 &lt;&lt;set $MostrarCabecera to false&gt;&gt;
@@ -2228,6 +2411,7 @@ No.
  &lt;/div&gt;
  
 &lt;/div&gt;
+&lt;div class=&quot;instrucciones&quot; id=&quot;pliegos-info&quot;&gt;Elige el modelo correcto de pliego.&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
     </tw-passagedata><tw-passagedata pid="54" name="Pliegos-error" tags="nobr" position="1229,1022" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
@@ -2290,18 +2474,22 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 &lt;p&gt;No hay definiciones que mostrar&lt;/p&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="J" tags="" position="1778,380" size="100,100">&lt;div class=&quot;definicion&quot;&gt;
 &lt;p&gt;No hay definiciones que mostrar&lt;/p&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="Tomo-1" tags="pdf nobr" position="695,897" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="Tomo-1" tags="pdf nobr" position="694,898" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 
 &lt;div class=&quot;display&quot;&gt;
 &lt;p&gt; &lt;a href=&quot;docs/tomo1.pdf&quot; target=&quot;_blank&quot;&gt;Abrir/Descargar como PDF&lt;/a&gt;&lt;/p&gt;
 [img[&quot;docs/tomo1/00.png&quot;]]
 &lt;/div&gt;
+&lt;div class=&quot;W&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="Tomo-2" tags="pdf nobr" position="806,898" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 
 &lt;div class=&quot;display&quot;&gt;
 &lt;p&gt; &lt;a href=&quot;docs/tomo2.pdf&quot; target=&quot;_blank&quot;&gt;Abrir/Descargar como PDF&lt;/a&gt;&lt;/p&gt;
 [img[&quot;docs/tomo2/00.jpg&quot;]]
 &lt;/div&gt;
+&lt;div class=&quot;W&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="VideoInicio" tags="nobr" position="111,373" size="100,100">&lt;div class=&quot;pantalla-video&quot;&gt;
 &lt;div class=&quot;opciones-video&quot;&gt;
 &lt;div class=&quot;opcion-accion&quot; id=&quot;skip&quot; data-passage=&quot;ConfiguracionAvatar&quot;&gt;Saltear Intro&lt;/div&gt;
@@ -2309,7 +2497,10 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 
 &lt;&lt;if $primeraVez is true&gt;&gt;
 &lt;div class=&quot;contenedor-video&quot;&gt;
-&lt;video src=&quot;videos/bienvenida.mp4&quot; width=&quot;1280&quot; height=&quot;600&quot; autoplay&gt;&lt;/video&gt;&lt;/div&gt;
+&lt;video width=&quot;1280&quot; height=&quot;600&quot; controls autoplay&gt;
+	&lt;source src=&quot;videos/bienvenida.mp4&quot; type=&quot;video/mp4&quot;&gt;
+&lt;/video&gt;
+&lt;/div&gt;
 
 
 &lt;&lt;timed 56s&gt;&gt;
@@ -2330,7 +2521,7 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 9&lt;/div&gt;&lt;/div&gt;
 	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 10&lt;/div&gt;&lt;/div&gt;
 	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="videos" tags="nobr" position="860,1037.5" size="100,100">&lt;&lt;switch $video&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="videos" tags="nobr" position="860,1037" size="100,100">&lt;&lt;switch $video&gt;&gt;
 &lt;&lt;case 1&gt;&gt;
 	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
 
