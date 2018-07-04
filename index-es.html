@@ -111,6 +111,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);
+  overflow: hidden;
   /*transform: scale(80%);*/
 }
 
@@ -1350,10 +1351,12 @@ background-color: #9ec8cf4d;
   opacity: 0;
   transition: opacity 300ms;
   color: #fff;
-  left: 10%;
-  height: 32px;
-  top: -32%;
+  left: 15%;
+  height: -moz-fit-content;
+  top: 67%;
   background-color: #ff9d28;
+  width: 330px;
+  position: absolute;
 }
 
 .video-item:hover .tooltip {
@@ -1663,13 +1666,10 @@ Abrazo y contá conmigo!
 
 
 &lt;&lt;/if&gt;&gt;
-
-
-&lt;/div&gt;
-
 &lt;div class=&quot;W&quot; data-passage=&quot;Oficina Impresora&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Biblioteca&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;S&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
+
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryInit" tags="" position="275,23" size="200,100">&lt;&lt;set $Glosario to [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;I&quot;,&quot;J&quot;,&quot;K&quot;,&quot;L&quot;,&quot;M&quot;,&quot;N&quot;,&quot;O&quot;,&quot;P&quot;,&quot;Q&quot;,&quot;R&quot;,&quot;S&quot;,&quot;T&quot;,&quot;U&quot;]&gt;&gt;
 &lt;&lt;set $Contenido to &quot;TEST&quot;&gt;&gt;
@@ -1895,6 +1895,7 @@ Total: 472 módulos
 &lt;div class=&quot;instrucciones&quot;&gt;
 	&lt;p&gt;Analiza las opciones y elige el correcto destinatario y asunto para este email y presiona &quot;Enviar&quot;.&lt;/p&gt;
 &lt;/div&gt;
+
 &lt;/div&gt;
 	
 
@@ -2680,18 +2681,18 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="vista-iconos" tags="nobr" position="964,1160" size="100,100">&lt;div class=&quot;videolista&quot;&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 1&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 2&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 2&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 3&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 3&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 4&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 4&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 5&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 5&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 6&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 6&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 7&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 7&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 8&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 8&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 9&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 10&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;¿Qué son los módulos?&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 2&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Procedimientos de selección aplicables&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 3&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Desarrollo de Procedimiento&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 4&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Inicio de la gestión&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 5&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Elaboración del pliego&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 6&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Convocatoria&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 7&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Evaluación de ofertas&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 8&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Finalización de procedimiento&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Recepeción de bienes o servicios&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Principios grales de gestión de compra&lt;/div&gt;&lt;/div&gt;
 	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="videos" tags="nobr" position="861,1036" size="100,100">&lt;&lt;switch $video&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="videos" tags="nobr" position="863,1036" size="100,100">&lt;&lt;switch $video&gt;&gt;
 &lt;&lt;case 1&gt;&gt;
 	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
 
