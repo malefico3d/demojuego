@@ -2101,7 +2101,9 @@ display: inline;
   position:absolute;
   height:100px;
   
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
+}
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
 function tiene(objeto) { return objeto in inventario(); }
 
 Macro.add("agarrar", {
@@ -2121,6 +2123,8 @@ State.variables.inventario = {};
 
 /* es.js – Español, by: Raúl Castellano. | Copyright © 2018 Thomas Michael Edwards <thomasmedwards@gmail.com>. All rights reserved. | Licensed under a BSD 2-clause "Simplified" License. */
 !function(){l10nStrings.identity="juego",l10nStrings.aborting="Abortar",l10nStrings.cancel="Cancelar",l10nStrings.close="Cerrar",l10nStrings.ok="OK",l10nStrings.errorTitle="Error",l10nStrings.errorToggle="Cambiar la vista de error",l10nStrings.errorNonexistentPassage='el pasaje "{passage}" no existe',l10nStrings.errorSaveMissingData="el guardado requiere datos no encontrados. O el archivo cargado no es un guardado o el guardado está corrupto",l10nStrings.errorSaveIdMismatch="guardado erróneo {identity}",l10nStrings._warningIntroLacking="Tu navegador carece o ha desactivado",l10nStrings._warningOutroDegraded=", esta {identity} está funcionando en un modo degradado. Puedes continuar, sin embargo, algunas partes pueden no funcionar correctamente",l10nStrings.warningNoWebStorage="{_warningIntroLacking} el Almacenamiento Web API{_warningOutroDegraded}",l10nStrings.warningDegraded="{_warningIntroLacking} algunas de las capacidades requeridas por esta {identity}{_warningOutroDegraded}",l10nStrings.debugBarToggle="Alternar la barra de depuración",l10nStrings.debugBarNoWatches="— no hay relojes estabecidos —",l10nStrings.debugBarAddWatch="Añadir reloj",l10nStrings.debugBarDeleteWatch="Borrar reloj",l10nStrings.debugBarWatchAll="Ver todo",l10nStrings.debugBarWatchNone="Borrar todo",l10nStrings.debugBarLabelAdd="Añadir",l10nStrings.debugBarLabelWatch="Ver",l10nStrings.debugBarLabelTurn="Girar",l10nStrings.debugBarLabelViews="Vistas",l10nStrings.debugBarViewsToggle="Alternar las vistas debug",l10nStrings.debugBarWatchToggle="Alternar el panel de reloj",l10nStrings.uiBarToggle="Alternar la barra de UI",l10nStrings.uiBarBackward="Volver atrás en la {identity} historia",l10nStrings.uiBarForward="Avanzar en la {identity} historia",l10nStrings.uiBarJumpto="Saltar a un punto específico de la {identity} historia",l10nStrings.jumptoTitle="Saltar A",l10nStrings.jumptoTurn="Girar",l10nStrings.jumptoUnavailable="No hay puntos de salto actualmente disponibles…",l10nStrings.savesTitle="Guardados",l10nStrings.savesDisallowed="Guardar ha sido deshabilitado en este pasaje.",l10nStrings.savesEmptySlot="— Guardado vacío —",l10nStrings.savesIncapable="{_warningIntroLacking} las capacidades requeridas para proporcionar guardados, entonces los guardados han sido deshabilitados para esta sesión.",l10nStrings.savesLabelAuto="Autoguardado",l10nStrings.savesLabelDelete="Borrar",l10nStrings.savesLabelExport="Guardar en Disco…",l10nStrings.savesLabelImport="Cargar desde Disco…",l10nStrings.savesLabelLoad="Cargar",l10nStrings.savesLabelClear="Borrar todo",l10nStrings.savesLabelSave="Guardar",l10nStrings.savesLabelSlot="Espacio",l10nStrings.savesSavedOn="Guardado",l10nStrings.savesUnavailable="No es encontraron espacios de guardado…",l10nStrings.savesUnknownDate="desconocido",l10nStrings.settingsTitle="Ajustes",l10nStrings.settingsOff="Off",l10nStrings.settingsOn="On",l10nStrings.settingsReset="Usar predeterminados",l10nStrings.restartTitle="Reiniciar",l10nStrings.restartPrompt="¿Estás seguro de que quieres reiniciar?Todo progreso no guardado caerá en el olvido.",l10nStrings.shareTitle="Compartir",l10nStrings.autoloadTitle="Autocarga",l10nStrings.autoloadCancel="Ir al Comienzo",l10nStrings.autoloadOk="Cargar autoguardado",l10nStrings.autoloadPrompt="Un autoguardado existe ¿Cargarlo ahora o ir al comienzo?",l10nStrings.macroBackText="Atrás",l10nStrings.macroReturnText="Volver",l10nStrings.alertTitle="Información"}();
+
+
 
 
 
@@ -2520,7 +2524,7 @@ No tenés mensajes.
 &lt;&lt;set $cajon to &quot;cerrado&quot;&gt;&gt;
 &lt;&lt;set $video to 0&gt;&gt;
 &lt;&lt;set $videonombre to &quot;&quot;&gt;&gt;
-&lt;&lt;set $password to &quot;master&quot;&gt;&gt;
+&lt;&lt;set $password to &quot;MASTER&quot;&gt;&gt;
 &lt;&lt;set $cadena to &quot;&quot;&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;ambiente&quot; &quot;sonidos/musica.ogg&quot;&gt;&gt;
@@ -3428,7 +3432,7 @@ _item\
 		&lt;span class=&quot;tooltiptext&quot;&gt;Un cuaderno azul&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-/*[[Cuaderno azul]]*/</tw-passagedata><tw-passagedata pid="37" name="Video Inicio" tags="nobr sin-celu sin-header sin-toolbox" position="222,301" size="100,100">&lt;div class=&quot;pantalla-video&quot;&gt;
+/*[[Cuaderno azul]]*/</tw-passagedata><tw-passagedata pid="37" name="Video Inicio" tags="nobr sin-celu sin-header sin-toolbox" position="189,273" size="100,100">&lt;div class=&quot;pantalla-video&quot;&gt;
 &lt;div class=&quot;opciones-video&quot;&gt;
 &lt;div class=&quot;opcion-accion&quot; id=&quot;skip&quot; data-passage=&quot;ConfiguracionAvatar&quot;&gt;Omitir Introducción&lt;/div&gt;
 &lt;/div&gt;
@@ -3440,8 +3444,8 @@ _item\
 &lt;/video&gt;
 &lt;/div&gt;
 
-
 &lt;&lt;timed 56s&gt;&gt;
+
 &lt;div class=&quot;ventana-accion&quot;&gt;
 &lt;div class=&quot;opcion-accion&quot; data-passage=&quot;ConfiguracionAvatar&quot;&gt;Comenzar a jugar&lt;/div&gt;
 &lt;/div&gt;
@@ -3449,13 +3453,13 @@ _item\
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
 
-/*[[ConfiguracionAvatar]]*/</tw-passagedata><tw-passagedata pid="38" name="Password" tags="nobr sin-celu sin-header sin-toolbox" position="46,403" size="100,100">&lt;div class=&quot;portada&quot;&gt;
+/*[[ConfiguracionAvatar]]*/</tw-passagedata><tw-passagedata pid="38" name="Password" tags="nobr sin-celu sin-header sin-toolbox" position="45,475" size="100,100">&lt;div class=&quot;portada&quot;&gt;
 &lt;div class=&quot;password&quot;&gt;
 &lt;p&gt;Ingresa la clave del nivel&lt;/p&gt;
 &lt;&lt;textbox &quot;$cadena&quot; &quot;&quot; autofocus&gt;&gt;
 &lt;&lt;button Entrar&gt;&gt;
-	&lt;&lt;if $cadena is $password&gt;&gt;
-		&lt;&lt;goto &quot;Video Inicio&quot;&gt;&gt;
+	&lt;&lt;if $cadena.toUpperCase() is $password&gt;&gt;
+		&lt;&lt;goto &quot;ConfiguracionAvatar&quot;&gt;&gt;
 	&lt;&lt;else&gt;&gt;
 		&lt;&lt;replace &quot;#advertencia&quot;&gt;&gt;La clave no es correcta&lt;&lt;/replace&gt;&gt;
 		
@@ -3466,7 +3470,7 @@ _item\
 &lt;/div&gt;
 &lt;/div&gt;
 
-/*[[Video Inicio]]*/</tw-passagedata><tw-passagedata pid="39" name="Tomo-1" tags="nobr" position="1456,722" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+/*[[ConfiguracionAvatar]]*/</tw-passagedata><tw-passagedata pid="39" name="Tomo-1" tags="nobr" position="1456,722" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 
 &lt;div class=&quot;display&quot;&gt;
 &lt;p class=&quot;boton-trucho&quot;&gt;
