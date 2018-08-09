@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1173077"
-     inkscape:cx="1017.6224"
+     inkscape:cx="472.84274"
      inkscape:cy="456.31369"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -52,74 +52,34 @@
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <g
-       id="g106"
+    <path
+       style="fill:#ffcc00;stroke-width:0.26458332"
+       d="m 18.142857,108.76786 c 20.67493,-5.3538 128.161113,-2.09003 154.970243,0 5.97035,42.10997 -0.45699,91.2133 -0.45699,91.2133 l -6.75929,10.11443 -6.06965,8.32717 -141.684313,-0.0418 c 0,0 4.899941,-65.06817 0,-109.61309 z"
+       id="rect10"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/malefico/Documentos/demojuego/imagenes/modulos-postit.png"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96">
-      <path
-         sodipodi:nodetypes="ccccccc"
-         inkscape:connector-curvature="0"
-         id="rect10"
-         d="m 18.142857,108.76786 c 20.67493,-5.3538 128.161113,-2.09003 154.970243,0 5.97035,42.10997 -0.45699,91.2133 -0.45699,91.2133 l -6.75929,10.11443 -6.06965,8.32717 -141.684313,-0.0418 c 0,0 4.899941,-65.06817 0,-109.61309 z"
-         style="fill:#ffcc00;stroke-width:0.26458332" />
-      <flowRoot
-         transform="matrix(0.55329039,0,0,0.55329039,-50.786937,-128.894)"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-         id="flowRoot12"
-         xml:space="preserve"><flowRegion
-           id="flowRegion14"><rect
-             y="496.80539"
-             x="165.71428"
-             height="80"
-             width="222.85715"
-             id="rect16" /></flowRegion><flowPara
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Caveat;-inkscape-font-specification:Caveat"
-           id="flowPara18">8300 módulos</flowPara></flowRoot>      <rect
-         y="96.672615"
-         x="18.331846"
-         height="12.095242"
-         width="154.78127"
-         id="rect20"
-         style="fill:#d4aa00;stroke-width:0.26377934" />
-      <ellipse
-         ry="2.6458333"
-         rx="1.1339285"
-         cy="186.25298"
-         cx="131.9137"
-         id="path22"
-         style="fill:#000000;stroke-width:0.26458332" />
-      <ellipse
-         ry="2.6458333"
-         rx="1.1339285"
-         cy="185.49702"
-         cx="143.25298"
-         id="path22-0"
-         style="fill:#000000;stroke-width:0.26458332" />
-      <path
-         sodipodi:nodetypes="cscsc"
-         inkscape:connector-curvature="0"
-         id="path43"
-         d="m 145.1651,195.40671 c 0,0.59031 -2.67036,5.73802 -6.77594,5.73802 -4.10557,0 -8.289,-4.69767 -8.289,-5.28798 0,-0.59031 4.24922,3.82535 8.35479,3.82535 4.10557,0 6.71015,-4.8657 6.71015,-4.27539 z"
-         style="fill:#000000;stroke-width:0.24089064" />
-      <path
-         sodipodi:nodetypes="cscsc"
-         inkscape:connector-curvature="0"
-         id="path43-1"
-         d="m 147.60271,196.60991 c -0.11043,0.10438 -1.55231,0.42546 -2.28865,-0.48026 -0.73635,-0.90572 -0.60789,-2.65923 -0.49746,-2.76361 0.11043,-0.10438 0.0465,1.61379 0.78286,2.51951 0.73634,0.90572 2.11367,0.61998 2.00325,0.72436 z"
-         style="fill:#000000;stroke-width:0.06507604" />
-      <path
-         sodipodi:nodetypes="cscsc"
-         inkscape:connector-curvature="0"
-         id="path43-1-5"
-         d="m 127.97704,196.68907 c 0.11043,0.10438 1.55231,0.42546 2.28865,-0.48026 0.73635,-0.90572 0.60789,-2.65923 0.49746,-2.76361 -0.11043,-0.10438 -0.0465,1.61379 -0.78286,2.51951 -0.73634,0.90572 -2.11367,0.61998 -2.00325,0.72436 z"
-         style="fill:#000000;stroke-width:0.06507604" />
-      <path
-         sodipodi:nodetypes="cccc"
-         inkscape:connector-curvature="0"
-         id="path91"
-         d="m 172.65611,199.98116 c -9.37807,6.31564 -16.31381,7.47317 -16.31381,7.47317 0,0 4.39836,5.2673 3.48487,10.96843 4.41461,-3.88945 9.77478,-6.5233 12.82894,-18.4416 z"
-         style="fill:#ffe680;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    </g>
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#d4aa00;stroke-width:0.26377934"
+       id="rect20"
+       width="154.78127"
+       height="12.095242"
+       x="18.331846"
+       y="96.672615"
+       inkscape:export-filename="/home/malefico/Documentos/demojuego/imagenes/modulos-postit.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#ffe680;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 172.65611,199.98116 c -9.37807,6.31564 -16.31381,7.47317 -16.31381,7.47317 0,0 4.39836,5.2673 3.48487,10.96843 4.41461,-3.88945 9.77478,-6.5233 12.82894,-18.4416 z"
+       id="path91"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/malefico/Documentos/demojuego/imagenes/modulos-postit.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <g
        id="g114"
        inkscape:export-xdpi="96"
@@ -141,5 +101,39 @@
          id="rect110"
          style="fill:#afdde9;stroke:none;stroke-width:0.25659907" />
     </g>
-  </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1743"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Caveat;-inkscape-font-specification:Caveat;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26362413,-0.02250908,0.02250908,0.26362413,-12.032318,8.6847585)"
+       inkscape:export-filename="/home/malefico/Documentos/demojuego/imagenes/modulos-postit.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1745"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Caveat;-inkscape-font-specification:Caveat"><rect
+           id="rect1747"
+           width="506.57486"
+           height="254.18246"
+           x="133.35628"
+           y="433.36307"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Caveat;-inkscape-font-specification:Caveat" /></flowRegion><flowPara
+         id="flowPara1749"
+         style="font-size:64px">Monto presunto compra de mobiliario: 8300 módulos</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1743-5"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Caveat;-inkscape-font-specification:Caveat;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26362413,-0.02250908,0.02250908,0.26362413,74.433872,66.670443)"
+       inkscape:export-filename="/home/malefico/Documentos/demojuego/imagenes/modulos-postit.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1745-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Caveat;-inkscape-font-specification:Caveat"><rect
+           id="rect1747-5"
+           width="163.43286"
+           height="96.431984"
+           x="133.35628"
+           y="433.36307"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Caveat;-inkscape-font-specification:Caveat" /></flowRegion><flowPara
+         id="flowPara1749-7"
+         style="font-size:64px">Sara</flowPara></flowRoot>  </g>
 </svg>

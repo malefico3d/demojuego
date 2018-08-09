@@ -1028,6 +1028,7 @@ border-color: #57c;
   margin: 15px;
   color: #505e5f;
   position: relative;
+  text-align: left;
 }
 
 .dialogo-container .mensaje-celular::after {
@@ -1253,7 +1254,7 @@ transform: translateX(-50%);
   
 }
 .portada {
-  background-image:url("imagenes/portada.jpg");
+  background-image:url("imagenes/portada-nivel1.jpg");
   background-repeat:no-repeat;
   background-position: center;
   background-size: contain;
@@ -1552,6 +1553,7 @@ border-width: 1px;
   top: 21px;
 }
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">function inventario()  { return State.variables.inventario }
 function tiene(objeto) { return objeto in inventario(); }
 
@@ -1570,6 +1572,8 @@ window.tiene = tiene;
 /* Asignación de variables en Twine */
 State.variables.inventario = {};
 
+/* es.js – Español, by: Raúl Castellano. | Copyright © 2018 Thomas Michael Edwards <thomasmedwards@gmail.com>. All rights reserved. | Licensed under a BSD 2-clause "Simplified" License. */
+!function(){l10nStrings.identity="juego",l10nStrings.aborting="Abortar",l10nStrings.cancel="Cancelar",l10nStrings.close="Cerrar",l10nStrings.ok="OK",l10nStrings.errorTitle="Error",l10nStrings.errorToggle="Cambiar la vista de error",l10nStrings.errorNonexistentPassage='el pasaje "{passage}" no existe',l10nStrings.errorSaveMissingData="el guardado requiere datos no encontrados. O el archivo cargado no es un guardado o el guardado está corrupto",l10nStrings.errorSaveIdMismatch="guardado erróneo {identity}",l10nStrings._warningIntroLacking="Tu navegador carece o ha desactivado",l10nStrings._warningOutroDegraded=", esta {identity} está funcionando en un modo degradado. Puedes continuar, sin embargo, algunas partes pueden no funcionar correctamente",l10nStrings.warningNoWebStorage="{_warningIntroLacking} el Almacenamiento Web API{_warningOutroDegraded}",l10nStrings.warningDegraded="{_warningIntroLacking} algunas de las capacidades requeridas por esta {identity}{_warningOutroDegraded}",l10nStrings.debugBarToggle="Alternar la barra de depuración",l10nStrings.debugBarNoWatches="— no hay relojes estabecidos —",l10nStrings.debugBarAddWatch="Añadir reloj",l10nStrings.debugBarDeleteWatch="Borrar reloj",l10nStrings.debugBarWatchAll="Ver todo",l10nStrings.debugBarWatchNone="Borrar todo",l10nStrings.debugBarLabelAdd="Añadir",l10nStrings.debugBarLabelWatch="Ver",l10nStrings.debugBarLabelTurn="Girar",l10nStrings.debugBarLabelViews="Vistas",l10nStrings.debugBarViewsToggle="Alternar las vistas debug",l10nStrings.debugBarWatchToggle="Alternar el panel de reloj",l10nStrings.uiBarToggle="Alternar la barra de UI",l10nStrings.uiBarBackward="Volver atrás en la {identity} historia",l10nStrings.uiBarForward="Avanzar en la {identity} historia",l10nStrings.uiBarJumpto="Saltar a un punto específico de la {identity} historia",l10nStrings.jumptoTitle="Saltar A",l10nStrings.jumptoTurn="Girar",l10nStrings.jumptoUnavailable="No hay puntos de salto actualmente disponibles…",l10nStrings.savesTitle="Guardados",l10nStrings.savesDisallowed="Guardar ha sido deshabilitado en este pasaje.",l10nStrings.savesEmptySlot="— Guardado vacío —",l10nStrings.savesIncapable="{_warningIntroLacking} las capacidades requeridas para proporcionar guardados, entonces los guardados han sido deshabilitados para esta sesión.",l10nStrings.savesLabelAuto="Autoguardado",l10nStrings.savesLabelDelete="Borrar",l10nStrings.savesLabelExport="Guardar en Disco…",l10nStrings.savesLabelImport="Cargar desde Disco…",l10nStrings.savesLabelLoad="Cargar",l10nStrings.savesLabelClear="Borrar todo",l10nStrings.savesLabelSave="Guardar",l10nStrings.savesLabelSlot="Espacio",l10nStrings.savesSavedOn="Guardado",l10nStrings.savesUnavailable="No es encontraron espacios de guardado…",l10nStrings.savesUnknownDate="desconocido",l10nStrings.settingsTitle="Ajustes",l10nStrings.settingsOff="Off",l10nStrings.settingsOn="On",l10nStrings.settingsReset="Usar predeterminados",l10nStrings.restartTitle="Reiniciar",l10nStrings.restartPrompt="¿Estás seguro de que quieres reiniciar?Todo progreso no guardado caerá en el olvido.",l10nStrings.shareTitle="Compartir",l10nStrings.autoloadTitle="Autocarga",l10nStrings.autoloadCancel="Ir al Comienzo",l10nStrings.autoloadOk="Cargar autoguardado",l10nStrings.autoloadPrompt="Un autoguardado existe ¿Cargarlo ahora o ir al comienzo?",l10nStrings.macroBackText="Atrás",l10nStrings.macroReturnText="Volver",l10nStrings.alertTitle="Información"}();
 
 
 
@@ -1585,7 +1589,8 @@ State.variables.inventario = {};
 
 
 
-</script><tw-passagedata pid="1" name="Oficina" tags="nobr" position="663,178" size="200,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+
+</script><tw-passagedata pid="1" name="Oficina" tags="nobr lugar" position="663,178" size="200,100">&lt;&lt;if $MUSICA is true&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; loop&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadeto 0.5&gt;&gt;
@@ -1616,9 +1621,9 @@ State.variables.inventario = {};
 &lt;div class=&quot;W&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina Este&quot;&gt;&lt;/div&gt;
 	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInterface" tags="" position="50,24" size="200,100">&lt;div id=&quot;aplicacion&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInterface" tags="" position="53,23" size="200,100">&lt;div id=&quot;aplicacion&quot;&gt;
 &lt;div id=&quot;passages&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Computadora" tags="nobr" position="663,299" size="200,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Computadora" tags="nobr" position="664,299" size="200,100">&lt;&lt;if $MUSICA is true&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -1737,7 +1742,8 @@ Abrazo y contá conmigo!
 	&lt;/div&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if not tags().includes(&quot;no-importante&quot;)&gt;&gt;
+
+&lt;&lt;if tags().includes(&quot;lugar&quot;)&gt;&gt;
 	&lt;&lt;set $Volver to State.passage&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Portada" tags="nobr" position="52,242" size="200,100">&lt;div class=&quot;portada&quot;&gt;
 
@@ -1768,7 +1774,7 @@ Total: 472 módulos
 &lt;/ul&gt;
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="51,126" size="200,100">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="nobr" position="53,126" size="200,100">&lt;&lt;if $MostrarAvatar is true&gt;&gt;
 &lt;div class=&quot;cabecera&quot;&gt;
   &lt;div id=&quot;avatar&quot;&gt;
   &lt;&lt;print &quot;&lt;div class=\&quot;avatar-foto foto&quot; + $avatar + &quot;\&quot;&gt;&lt;/div&gt;&quot;&gt;&gt;
@@ -1804,7 +1810,7 @@ Total: 472 módulos
 
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Biblioteca" tags="nobr" position="914,309" size="200,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Biblioteca" tags="nobr lugar" position="914,309" size="200,100">&lt;&lt;if $MUSICA is true&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadeto 0.3&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -1852,7 +1858,7 @@ Total: 472 módulos
 &lt;div class=&quot;mensaje&quot;&gt;
 &lt;&lt;if $Destino is &quot;formacion&quot; and $Asunto is &quot;condiciones&quot;&gt;&gt;
 	&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
-  	&lt;h4&gt;Bien!&lt;/h4&gt;
+  	&lt;h4&gt;¡Bien!&lt;/h4&gt;
 	&lt;p&gt;Mariela es la Coordinadora del Área de Formación, que en este caso es la unidad requirente. Por eso es pertinente que no hayas elegido la dirección de correo que indica que Mariela trabaja en la unidad operativa de compras, dado que ese puesto está siendo ocupado por vos en este entrenamiento.&lt;/p&gt;
 	&lt;&lt;set $TieneMail to false&gt;&gt;
   	&lt;&lt;set $Pregunta to 2&gt;&gt;
@@ -1929,7 +1935,7 @@ $(function(){
 			.style.backgroundPositionX = offset + &#39;px&#39;;
 		});
 	});	
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="13" name="Wassap" tags="nobr" position="770,27" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="13" name="Wassap" tags="nobr" position="769,26" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
 
 &lt;&lt;/if&gt;&gt;
@@ -2165,7 +2171,7 @@ Mensaje de audio de Mariela
 &lt;/div&gt;
 
 &lt;div class=&quot;mensaje-celular&quot;&gt;
-Hola $usuario recibí tu mail. Me dijo Juan que ibas a ayudarnos con este tema, estoy muy entusiasmada con este proyecto. La idea es armar para la nueva sala un espacio novedoso que oficie tanto para la consulta de material de diferentes tipos de usuarios (alumnos, docentes, especialistas) así como soporte para los cursos de formación que vamos a dictar en el museo (nuestros expertos!).
+Hola $usuario recibí tu mail. Me dijo Juan que ibas a ayudarnos con este tema, estoy muy entusiasmada con este proyecto. La idea es armar para la nueva sala un espacio novedoso que oficie tanto para la consulta de material de diferentes tipos de usuarios (alumnos, docentes, especialistas) así como soporte para los cursos de formación que vamos a dictar en el museo (¡nuestros expertos!).
 &lt;/div&gt;
 
 &lt;div class=&quot;mensaje-celular&quot;&gt;
@@ -2229,17 +2235,16 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;&lt;set $MostrarPresupuestos to true&gt;&gt;
 	&lt;&lt;set $MostrarFooter to true&gt;&gt;
 /* &lt;/div&gt; */
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="libro1" tags="item nobr" position="103,797" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;libro1&quot; data-passage=&quot;Tomo-1&quot;&gt;
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="libro1" tags="item nobr" position="105,797" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;libro1&quot; data-passage=&quot;Tomo-1&quot;&gt;
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consultar Tomo 1&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="32" name="glosario" tags="item nobr" position="101,906" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;glosario&quot; data-passage=&quot;PalabrasClave&quot;&gt;
-	&lt;&lt;set $Volver to State.passage &gt;&gt;
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Ver Palabras Clave&lt;/span&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Oficina Oeste" tags="nobr" position="525,224" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Oficina Oeste" tags="nobr lugar" position="525,224" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadeout&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -2253,7 +2258,7 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;div class=&quot;hotspot&quot; id=&quot;gomez&quot; data-passage=&quot;Gomez&quot;&gt;&lt;div class=&quot;tooltip-left&quot;&gt;&lt;span class=&quot;tooltiptext&quot;&gt;¿Querés ver el escritorio de Gómez?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;E&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="Oficina Este" tags="nobr" position="910,186" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="Oficina Este" tags="nobr lugar" position="910,186" size="100,100">&lt;&lt;if $MUSICA is true&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
 &lt;&lt;audio &quot;ambiente2&quot; fadein&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -2276,12 +2281,12 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 	&lt;&lt;/if&gt;&gt;
 	&lt;&lt;set $MostrarFooter to true&gt;&gt;
 	&lt;div class=&quot;W&quot; data-passage=&quot;Oficina&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="Bebedero" tags="nobr" position="402,316" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="Bebedero" tags="nobr lugar" position="402,316" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 	[img[&quot;imagenes/bebedero-fichero.png&quot;]]
 
 &lt;div class=&quot;E&quot; data-passage=&quot;Gomez&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;S&quot; data-passage=&quot;Oficina Oeste&quot;&gt;&lt;/div&gt;	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Gomez" tags="nobr" position="403,172" size="100,100">
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Gomez" tags="nobr lugar" position="403,172" size="100,100">
 &lt;div class=&quot;pantalla&quot;&gt;
 	
 [img[&quot;imagenes/escritorio-gomez-1.png&quot;]]
@@ -2429,7 +2434,6 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 
 
 </tw-passagedata><tw-passagedata pid="46" name="experto" tags="item nobr" position="103,1118" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;experto&quot; data-passage=&quot;Consulta Experto&quot;&gt;
-	&lt;&lt;set $Volver to State.passage &gt;&gt;
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Consulta con Experto&lt;/span&gt;
 	&lt;/div&gt;
@@ -2459,7 +2463,7 @@ En el escritorio de Gómez vas a encontrar algunos presupuestos para orientarte,
 
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="Desafio3-comun" tags="nobr" position="1418,662" size="100,100">&lt;div class=&quot;mensaje-celular&quot;&gt;
-&lt;&lt;if not tiene(&quot;glosario&quot;)&gt;&gt;En la biblioteca hay un Glosario de Palabras Clave, buscá: &lt;&lt;else&gt;&gt;Buscá en Palabras Clave &lt;&lt;/if&gt;&gt;“Plan Anual de Contrataciones/Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses. 
+&lt;&lt;if not tiene(&quot;glosario&quot;)&gt;&gt;En la biblioteca hay un Glosario de Palabras Clave, buscá: &lt;&lt;else&gt;&gt;Buscá en Palabras Clave &lt;&lt;/if&gt;&gt;“Plan Anual de Contrataciones&quot; o &quot;Desdoblamiento” y decime si podemos hacer esta compra. Tené en cuenta que cerramos una compra similar hace 2 meses. 
 &lt;/div&gt;
 
 &lt;&lt;if not tiene(&quot;glosario&quot;)&gt;&gt;
@@ -2494,7 +2498,7 @@ Sí.
 	 data-setter=&quot;$mensaje to &#39;Desafio4-error&#39;&quot;&gt;
 No.
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="AccionPliegos" tags="nobr accion" position="307,1108" size="200,100">&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina Impresora&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir a impresora.&lt;/div&gt;
-&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina Este&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir a la oficina de Juan.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Oficina Impresora" tags="nobr" position="397,446" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
+&lt;div class=&quot;opcion-accion&quot; data-passage=&quot;Oficina Este&quot; data-setter=&quot;$Accion to false&quot;&gt;Ir a la oficina de Juan.&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="Oficina Impresora" tags="nobr lugar" position="397,446" size="100,100">&lt;div class=&quot;pantalla&quot;&gt;
 	
 [img[&quot;imagenes/oficina-impresora.png&quot;]]
 
@@ -2641,7 +2645,7 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 &lt;div class=&quot;botonera-libros&quot;&gt;
 	&lt;&lt;button &quot;Cerrar&quot; $Volver&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="Tomo-2" tags="pdf nobr no-importante" position="808,897" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="Tomo-2" tags="pdf nobr" position="808,897" size="100,100">&lt;div class=&quot;pantalla-bienvenida&quot;&gt;
 
 &lt;div class=&quot;display&quot;&gt;
 &lt;p class=&quot;boton-trucho&quot;&gt;
@@ -2727,7 +2731,6 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 &lt;/div&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="pizarra" tags="item nobr" position="98,1333" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;pizarra&quot; data-passage=&quot;Pizarra&quot;&gt;
-	&lt;&lt;set $Volver to State.passage &gt;&gt;
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Una pizarra electrónica&lt;/span&gt;
 	&lt;/div&gt;
