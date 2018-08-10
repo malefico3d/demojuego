@@ -810,7 +810,8 @@ border-color: #57c;
 }
 
 .glosario > .botones {
-  position: absolute;
+  position: relative;
+top: 270px;
 }
 .contenedor-botonera {
   position: relative;
@@ -822,15 +823,15 @@ border-color: #57c;
 
 .contenedor-definiciones {
   background-color: white;
-  position: absolute;
-  height: 179px;
-  width: 95%;
-  top: 120px;
-  padding: 20px;
-  overflow-y: scroll;
-  color: #404040;
-  font-size: 0.85em;
-  text-align: left;
+position: absolute;
+height: 179px;
+width: 90%;
+top: 120px;
+padding: 20px;
+overflow-y: scroll;
+color: #404040;
+font-size: 0.85em;
+text-align: left;
 }
 
 .contenedorCentrado {
@@ -914,15 +915,16 @@ border-color: #57c;
 }
 .glosario {
   position: relative;
-  width: 100%;
-  background-color: white;
-  height: 400px;
-  top: 100px;
-  border-radius: 10px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: transparent;
-  box-shadow: 5px 5px 5px #10101070;
+width: 762px;
+background-color: white;
+height: 400px;
+top: 109px;
+border-radius: 10px;
+border-style: solid;
+border-width: 2px;
+border-color: transparent;
+box-shadow: 5px 5px 5px #10101070;
+margin: auto;
 }
 
 .contenedor-botonera > .macro-button {
@@ -1189,7 +1191,7 @@ top:30%;
 
 .instrucciones {
   position: absolute;
-  top: 205px;
+  top: 193px;
   width: 400px;
   background-color: orange;
   color: white;
@@ -1199,11 +1201,12 @@ top:30%;
   border-style: solid;
   border-width: 1px;
   border-color: white;
-  left: 94px;
-  padding-left: 94px;
+  left: 154px;
+  padding: 10px; */
   text-align: center;
   box-shadow: 0px 5px 10px #404040c0;
   animation: ingresa-instrucciones 500ms linear;
+
 }
 
 .instrucciones#presupuestos-info, .instrucciones#pliegos-info {
@@ -1211,8 +1214,8 @@ top:30%;
   width: 198px;
   left: 94px;
   padding: 20px;
-  padding-left: 20px;
-  padding-left: 86px;
+  /*padding-left: 20px;
+  padding-left: 86px;*/
   z-index:5000;
 }
 
@@ -1236,7 +1239,7 @@ top:30%;
   from {opacity:  0;
   		left: 0px;}
   to {opacity: 1;
-  		left: 94px;}
+  		left: 154px;}
 }
 @keyframes resalta {
   from {top: 0px;}
@@ -1522,7 +1525,7 @@ overflow: scroll;
 }
 
 .pizarra-pantalla img {
- 	max-width: 145%;
+ 	max-width: 100%;
 }
 
 /* LIBROS */
@@ -2099,7 +2102,7 @@ Una vez recibida la conformidad de la recepción, los cocontratantes podrán pre
 Los pagos deben realizarse en la moneda que corresponda, de acuerdo a las disposiciones de la Secretaría de Hacienda, del Ministerio de Hacienda.
 &lt;/div&gt;
 
-&lt;h2&gt;Plan Anual de Contrataciones/Desdoblamiento&lt;/h2&gt;
+&lt;h2&gt;Plan Anual de Contrataciones / Desdoblamiento&lt;/h2&gt;
 &lt;&lt;if $TieneDefinicion is false&gt;&gt;
   &lt;&lt;set $Progreso += 1 &gt;&gt;
   &lt;&lt;audio &quot;exito&quot; play&gt;&gt;
@@ -2215,7 +2218,7 @@ No.
 Mariela me avisó que puso todo lo necesario así que tranquilo. ¡Avancemos!. 
 &lt;/div&gt;
 &lt;&lt;include Desafio4-exito&gt;&gt;
-</tw-passagedata><tw-passagedata pid="30" name="Desafio4-exito" tags="nobr" position="1421,786" size="200,100">&lt;&lt;if $Desafio5primera is true&gt;&gt;
+</tw-passagedata><tw-passagedata pid="30" name="Desafio4-exito" tags="nobr" position="1422,786" size="200,100">&lt;&lt;if $Desafio5primera is true&gt;&gt;
 &lt;&lt;set $Progreso += 1 &gt;&gt;
 &lt;&lt;audio &quot;exito&quot; play&gt;&gt;
 &lt;&lt;set $Desafio5primera to false&gt;&gt;
@@ -2677,18 +2680,18 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="vista-iconos" tags="nobr" position="963,1160" size="100,100">&lt;div class=&quot;videolista&quot;&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 1&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 2&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 2&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 3&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 3&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 4&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 4&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 5&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 5&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 6&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 6&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 7&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 7&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 8&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 8&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 9&lt;/div&gt;&lt;/div&gt;
-	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Video 10&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;¿Qué son los módulos?&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 2&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Procedimientos de selección aplicables&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 3&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Desarrollo de Procedimiento&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 4&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Inicio de la gestión&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 5&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Elaboración del pliego&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 6&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Convocatoria&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 7&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Evaluación de ofertas&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 8&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Finalización de procedimiento&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 9&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Recepeción de bienes o servicios&lt;/div&gt;&lt;/div&gt;
+	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 10&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;Principios grales de gestión de compra&lt;/div&gt;&lt;/div&gt;
 	
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="videos" tags="nobr" position="860,1037" size="100,100">&lt;&lt;switch $video&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="videos" tags="nobr" position="862,1036" size="100,100">&lt;&lt;switch $video&gt;&gt;
 &lt;&lt;case 1&gt;&gt;
 	  &lt;video src=&quot;videos/ANGELA_PEPA-JUEGO-PRG_01_QUE_SON_LOS_MODULOS.mp4&quot; width=&quot;800px&quot; height=&quot;280px&quot; autoplay controls&gt;&lt;/video&gt; 
 
@@ -2724,13 +2727,14 @@ Comprende a todas las jurisdicciones y entidades que desean llevar a cabo un pro
 [img[&quot;imagenes/fin-nivel-1.jpg&quot;]]
 
 &lt;div class=&quot;instrucciones&quot;&gt;
- &lt;p&gt;¡ Felicidades $usuario ! Has logrado terminar el Nivel 1 y has resuelto $Progreso de $Total enigmas !&lt;/p&gt;
+ &lt;p&gt;¡Felicidades $usuario! ¡Has logrado terminar el Nivel 1 y has resuelto $Progreso de $Total enigmas!&lt;/p&gt;
  &lt;p&gt;Para iniciar el nivel 2 necesitarás la siguiente clave:&lt;/p&gt;
  &lt;p&gt;master&lt;/p&gt;
+ &lt;p&gt;Lo has hecho muy bien, no es necesario que hayas resuelto todo para iniciar el nivel 2.&lt;/p&gt;
  &lt;&lt;button &quot;Jugar otra vez&quot;&gt;&gt;&lt;&lt;script&gt;&gt;UI.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="pizarra" tags="item nobr" position="98,1333" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;pizarra&quot; data-passage=&quot;Pizarra&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="pizarra" tags="item nobr" position="98,1332" size="100,100">&lt;div class=&quot;toolbox_item&quot; id=&quot;pizarra&quot; data-passage=&quot;Pizarra&quot;&gt;
 	&lt;div class=&quot;item-tooltip&quot;&gt;
 		&lt;span class=&quot;tooltiptext&quot;&gt;Una pizarra electrónica&lt;/span&gt;
 	&lt;/div&gt;

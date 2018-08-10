@@ -182,7 +182,7 @@ box-shadow: 5px 5px 5px #10101060;
   position: absolute;
   top: 20px;
   left: 97px;
-  width: 89px;
+  width: 105px;
   font-size:2em;
   color:yellow;
   font-weight: bold;
@@ -1396,7 +1396,7 @@ top:30%;
 
 .instrucciones {
 position: absolute;
-top: 415px;
+top: 454px;
 width: 400px;
 background-color: orange;
 color: white;
@@ -1406,8 +1406,8 @@ border-radius: 10px;
 border-style: solid;
 border-width: 1px;
 border-color: white;
-left: 164px;
-/*padding-left: 94px;*/
+left: 197px;
+padding: 10px;
 text-align: center;
 box-shadow: 0px 5px 10px #404040c0;
 animation: ingresa-instrucciones 500ms linear;
@@ -1432,7 +1432,7 @@ animation: ingresa-instrucciones 500ms linear;
   from {opacity:  0;
   		left: 0px;}
   to {opacity: 1;
-  		left: 94px;}
+  		left: 197px;}
 }
 @keyframes resalta {
   from {top: 0px;}
@@ -1897,7 +1897,7 @@ overflow: scroll;
 }
 
 .pizarra-pantalla img {
- 	max-width: 145%;
+ 	max-width: 100%;
 }
 
 /* LIBROS */
@@ -2217,7 +2217,7 @@ State.variables.inventario = {};
 /*El escritorio de Sara y se vé ordenado, tiene en su oficina una [[pizarra]], su [[computadora]] y un [[rotafolios]].
 
 
-[[Ir a tu escritorio|Escritorio]]*/</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="203,150" size="100,100">&lt;&lt;if not tags().includes(&quot;sin-toolbox&quot;)&gt;&gt;
+[[Ir a tu escritorio|Escritorio]]*/</tw-passagedata><tw-passagedata pid="5" name="PassageFooter" tags="nobr" position="205,150" size="100,100">&lt;&lt;if not tags().includes(&quot;sin-toolbox&quot;)&gt;&gt;
 &lt;div class=&quot;toolbox&quot;&gt;
 		&lt;&lt;for _item, _data range $inventario&gt;&gt;
 			&lt;&lt;include _item&gt;&gt;
@@ -3020,7 +3020,6 @@ Hola, estamos en busca de presupuestos para los siguientes ítems:
 		&lt;&lt;link &quot;&lt;img src=&#39;imagenes/libros-consulta.png&#39;&gt;&quot;&gt;&gt;
 			&lt;&lt;agarrar &quot;libro1&quot;&gt;&gt;
 			&lt;&lt;agarrar &quot;libro2&quot;&gt;&gt;
-			&lt;&lt;set $Progreso += 1 &gt;&gt;
 			&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
 			&lt;&lt;script&gt;&gt;Engine.play(&quot;biblioteca&quot;)&lt;&lt;/script&gt;&gt;
 		&lt;&lt;/link&gt;&gt;
@@ -3127,18 +3126,14 @@ Estás en tu escritorio, podés acceder a tu [[computadora]], buscar algo intere
 &lt;/div&gt;
 
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="P" tags="P nobr" position="950,200" size="100,100">&lt;h2&gt;Pago de bienes y/o servicios&lt;/h2&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="P" tags="P nobr" position="951,200" size="100,100">&lt;h2&gt;Pago de bienes y/o servicios&lt;/h2&gt;
 &lt;div class=&quot;definicion&quot;&gt;
 Una vez recibida la conformidad de la recepción, los cocontratantes podrán presentar las facturas en la forma y lugar establecidos en el pliego, dando así inicio del plazo de pago, que es de TREINTA (30) días corridos, salvo que se disponga uno distinto en los pliegos.
 Los pagos deben realizarse en la moneda que corresponda, de acuerdo a las disposiciones de la Secretaría de Hacienda, del Ministerio de Hacienda.
 &lt;/div&gt;
 
 &lt;h2&gt;Plan Anual de Contrataciones/Desdoblamiento&lt;/h2&gt;
-&lt;&lt;if $TieneDefinicion is false&gt;&gt;
-  &lt;&lt;set $Progreso += 1 &gt;&gt;
-  &lt;&lt;audio &quot;exito&quot; play&gt;&gt;
-  &lt;&lt;set $TieneDefinicion to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+
 &lt;div class=&quot;definicion&quot;&gt;
 El Plan Anual de Contrataciones es el documento que debe elaborar anualmente cada jurisdicción o entidad contratante, en el que se establece la programación de las contrataciones que se harán a lo largo del ejercicio financiero, teniendo en cuenta sus actividades y los créditos que se les asignan a través de la ley de Presupuesto.
 Es una herramienta fundamental, elaborada por la Unidad Operativa de Compras, que se nutre de la información que le remiten las Unidades Requirentes sobre los requerimientos (ya sea de bienes y/o servicios) a lo largo del año, y que permite planificar adecuadamente en forma trimestral las adquisiciones del organismo, de manera de poder unificar los requerimientos en un mismo procedimiento y así ahorrar tiempo y recursos. Así se coadyuva a realizar las adquisiciones en forma eficaz y eficiente utilizando la menor cantidad de recursos, a la vez que evitamos incurrir en desdoblamiento.
@@ -3200,12 +3195,6 @@ Resultan ser “cocontratantes” aquellos proveedores adjudicatarios cuando se 
 
 El desdoblamiento es una práctica que está expresamente prohibida por la norma, que implica que no se puede realizar la adquisición del mismo bien o servicio en un lapso de TRES (3) meses desde la primera convocatoria (fecha de difusión del procedimiento), cuando ello se hace con el fin de eludir los montos de los procedimientos de selección o las autoridades competentes, aunque admite prueba en contrario, poniendo en cabeza exclusiva de estas autoridades la responsabilidad ante el incumplimiento de esta manda. 
 Esta información debe ser remitida a la ONC en los plazos estipulados, que centraliza la información y los difunde en su sitio. Para más información consultar el Tomo 1 de la Biblioteca (Caja de Herramientas).
-
-&lt;&lt;if $TieneDefinicion is false&gt;&gt;
-	&lt;&lt;set $TieneDefinicion to true&gt;&gt;
-	&lt;&lt;set $Progreso += 1 &gt;&gt;
-	&lt;&lt;audio &quot;exito&quot; play&gt;&gt;
-&lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="vista-iconos" tags="nobr" position="950,325" size="100,100">&lt;div class=&quot;videolista&quot;&gt;
 	&lt;div class=&quot;video-item&quot; data-passage=&quot;Consulta Experto&quot; data-setter=&quot;$video to 1&quot;&gt;&lt;div class=&quot;tooltip&quot;&gt;¿Qué son los módulos?&lt;/div&gt;&lt;/div&gt;
@@ -3347,7 +3336,7 @@ _item\
 		&lt;&lt;goto &quot;Cuaderno azul&quot;&gt;&gt;\
 	&lt;&lt;else&gt;&gt;\
 		&lt;&lt;if _correctos + _incorrectos is 6&gt;&gt;\
-			&lt;&lt;set $popup to &quot;Ese no es el orden correcto, revisá la documentación y volvé a intentarlo :(&quot;&gt;&gt;
+			&lt;&lt;set $popup to &quot;Ese no es el orden correcto, revisá la documentación y volvé a intentarlo :( (Clic en la pantalla para continuar)&quot;&gt;&gt;
 			&lt;&lt;goto &quot;Cuaderno azul&quot;&gt;&gt;
 		&lt;&lt;else&gt;&gt;
 			&lt;&lt;replace &quot;#faltaelegir&quot;&gt;&gt;\
@@ -3356,7 +3345,7 @@ _item\
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;\
-&lt;&lt;button Cancelar $Volver&gt;&gt;&lt;&lt;/button&gt;&gt;\
+&lt;&lt;button Volver $Volver&gt;&gt;&lt;&lt;/button&gt;&gt;\
 &lt;/div&gt;\
 &lt;&lt;else&gt;&gt;
 
@@ -3545,10 +3534,10 @@ _item\
 &lt;&lt;audio &quot;ambiente2&quot; play&gt;&gt;
 
 &lt;div class=&quot;texto-final&quot;&gt;
-¡Felicidades $usuario !&lt;br&gt;
-¡ Has resuelto $Progreso de $Total desafíos !&lt;br&gt;
+¡Felicidades $usuario!&lt;br&gt;
+¡Has resuelto $Progreso de $Total desafíos!&lt;br&gt;
 &lt;&lt;if $Progreso is $Total&gt;&gt;
-¡ Eres un MASTER en CONTRATACIONES !
+¡Eres un MASTER en CONTRATACIONES!
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
